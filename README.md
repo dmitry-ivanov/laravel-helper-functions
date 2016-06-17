@@ -16,4 +16,4 @@ Provides Laravel-specific and pure PHP helper functions.
     composer require illuminated/helper-functions
     ```
 
-2. Now you are ready to go?... To be continued...
+2. That's it! Now you can use any of provided helper functions.
