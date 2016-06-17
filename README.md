@@ -1,7 +1,7 @@
 # Laravel helper functions
 
 [![StyleCI](https://styleci.io/repos/61384075/shield)](https://styleci.io/repos/61384075)
-SensioLabsInsight
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/df1af353-b377-4478-b57a-789d86eb35e9/mini.png)](https://insight.sensiolabs.com/projects/df1af353-b377-4478-b57a-789d86eb35e9)
 
 Provides Laravel-specific and pure PHP helper functions.
 
