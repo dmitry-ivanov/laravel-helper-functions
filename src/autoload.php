@@ -1,7 +1,6 @@
 <?php
 
-$helpers = glob('.');
-foreach ($helpers as $helper) {
-    //require_once $helper;
-    var_dump($helper);
+$files = glob(__DIR__ . '/*');
+foreach ($files as $file) {
+    require_once $file;
 }
