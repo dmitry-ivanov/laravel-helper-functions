@@ -7,11 +7,11 @@ if (!function_exists('is_json')) {
             return false;
         }
 
-        $data = json_decode($string);
+        $decoded = json_decode($string);
         if (json_last_error() != JSON_ERROR_NONE) {
             return false;
         }
 
-        return ($return ? $data : true);
+        return ($return ? $decoded : true);
     }
 }
