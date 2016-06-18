@@ -36,4 +36,16 @@ Lalala
 
 #### `is_json`
 
-Lalala
+Checks if specified variable is valid json-encoded string or not:
+```php
+$isJson = is_json('{"foo":1,"bar":2,"baz":3}');
+
+// true
+```
+
+Boolean is returned by default, however, function can return decoded json, as associative array, if you pass the second `return` parameter as `true`:
+```php
+$decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
+
+// ['foo' => 1, 'bar' => 2, 'baz' => 3]
+```
