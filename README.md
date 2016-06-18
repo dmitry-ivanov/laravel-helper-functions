@@ -22,16 +22,20 @@ Provides Laravel-specific and pure PHP helper functions.
 
 ### Dump
 
-[get_dump]
+- [get_dump]
 
 ### Json
 
-[is_json]
+- [is_json]
 
-#### get_dump
+## Dump
+
+### get_dump
 
 Lalala
 
-#### is_json
+## Json
+
+### is_json
 
 Lalala
