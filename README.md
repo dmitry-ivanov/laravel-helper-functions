@@ -17,3 +17,21 @@ Provides Laravel-specific and pure PHP helper functions.
     ```
 
 2. That's it! Now you can use any of provided helper functions.
+
+## Available Functions
+
+### Dump
+
+[get_dump]
+
+### Json
+
+[is_json]
+
+#### get_dump
+
+Lalala
+
+#### is_json
+
+Lalala
