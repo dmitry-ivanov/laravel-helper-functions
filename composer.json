@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=5.4.0",
+        "symfony/var-dumper": "^3.1"
     },
     "autoload": {
         "files": ["src/autoload.php"]
