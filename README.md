@@ -18,7 +18,7 @@ Provides Laravel-specific and pure PHP helper functions.
 
 2. That's it! Now you can use any of provided helper functions.
 
-## Available Functions
+## Available functions
 
 ### [Dump](#dump-1)
 
