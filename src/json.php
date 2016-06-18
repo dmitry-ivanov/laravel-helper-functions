@@ -7,7 +7,7 @@ if (!function_exists('is_json')) {
             return false;
         }
 
-        $decoded = json_decode($string);
+        $decoded = json_decode($string, true);
         if (json_last_error() != JSON_ERROR_NONE) {
             return false;
         }
