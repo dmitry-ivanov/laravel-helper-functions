@@ -61,7 +61,7 @@ $isJson = is_json('{"foo":1,"bar":2,"baz":3}');
 // true
 ```
 
-Boolean is returned by default, however, function can return decoded json, as associative array, if you pass the second `return` parameter as `true`:
+Boolean is returned by default, however, function can return decoded json, if you pass the second `return` argument as `true`:
 ```php
 $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
 
