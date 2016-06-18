@@ -20,11 +20,11 @@ Provides Laravel-specific and pure PHP helper functions.
 
 ## Available Functions
 
-### Dump
+### [Dump](#dump-1)
 
 - [get_dump](#get_dump)
 
-### Json
+### [Json](#json-1)
 
 - [is_json](#is_json)
 
