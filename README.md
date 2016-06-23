@@ -77,7 +77,7 @@ $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
 
 #### `laravel_db_is_mysql`
 
-Checks if default connection is `mysql` or not:
+Checks if current Laravel application's default database connection is `mysql` or not:
 ```php
 if (laravel_db_is_mysql()) {
     // mysql-specific code here
