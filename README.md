@@ -83,3 +83,12 @@ if (laravel_db_is_mysql()) {
     // mysql-specific code here
 }
 ```
+
+#### `laravel_db_mysql_now`
+
+Returns current database datetime string, using Laravel `mysql` connection:
+```php
+$now = laravel_db_mysql_now();
+
+// 2016-06-23 15:23:16
+```
