@@ -57,7 +57,7 @@ $dump = get_dump($var);
 
 ## Json
 
-#### `is_json`
+#### `is_json()`
 
 Checks if specified variable is valid json-encoded string or not:
 ```php
