@@ -26,6 +26,11 @@ Provides Laravel-specific and pure PHP helper functions.
 - [Json](#json)
     - [is_json](#is_json)
 
+- [Laravel](#laravel)
+    - [laravel_db_is_mysql](#laravel_db_is_mysql)
+    - [laravel_db_mysql_now](#laravel_db_mysql_now)
+    - [laravel_db_mysql_variable](#laravel_db_mysql_variable)
+
 ## Dump
 
 #### `get_dump`
