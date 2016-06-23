@@ -77,7 +77,7 @@ $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
 
 #### `laravel_db_is_mysql`
 
-Checks if current Laravel application's default database connection is `mysql` or not:
+Checks if default database connection is `mysql` or not:
 ```php
 if (laravel_db_is_mysql()) {
     // mysql-specific code here
@@ -86,7 +86,7 @@ if (laravel_db_is_mysql()) {
 
 #### `laravel_db_mysql_now`
 
-Returns current database datetime string, using Laravel `mysql` connection:
+Returns current database datetime string, using `mysql` connection:
 ```php
 $now = laravel_db_mysql_now();
 
