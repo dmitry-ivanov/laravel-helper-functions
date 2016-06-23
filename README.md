@@ -86,7 +86,7 @@ if (laravel_db_is_mysql()) {
 
 #### `laravel_db_mysql_now()`
 
-Returns current database datetime string, using `mysql` connection:
+Returns database datetime, using `mysql` connection:
 ```php
 $now = laravel_db_mysql_now();
 
