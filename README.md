@@ -92,3 +92,14 @@ $now = laravel_db_mysql_now();
 
 // 2016-06-23 15:23:16
 ```
+
+#### `laravel_db_mysql_variable`
+
+Returns value of specified `mysql` variable:
+```php
+$hostname = (string) laravel_db_mysql_variable('hostname');
+
+// localhost
+```
+
+If variable doesn't exist, `false` would be returned.
