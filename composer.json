@@ -11,6 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
+        "illuminate/support": "^5.2",
         "symfony/var-dumper": "^3.0"
     },
     "autoload": {
