@@ -95,11 +95,9 @@ $now = laravel_db_mysql_now();
 
 #### `laravel_db_mysql_variable()`
 
-Returns value of specified `mysql` variable:
+Returns value of specified `mysql` variable, or `false` if variable doesn't exist:
 ```php
 $hostname = laravel_db_mysql_variable('hostname');
 
 // localhost
 ```
-
-If variable doesn't exist, `false` would be returned.
