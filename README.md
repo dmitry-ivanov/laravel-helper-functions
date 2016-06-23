@@ -33,7 +33,7 @@ Provides Laravel-specific and pure PHP helper functions.
 
 ## Dump
 
-#### `get_dump`
+#### `get_dump()`
 
 Returns nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html) with all of it's benefits:
 ```php
@@ -75,7 +75,7 @@ $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
 
 ## Laravel
 
-#### `laravel_db_is_mysql`
+#### `laravel_db_is_mysql()`
 
 Checks if default database connection is `mysql` or not:
 ```php
@@ -84,7 +84,7 @@ if (laravel_db_is_mysql()) {
 }
 ```
 
-#### `laravel_db_mysql_now`
+#### `laravel_db_mysql_now()`
 
 Returns current database datetime string, using `mysql` connection:
 ```php
@@ -93,7 +93,7 @@ $now = laravel_db_mysql_now();
 // 2016-06-23 15:23:16
 ```
 
-#### `laravel_db_mysql_variable`
+#### `laravel_db_mysql_variable()`
 
 Returns value of specified `mysql` variable:
 ```php
