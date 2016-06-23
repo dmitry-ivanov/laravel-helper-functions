@@ -97,7 +97,7 @@ $now = laravel_db_mysql_now();
 
 Returns value of specified `mysql` variable:
 ```php
-$hostname = (string) laravel_db_mysql_variable('hostname');
+$hostname = laravel_db_mysql_variable('hostname');
 
 // localhost
 ```
