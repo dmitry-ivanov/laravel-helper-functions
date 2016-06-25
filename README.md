@@ -6,7 +6,7 @@
 Provides Laravel-specific and pure PHP helper functions.
 
 ## Dependencies
-- `PHP >=5.4.0`
+- `PHP >=5.5.9`
 - `Laravel >=5.2`
 
 ## Usage
