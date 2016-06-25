@@ -9,6 +9,6 @@ if (!function_exists('format_bytes')) {
         $factor = floor(((strlen($bytes) - 1) / 3));
         $factor = ($factor > $maxFactor) ? $maxFactor : $factor;
 
-        return sprintf("%.{$precision}f", ($bytes / pow(1024, $factor))) . $units[$factor];
+        return round(($bytes / pow(1024, $factor)), $precision) . $units[$factor];
     }
 }
