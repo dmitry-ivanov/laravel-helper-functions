@@ -23,6 +23,9 @@ Provides Laravel-specific and pure PHP helper functions.
 - [Dump](#dump)
     - [get_dump](#get_dump)
 
+- [Format](#format)
+    - [format_bytes](#format_bytes)
+
 - [Json](#json)
     - [is_json](#is_json)
 
@@ -53,6 +56,17 @@ $dump = get_dump($var);
 //     "a boolean" => true
 //     "an empty array" => []
 // ]
+```
+
+## Format
+
+#### `format_bytes()`
+
+Formats bytes into kilobytes, megabytes, gigabytes or terabytes, with specified precision:
+```php
+$formatted = format_bytes(3333333);
+
+// 3.18 MB
 ```
 
 ## Json
