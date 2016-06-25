@@ -3,12 +3,13 @@
 if (!function_exists('format_bytes')) {
     function format_bytes($bytes, $precision = 2)
     {
-        $units = ['B', 'kB', 'MB', 'GB', 'TB'];
+        $units = ['B', 'KB', 'MB', 'GB', 'TB'];
 
-        $maxFactor = count($units) - 1;
-        $factor = floor(((strlen($bytes) - 1) / 3));
-        $factor = ($factor > $maxFactor) ? $maxFactor : $factor;
+        $bytes = max($bytes, 0);
+        $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
+        $pow = min($pow, count($units) - 1);
+        $bytes /= pow(1024, $pow);
 
-        return round(($bytes / pow(1024, $factor)), $precision) . $units[$factor];
+        return round($bytes, $precision) . ' ' . $units[$pow];
     }
 }
