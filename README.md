@@ -34,6 +34,10 @@ Provides Laravel-specific and pure PHP helper functions.
 - [Json](#json)
     - [is_json](#is_json)
 
+- [Str](#str)
+    - [str_lower](#str_lower)
+    - [str_upper](#str_upper)
+
 ## Db
 
 #### `db_is_mysql()`
@@ -114,4 +118,24 @@ Function can return decoded json, if you pass the second `return` argument as `t
 $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
 
 // ['foo' => 1, 'bar' => 2, 'baz' => 3]
+```
+
+## Str
+
+#### `str_lower()`
+
+Returns string in lowercase:
+```php
+$lower = str_lower('TeSt');
+
+// test
+```
+
+#### `str_upper()`
+
+Returns string in uppercase:
+```php
+$upper = str_upper('TeSt');
+
+// TEST
 ```
