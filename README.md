@@ -20,7 +20,7 @@ Provides Laravel-specific and pure PHP helper functions.
 
 ## Available functions
 
-- [Db](#db)
+- [Database](#database)
     - [db_is_mysql](#db_is_mysql)
     - [db_mysql_now](#db_mysql_now)
     - [db_mysql_variable](#db_mysql_variable)
@@ -34,11 +34,11 @@ Provides Laravel-specific and pure PHP helper functions.
 - [Json](#json)
     - [is_json](#is_json)
 
-- [Str](#str)
+- [Strings](#strings)
     - [str_lower](#str_lower)
     - [str_upper](#str_upper)
 
-## Db
+## Database
 
 #### `db_is_mysql()`
 
@@ -120,7 +120,7 @@ $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
 // ['foo' => 1, 'bar' => 2, 'baz' => 3]
 ```
 
-## Str
+## Strings
 
 #### `str_lower()`
 
