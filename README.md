@@ -20,6 +20,11 @@ Provides Laravel-specific and pure PHP helper functions.
 
 ## Available functions
 
+- [Db](#db)
+    - [db_is_mysql](#db_is_mysql)
+    - [db_mysql_now](#db_mysql_now)
+    - [db_mysql_variable](#db_mysql_variable)
+
 - [Dump](#dump)
     - [get_dump](#get_dump)
 
@@ -28,11 +33,6 @@ Provides Laravel-specific and pure PHP helper functions.
 
 - [Json](#json)
     - [is_json](#is_json)
-
-- [Laravel](#laravel)
-    - [laravel_db_is_mysql](#laravel_db_is_mysql)
-    - [laravel_db_mysql_now](#laravel_db_mysql_now)
-    - [laravel_db_mysql_variable](#laravel_db_mysql_variable)
 
 ## Dump
 
@@ -89,29 +89,29 @@ $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
 
 ## Laravel
 
-#### `laravel_db_is_mysql()`
+#### `db_is_mysql()`
 
 Checks if default database connection is `mysql` or not:
 ```php
-if (laravel_db_is_mysql()) {
+if (db_is_mysql()) {
     // mysql-specific code here
 }
 ```
 
-#### `laravel_db_mysql_now()`
+#### `db_mysql_now()`
 
 Returns database datetime, using `mysql` connection:
 ```php
-$now = laravel_db_mysql_now();
+$now = db_mysql_now();
 
 // 2016-06-23 15:23:16
 ```
 
-#### `laravel_db_mysql_variable()`
+#### `db_mysql_variable()`
 
 Returns value of specified `mysql` variable, or `false` if variable doesn't exist:
 ```php
-$hostname = laravel_db_mysql_variable('hostname');
+$hostname = db_mysql_variable('hostname');
 
 // localhost
 ```
