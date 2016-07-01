@@ -106,6 +106,25 @@ $isEmail = is_email('john.doe@example.com');
 // true
 ```
 
+#### `to_rfc2822_email()`
+
+Converts passed array of laravel addresses to [RFC 2822](http://www.faqs.org/rfcs/rfc2822.html) string, suitable for PHP [mail()](http://ua2.php.net/manual/en/function.mail.php) function:
+```php
+$address = to_rfc2822_email([
+    ['address' => 'john.doe@example.com', 'name' => 'John Doe'],
+    ['address' => 'mary.smith@example.com'],
+]);
+
+// John Doe <john.doe@example.com>, mary.smith@example.com
+```
+
+Also supports simplified way of usage with just one item:
+```php
+$address = to_rfc2822_email(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
+
+// John Doe <john.doe@example.com>
+```
+
 ## Format
 
 #### `format_bytes()`
