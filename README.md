@@ -28,6 +28,10 @@ Provides Laravel-specific and pure PHP helper functions.
 - [Dump](#dump)
     - [get_dump](#get_dump)
 
+- [Email](#email)
+    - [is_email](#is_email)
+    - [to_rfc2822_email](#to_rfc2822_email)
+
 - [Format](#format)
     - [format_bytes](#format_bytes)
 
@@ -89,6 +93,17 @@ $dump = get_dump($var);
 //     "a boolean" => true
 //     "an empty array" => []
 // ]
+```
+
+## Email
+
+#### `is_email()`
+
+Checks if specified string is valid email address or not:
+```php
+$isEmail = is_email('john.doe@example.com');
+
+// true
 ```
 
 ## Format
