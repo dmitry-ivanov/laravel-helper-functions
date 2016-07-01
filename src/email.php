@@ -3,7 +3,7 @@
 if (!function_exists('is_email')) {
     function is_email($string)
     {
-        return filter_var($string, FILTER_VALIDATE_EMAIL);
+        return (bool) filter_var($string, FILTER_VALIDATE_EMAIL);
     }
 }
 
