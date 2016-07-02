@@ -118,7 +118,7 @@ $address = to_rfc2822_email([
 // John Doe <john.doe@example.com>, mary.smith@example.com
 ```
 
-Also supports simplified way of usage with just one item:
+Also supports simplified syntax for single address item:
 ```php
 $address = to_rfc2822_email(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
 
