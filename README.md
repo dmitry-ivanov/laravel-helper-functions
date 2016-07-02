@@ -31,6 +31,7 @@ Provides Laravel-specific and pure PHP helper functions.
 - [Email](#email)
     - [is_email](#is_email)
     - [to_rfc2822_email](#to_rfc2822_email)
+    - [to_swiftmailer_emails](#to_swiftmailer_emails)
 
 - [Format](#format)
     - [format_bytes](#format_bytes)
@@ -108,7 +109,7 @@ $isEmail = is_email('john.doe@example.com');
 
 #### `to_rfc2822_email()`
 
-Converts passed array of addresses data to [RFC 2822](http://www.faqs.org/rfcs/rfc2822.html) string, suitable for PHP [mail()](http://ua2.php.net/manual/en/function.mail.php) function:
+Converts addresses data to [RFC 2822](http://www.faqs.org/rfcs/rfc2822.html) string, suitable for PHP [mail()](http://ua2.php.net/manual/en/function.mail.php) function:
 ```php
 $address = to_rfc2822_email([
     ['address' => 'john.doe@example.com', 'name' => 'John Doe'],
@@ -123,6 +124,25 @@ Also supports simplified syntax for single address item:
 $address = to_rfc2822_email(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
 
 // John Doe <john.doe@example.com>
+```
+
+#### `to_swiftmailer_emails()`
+
+Converts addresses data to format, which is suitable for [SwiftMailer library](http://swiftmailer.org/docs/messages.html):
+```php
+$addresses = to_swiftmailer_emails([
+    ['address' => 'john.doe@example.com', 'name' => 'John Doe'],
+    ['address' => 'mary.smith@example.com'],
+]);
+
+// ["john.doe@example.com" => "John Doe", "mary.smith@example.com"]
+```
+
+Also supports simplified syntax for single address item:
+```php
+$address = to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
+
+// ["john.doe@example.com" => "John Doe"]
 ```
 
 ## Format
