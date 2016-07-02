@@ -158,7 +158,7 @@ $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
 
 #### `str_lower()`
 
-Returns passed string, converted to lowercase:
+Converts string to lowercase:
 ```php
 $lower = str_lower('TeSt');
 
@@ -167,7 +167,7 @@ $lower = str_lower('TeSt');
 
 #### `str_upper()`
 
-Returns passed string, converted to uppercase:
+Converts string to uppercase:
 ```php
 $upper = str_upper('TeSt');
 
