@@ -52,7 +52,13 @@ Provides Laravel-specific and pure PHP helper functions.
 
 Calls artisan console command in background, with optional `before` and `after` sub-commands:
 ```php
-call_in_background("foo:bar baz", 'sleep 0.3');
+call_in_background('foo');
+
+// "php artisan foo" would be called in background
+```
+
+```php
+call_in_background('foo:bar baz', 'sleep 0.3');
 
 // "sleep 0.3 && php artisan foo:bar baz" would be called in background
 ```
