@@ -20,6 +20,9 @@ Provides Laravel-specific and pure PHP helper functions.
 
 ## Available functions
 
+- [Artisan](#artisan)
+    - [call_in_background](#call_in_background)
+
 - [Database](#database)
     - [db_is_mysql](#db_is_mysql)
     - [db_mysql_now](#db_mysql_now)
@@ -42,6 +45,17 @@ Provides Laravel-specific and pure PHP helper functions.
 - [Strings](#strings)
     - [str_lower](#str_lower)
     - [str_upper](#str_upper)
+
+## Artisan
+
+#### `call_in_background()`
+
+Calls artisan console command in background, with optional `before` and `after` sub-commands:
+```php
+call_in_background("foo:bar baz", 'sleep 0.3');
+
+// "sleep 0.3 && php artisan foo:bar baz" would be called in background
+```
 
 ## Database
 
