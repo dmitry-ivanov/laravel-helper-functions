@@ -20,6 +20,9 @@ Provides Laravel-specific and pure PHP helper functions.
 
 ## Available functions
 
+- [Array](#array)
+    - [array_except_value](#array_except_value)
+
 - [Artisan](#artisan)
     - [call_in_background](#call_in_background)
 
@@ -45,6 +48,25 @@ Provides Laravel-specific and pure PHP helper functions.
 - [Strings](#strings)
     - [str_lower](#str_lower)
     - [str_upper](#str_upper)
+
+## Array
+
+#### `array_except_value()`
+
+Removes the given values from array:
+```php
+$array = ['foo', 'bar', 'baz'];
+$array = array_except_value($array, 'baz');
+
+// ['foo', 'bar']
+```
+
+```php
+$array = ['foo', 'bar', 'baz'];
+$array = array_except_value($array, ['bar', 'baz']);
+
+// ['foo']
+```
 
 ## Artisan
 
