@@ -21,5 +21,10 @@
     },
     "autoload": {
         "files": ["src/autoload.php"]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
     }
 }
