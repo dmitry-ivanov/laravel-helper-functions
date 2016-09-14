@@ -9,6 +9,12 @@ class StrLowerTest extends TestCase
     }
 
     /** @test */
+    public function it_works_with_lowercased_string()
+    {
+        $this->assertEquals('test', str_lower('test'));
+    }
+
+    /** @test */
     public function it_lowers_capitalized_word()
     {
         $this->assertEquals('test', str_lower('Test'));
