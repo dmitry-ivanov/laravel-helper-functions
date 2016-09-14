@@ -21,7 +21,7 @@ class StrLowerTest extends TestCase
     }
 
     /** @test */
-    public function it_lowers_uppercase_word()
+    public function it_lowers_uppercased_word()
     {
         $this->assertEquals('test', str_lower('TEST'));
     }
@@ -39,7 +39,7 @@ class StrLowerTest extends TestCase
     }
 
     /** @test */
-    public function it_lowers_uppercase_sentence()
+    public function it_lowers_uppercased_sentence()
     {
         $this->assertEquals('another test', str_lower('ANOTHER TEST'));
     }
