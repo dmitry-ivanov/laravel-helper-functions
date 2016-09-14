@@ -15,6 +15,12 @@ class StrUpperTest extends TestCase
     }
 
     /** @test */
+    public function it_works_with_uppercased_sentence()
+    {
+        $this->assertEquals('ANOTHER TEST', str_upper('ANOTHER TEST'));
+    }
+
+    /** @test */
     public function it_uppers_capitalized_word()
     {
         $this->assertEquals('TEST', str_upper('Test'));
