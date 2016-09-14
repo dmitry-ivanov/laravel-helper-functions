@@ -1,0 +1,52 @@
+<?php
+
+class StrLowerTest extends TestCase
+{
+    /** @test */
+    public function it_works_with_an_empty_string()
+    {
+        $this->assertEquals('', str_lower(''));
+    }
+
+    /** @test */
+    public function it_lowers_capitalized_word()
+    {
+        $this->assertEquals('test', str_lower('Test'));
+    }
+
+    /** @test */
+    public function it_lowers_mixed_word()
+    {
+        $this->assertEquals('test', str_lower('TeSt'));
+    }
+
+    /** @test */
+    public function it_lowers_uppercase_word()
+    {
+        $this->assertEquals('test', str_lower('TEST'));
+    }
+
+    /** @test */
+    public function it_lowers_capitalized_sentence()
+    {
+        $this->assertEquals('another test', str_lower('Another Test'));
+    }
+
+    /** @test */
+    public function it_lowers_mixed_sentence()
+    {
+        $this->assertEquals('another test', str_lower('AnoTHer TeST'));
+    }
+
+    /** @test */
+    public function it_lowers_uppercase_sentence()
+    {
+        $this->assertEquals('another test', str_lower('ANOTHER TEST'));
+    }
+
+    /** @test */
+    public function it_lowers_mixed_sentence_with_special_chars()
+    {
+        $this->assertEquals('another-test!', str_lower('AnoTHer-TeST!'));
+    }
+}
