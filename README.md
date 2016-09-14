@@ -2,6 +2,7 @@
 
 [![StyleCI](https://styleci.io/repos/61384075/shield)](https://styleci.io/repos/61384075)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/df1af353-b377-4478-b57a-789d86eb35e9/mini.png)](https://insight.sensiolabs.com/projects/df1af353-b377-4478-b57a-789d86eb35e9)
+[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions.svg?branch=master)](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions)
 
 Provides Laravel-specific and pure PHP helper functions.
 
