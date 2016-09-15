@@ -45,6 +45,12 @@ class IsJsonTest extends TestCase
     }
 
     /** @test */
+    public function it_returns_false_with_object_passed()
+    {
+        $this->assertFalse(is_json(new StdClass()));
+    }
+
+    /** @test */
     public function it_returns_false_with_an_empty_string_passed()
     {
         $this->assertFalse(is_json(''));
@@ -57,9 +63,23 @@ class IsJsonTest extends TestCase
     }
 
     /** @test */
+    public function it_returns_false_with_non_json_string_and_second_argument_passed()
+    {
+        $this->assertFalse(is_json('non-json string', true));
+    }
+
+    /** @test */
     public function it_returns_true_with_json_string_passed()
     {
         $json = json_encode(['foo' => 'bar']);
         $this->assertTrue(is_json($json));
+    }
+
+    /** @test */
+    public function it_returns_decoded_json_with_second_argument_passed()
+    {
+        $array = ['foo' => 'bar', 'baz' => 'bax'];
+        $json = json_encode($array);
+        $this->assertEquals($array, is_json($json, true));
     }
 }
