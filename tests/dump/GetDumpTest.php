@@ -59,4 +59,37 @@ class GetDumpTest extends TestCase
 
         $this->assertEquals($expected, get_dump($array));
     }
+
+    /** @test */
+    public function it_correctly_dumps_array_with_very_long_strings()
+    {
+        $dump = get_dump([str_repeat('x', 3000)]);
+        $this->assertNotContains('…', $dump);
+        $this->assertNotContains('...', $dump);
+    }
+
+    /** @test */
+    public function it_correctly_dumps_array_with_huge_amount_of_items()
+    {
+        $array = range(1, 3);
+        $subArray = range(1, 3000);
+        $array = array_map(function () use ($subArray) {
+            return $subArray;
+        }, $array);
+
+        $dump = get_dump($array);
+        $this->assertNotContains('…', $dump);
+        $this->assertNotContains('...', $dump);
+    }
+
+    /** @test */
+    public function it_correctly_dumps_array_with_depth_50()
+    {
+        $key = trim(str_repeat('foo.', 50), '.');
+        $array = array_add([], $key, 'bar');
+
+        $dump = get_dump($array);
+        $this->assertNotContains('…', $dump);
+        $this->assertNotContains('...', $dump);
+    }
 }
