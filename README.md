@@ -122,14 +122,14 @@ $hostname = db_mysql_variable('hostname');
 
 Returns nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html) with all of it's benefits:
 ```php
-$var = array(
+$array = [
     'a simple string' => 'in an array of 5 elements',
     'a float' => 1.0,
     'an integer' => 1,
     'a boolean' => true,
-    'an empty array' => array(),
-);
-$dump = get_dump($var);
+    'an empty array' => [],
+];
+$dump = get_dump($array);
 
 // array:5 [
 //     "a simple string" => "in an array of 5 elements"
