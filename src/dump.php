@@ -11,9 +11,9 @@ if (!function_exists('get_dump')) {
         $cloner->setMaxString(-1);
 
         $cloned = $cloner->cloneVar($var);
-        $cloned->withMaxDepth(-1);
-        $cloned->withMaxItemsPerDepth(-1);
-        $cloned->withRefHandles(-1);
+        $cloned = $cloned->withMaxDepth(50);
+        $cloned = $cloned->withMaxItemsPerDepth(-1);
+        $cloned = $cloned->withRefHandles(true);
 
         $dumper = new CliDumper();
         $dumper->setIndentPad('    ');
