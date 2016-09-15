@@ -3,7 +3,7 @@
 if (!function_exists('is_json')) {
     function is_json($string, $return = false)
     {
-        if (!is_string($string)) {
+        if (!is_string($string) || empty($string)) {
             return false;
         }
 
