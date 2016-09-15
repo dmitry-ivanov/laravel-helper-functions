@@ -55,8 +55,7 @@ class GetDumpTest extends TestCase
             . "    \"an integer\" => 1\n"
             . "    \"a boolean\" => true\n"
             . "    \"an empty array\" => []\n"
-            . "]\n"
-        ;
+            . "]\n";
 
         $this->assertEquals($expected, get_dump($array));
     }
