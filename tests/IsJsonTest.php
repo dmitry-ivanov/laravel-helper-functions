@@ -69,9 +69,61 @@ class IsJsonTest extends TestCase
     }
 
     /** @test */
-    public function it_returns_true_with_json_string_passed()
+    public function it_returns_true_with_json_encoded_null_passed()
+    {
+        $json = json_encode(null);
+        $this->assertTrue(is_json($json));
+    }
+
+    /** @test */
+    public function it_returns_true_with_json_encoded_boolean_true_passed()
+    {
+        $json = json_encode(true);
+        $this->assertTrue(is_json($json));
+    }
+
+    /** @test */
+    public function it_returns_true_with_json_encoded_boolean_false_passed()
+    {
+        $json = json_encode(false);
+        $this->assertTrue(is_json($json));
+    }
+
+    /** @test */
+    public function it_returns_true_with_json_encoded_integer_passed()
+    {
+        $json = json_encode(123);
+        $this->assertTrue(is_json($json));
+    }
+
+    /** @test */
+    public function it_returns_true_with_json_encoded_float_passed()
+    {
+        $json = json_encode(123.45);
+        $this->assertTrue(is_json($json));
+    }
+
+    /** @test */
+    public function it_returns_true_with_json_encoded_array_passed()
     {
         $json = json_encode(['foo' => 'bar']);
+        $this->assertTrue(is_json($json));
+    }
+
+    /** @test */
+    public function it_returns_true_with_json_encoded_object_passed()
+    {
+        $object = new StdClass();
+        $object->foo = 'bar';
+        $object->baz = 'bax';
+        $json = json_encode($object);
+        $this->assertTrue(is_json($json));
+    }
+
+    /** @test */
+    public function it_returns_true_with_json_encoded_string_passed()
+    {
+        $json = json_encode('string to encode');
         $this->assertTrue(is_json($json));
     }
 
