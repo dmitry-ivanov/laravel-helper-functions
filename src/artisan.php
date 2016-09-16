@@ -1,5 +1,6 @@
 <?php
 
+use Illuminated\Helpers\System\Command;
 use Symfony\Component\Process\PhpExecutableFinder;
 use Symfony\Component\Process\ProcessUtils;
 
@@ -33,6 +34,6 @@ if (!function_exists('call_in_background')) {
         }
 
         $expression = implode(' && ', $parts);
-        exec("({$expression}) > /dev/null 2>&1 &");
+        Command::exec("({$expression}) > /dev/null 2>&1 &");
     }
 }
