@@ -1,5 +1,7 @@
 <?php
 
-abstract class TestCase extends \PHPUnit\Framework\TestCase
+use Mockery\Adapter\PHPUnit\MockeryTestCase;
+
+abstract class TestCase extends MockeryTestCase
 {
 }
