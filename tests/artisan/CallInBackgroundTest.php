@@ -1,63 +1,53 @@
 <?php
 
+use Mockery as m;
+
 class CallInBackgroundTest extends TestCase
 {
-    /** @test */
-    public function it_returns_false_for_an_empty_command()
+    protected function setUp()
     {
-        $this->assertFalse(call_in_background(null));
-        $this->assertFalse(call_in_background(false));
-        $this->assertFalse(call_in_background(''));
-    }
+        $phpMock = m::mock('overload:Symfony\Component\Process\PhpExecutableFinder');
+        $phpMock->shouldReceive('find')->with(false)->once()->andReturn('php');
 
-    /** @test */
-    public function it_returns_false_for_non_string_command()
-    {
-        $this->assertFalse(call_in_background(123));
-        $this->assertFalse(call_in_background(123.45));
-        $this->assertFalse(call_in_background(['array']));
-        $this->assertFalse(call_in_background(new StdClass()));
-    }
-
-    /** @test */
-    public function it_returns_false_for_non_string_before_parameter()
-    {
-        $this->assertFalse(call_in_background('command', 123));
-        $this->assertFalse(call_in_background('command', 123.45));
-        $this->assertFalse(call_in_background('command', ['array']));
-        $this->assertFalse(call_in_background('command', new StdClass()));
-    }
-
-    /** @test */
-    public function it_returns_false_for_non_string_after_parameter()
-    {
-        $this->assertFalse(call_in_background('command', null, 123));
-        $this->assertFalse(call_in_background('command', null, 123.45));
-        $this->assertFalse(call_in_background('command', null, ['array']));
-        $this->assertFalse(call_in_background('command', null, new StdClass()));
+        $utilsMock = m::mock('alias:Symfony\Component\Process\ProcessUtils');
+        $utilsMock->shouldReceive('escapeArgument')->withAnyArgs()->atLeast()->once()->andReturnUsing(function ($v) {
+            return $v;
+        });
     }
 
     /** @test */
     public function it_works_without_before_and_after_parameters()
     {
-        $this->markTestIncomplete();
+        $mock = m::mock('alias:Illuminated\Helpers\System\Command');
+        $mock->shouldReceive('exec')->with('(php artisan test command) > /dev/null 2>&1 &')->once();
+
+        call_in_background('test command');
     }
 
     /** @test */
     public function it_works_with_only_before_parameter()
     {
-        $this->markTestIncomplete();
+        $mock = m::mock('alias:Illuminated\Helpers\System\Command');
+        $mock->shouldReceive('exec')->with('(before command && php artisan test command) > /dev/null 2>&1 &')->once();
+
+        call_in_background('test command', 'before command');
     }
 
     /** @test */
     public function it_works_with_only_after_parameter()
     {
-        $this->markTestIncomplete();
+        $mock = m::mock('alias:Illuminated\Helpers\System\Command');
+        $mock->shouldReceive('exec')->with('(php artisan test command && after command) > /dev/null 2>&1 &')->once();
+
+        call_in_background('test command', null, 'after command');
     }
 
     /** @test */
     public function it_works_with_before_and_after_parameters()
     {
-        $this->markTestIncomplete();
+        $mock = m::mock('alias:Illuminated\Helpers\System\Command');
+        $mock->shouldReceive('exec')->with('(before && php artisan test command && after) > /dev/null 2>&1 &')->once();
+
+        call_in_background('test command', 'before', 'after');
     }
 }
