@@ -6,6 +6,13 @@ use Symfony\Component\Process\ProcessUtils;
 if (!function_exists('call_in_background')) {
     function call_in_background($command, $before = null, $after = null)
     {
+        $isInvalidCommand = empty($command) || !is_string($command);
+        $isInvalidBefore = !empty($before) && !is_string($before);
+        $isInvalidAfter = !empty($after) && !is_string($after);
+        if ($isInvalidCommand || $isInvalidBefore || $isInvalidAfter) {
+            return false;
+        }
+
         $parts = [];
         if (!empty($before)) {
             $parts[] = $before;
