@@ -2,6 +2,10 @@
 
 use Mockery as m;
 
+// /**
+//  * @runTestsInSeparateProcesses
+//  * @preserveGlobalState disabled
+//  */
 class CallInBackgroundTest extends TestCase
 {
     protected function setUp()
