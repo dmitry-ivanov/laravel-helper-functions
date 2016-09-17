@@ -21,7 +21,6 @@
         "mockery/mockery": "^0.9.5"
     },
     "autoload": {
-        "files": ["src/autoload.php"],
         "psr-4": {
             "Illuminated\\Helpers\\": "src/classes/"
         }
