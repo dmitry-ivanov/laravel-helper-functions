@@ -24,14 +24,14 @@ class CommandTest extends TestCase
     }
 
     /** @test */
-    public function it_has_required_arguments()
+    public function it_has_required_constructor_arguments()
     {
         $this->expectException(PHPUnit_Framework_Error::class);
         return new Command();
     }
 
     /** @test */
-    public function it_has_one_required_argument_which_is_command()
+    public function it_has_one_required_constructor_argument_which_is_command()
     {
         $command = new Command('test');
         $this->assertInstanceOf(Command::class, $command);
