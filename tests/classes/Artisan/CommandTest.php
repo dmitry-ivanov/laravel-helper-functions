@@ -47,9 +47,9 @@ class CommandTest extends TestCase
     /** @test */
     public function it_can_run_command_in_background()
     {
-        self::$functions->shouldReceive('exec')->with("(php artisan test command) > /dev/null 2>&1 &")->once();
+        self::$functions->shouldReceive('exec')->with('(php artisan test:command) > /dev/null 2>&1 &')->once();
 
-        $command = Command::factory('test command');
+        $command = Command::factory('test:command');
         $command->runInBackground();
     }
 }
