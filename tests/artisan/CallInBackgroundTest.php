@@ -2,10 +2,10 @@
 
 use Mockery as m;
 
-// /**
-//  * @runTestsInSeparateProcesses
-//  * @preserveGlobalState disabled
-//  */
+/**
+ * @runTestsInSeparateProcesses
+ * @preserveGlobalState disabled
+ */
 class CallInBackgroundTest extends TestCase
 {
     /** @test */
