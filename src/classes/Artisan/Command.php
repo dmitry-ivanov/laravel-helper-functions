@@ -18,6 +18,11 @@ class Command
         $this->after = $after;
     }
 
+    public static function factory($command, $before = null, $after = null)
+    {
+        return new self($command, $before, $after);
+    }
+
     public function runInBackground()
     {
         exec($this->composeForRunInBackground());
