@@ -9,9 +9,7 @@ class DbMysqlNowTest extends TestCase
     {
         $mock = m::mock('alias:Illuminate\Support\Facades\DB');
         $mock->shouldReceive('selectOne')->withArgs(['select now() as now'])->once()->andReturnUsing(function () {
-            $object = new StdClass();
-            $object->now = '2016-09-17 18:49:46';
-            return $object;
+            return (object) ['now' => '2016-09-17 18:49:46'];
         });
 
         $this->assertEquals('2016-09-17 18:49:46', db_mysql_now());

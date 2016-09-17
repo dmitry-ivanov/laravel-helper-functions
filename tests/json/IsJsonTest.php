@@ -113,10 +113,7 @@ class IsJsonTest extends TestCase
     /** @test */
     public function it_returns_true_with_json_encoded_object_passed()
     {
-        $object = new StdClass();
-        $object->foo = 'bar';
-        $object->baz = 'bax';
-        $json = json_encode($object);
+        $json = json_encode((object) ['foo' => 'bar', 'baz' => 'bax']);
         $this->assertTrue(is_json($json));
     }
 

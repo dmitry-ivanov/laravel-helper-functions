@@ -24,10 +24,7 @@ class DbMysqlVariableTest extends TestCase
              ->withArgs(['show variables where variable_name = ?', ['hostname']])
              ->once()
              ->andReturnUsing(function () {
-                 $object = new StdClass();
-                 $object->Variable_name = 'hostname';
-                 $object->Value = 'localhost';
-                 return $object;
+                 return (object) ['Variable_name' => 'hostname', 'Value' => 'localhost'];
              });
 
         $this->assertEquals('localhost', db_mysql_variable('hostname'));
