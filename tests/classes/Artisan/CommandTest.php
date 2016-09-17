@@ -47,10 +47,42 @@ class CommandTest extends TestCase
     /** @test */
     public function it_can_run_command_in_background()
     {
-        self::$functions->shouldReceive('exec')->with('(php artisan test:command) > /dev/null 2>&1 &')->once();
+        $this->shouldRecieveExecCallOnceWith('(php artisan test:command) > /dev/null 2>&1 &');
 
         $command = Command::factory('test:command');
         $command->runInBackground();
+    }
+
+    /** @test */
+    public function run_in_background_supports_before_command()
+    {
+        $this->shouldRecieveExecCallOnceWith('(before command && php artisan test:command) > /dev/null 2>&1 &');
+
+        $command = Command::factory('test:command', 'before command');
+        $command->runInBackground();
+    }
+
+    /** @test */
+    public function run_in_background_supports_after_command()
+    {
+        $this->shouldRecieveExecCallOnceWith('(php artisan test:command && after command) > /dev/null 2>&1 &');
+
+        $command = Command::factory('test:command', null, 'after command');
+        $command->runInBackground();
+    }
+
+    /** @test */
+    public function run_in_background_supports_before_and_after_commands_both()
+    {
+        $this->shouldRecieveExecCallOnceWith('(before && php artisan test:command && after) > /dev/null 2>&1 &');
+
+        $command = Command::factory('test:command', 'before', 'after');
+        $command->runInBackground();
+    }
+
+    private function shouldRecieveExecCallOnceWith($with)
+    {
+        self::$functions->shouldReceive('exec')->with($with)->once();
     }
 }
 
