@@ -11,8 +11,8 @@ class DbMysqlVariableTest extends TestCase
         $mock->shouldReceive('selectOne')
             ->withArgs(['show variables where variable_name = ?', ['fake']])
             ->once()
-            ->andReturnNull()
-        ;
+            ->andReturnNull();
+
         $this->assertFalse(db_mysql_variable('fake'));
     }
 
@@ -28,8 +28,8 @@ class DbMysqlVariableTest extends TestCase
                  $object->Variable_name = 'hostname';
                  $object->Value = 'localhost';
                  return $object;
-             })
-        ;
+             });
+
         $this->assertEquals('localhost', db_mysql_variable('hostname'));
     }
 }
