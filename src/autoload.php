@@ -10,6 +10,6 @@ $files = Finder::create()
     ->notName('autoload.php');
 
 foreach ($files as $file) {
-    dump((string)$file);
+    dump((string) $file);
     require_once $file;
 }
