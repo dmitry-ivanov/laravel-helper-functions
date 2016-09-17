@@ -80,6 +80,34 @@ class CommandTest extends TestCase
         $command->runInBackground();
     }
 
+    /**
+     * @test
+     * @runInSeparateProcess
+     * @preserveGlobalState disabled
+     */
+    public function it_adds_php_option_for_hhvm()
+    {
+        $this->shouldRecieveExecCallOnceWith('(before && php --php artisan test:command && after) > /dev/null 2>&1 &');
+
+        define('HHVM_VERSION', true);
+        $command = Command::factory('test:command', 'before', 'after');
+        $command->runInBackground();
+    }
+
+    /**
+     * @test
+     * @runInSeparateProcess
+     * @preserveGlobalState disabled
+     */
+    public function it_supports_overriding_of_artisan_binary_through_constant()
+    {
+        $this->shouldRecieveExecCallOnceWith('(before && php custom-artisan test:command && after) > /dev/null 2>&1 &');
+
+        define('ARTISAN_BINARY', 'custom-artisan');
+        $command = Command::factory('test:command', 'before', 'after');
+        $command->runInBackground();
+    }
+
     private function shouldRecieveExecCallOnceWith($with)
     {
         self::$functions->shouldReceive('exec')->with($with)->once();
