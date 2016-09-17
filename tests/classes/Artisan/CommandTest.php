@@ -24,14 +24,14 @@ class CommandTest extends TestCase
     }
 
     /** @test */
-    public function it_has_required_constructor_arguments()
+    public function it_can_not_be_initiated_without_constructor_arguments()
     {
         $this->expectException(PHPUnit_Framework_Error::class);
         return new Command();
     }
 
     /** @test */
-    public function required_constructor_argument_is_command()
+    public function only_one_constructor_argument_is_required()
     {
         $command = new Command('test');
         $this->assertInstanceOf(Command::class, $command);
@@ -72,7 +72,7 @@ class CommandTest extends TestCase
     }
 
     /** @test */
-    public function run_in_background_supports_before_and_after_commands_both()
+    public function run_in_background_supports_before_and_after_commands_together()
     {
         $this->shouldRecieveExecCallOnceWith('(before && php artisan test:command && after) > /dev/null 2>&1 &');
 
