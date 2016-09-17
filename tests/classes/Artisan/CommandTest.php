@@ -31,7 +31,7 @@ class CommandTest extends TestCase
     }
 
     /** @test */
-    public function it_has_one_required_constructor_argument_which_is_command()
+    public function required_constructor_argument_is_command()
     {
         $command = new Command('test');
         $this->assertInstanceOf(Command::class, $command);
