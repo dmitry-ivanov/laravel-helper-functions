@@ -3,20 +3,10 @@
 class ArrayExceptValueTest extends TestCase
 {
     /** @test */
-    public function it_returns_empty_array_after_excluding_empty_value_from_empty_array()
-    {
-        $this->assertEquals([], array_except_value([], null));
-    }
-
-    /** @test */
-    public function it_returns_empty_array_after_excluding_not_empty_value_from_empty_array()
-    {
-        $this->assertEquals([], array_except_value([], 'foo'));
-    }
-
-    /** @test */
     public function it_returns_array_itself_after_excluding_unexisting_value()
     {
+        $this->assertEquals([], array_except_value([], null));
+        $this->assertEquals([], array_except_value([], 'foo'));
         $this->assertEquals(['foo', 'bar', 'baz'], array_except_value(['foo', 'bar', 'baz'], 'bax'));
     }
 
