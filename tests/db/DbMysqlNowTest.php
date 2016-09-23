@@ -5,7 +5,7 @@ use Mockery as m;
 class DbMysqlNowTest extends TestCase
 {
     /** @test */
-    public function it_returns_valid_mysql_now()
+    public function it_returns_valid_mysql_datetime()
     {
         $mock = m::mock('alias:Illuminate\Support\Facades\DB');
         $mock->shouldReceive('selectOne')->withArgs(['select now() as now'])->once()->andReturnUsing(function () {
