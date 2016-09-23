@@ -3,19 +3,19 @@
 class StrLowerTest extends TestCase
 {
     /** @test */
-    public function it_works_with_an_empty_string()
+    public function it_lowers_empty_string()
     {
         $this->assertEquals('', str_lower(''));
     }
 
     /** @test */
-    public function it_works_with_lowercased_string()
+    public function it_lowers_lowercased_string()
     {
         $this->assertEquals('test', str_lower('test'));
     }
 
     /** @test */
-    public function it_works_with_lowercased_sentence()
+    public function it_lowers_lowercased_sentence()
     {
         $this->assertEquals('another test', str_lower('another test'));
     }
