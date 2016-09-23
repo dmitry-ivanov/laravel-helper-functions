@@ -9,7 +9,7 @@ use Mockery as m;
 class CallInBackgroundTest extends TestCase
 {
     /** @test */
-    public function it_works_without_before_and_after_parameters()
+    public function it_works_without_optional_before_and_after_parameters()
     {
         $mock = m::mock('alias:Illuminated\Helpers\Artisan\Command');
         $mock->shouldReceive('factory')->withArgs(['test command', null, null])->once()->andReturnSelf();
@@ -19,7 +19,7 @@ class CallInBackgroundTest extends TestCase
     }
 
     /** @test */
-    public function it_works_with_only_before_parameter()
+    public function it_works_with_optional_before_parameter()
     {
         $mock = m::mock('alias:Illuminated\Helpers\Artisan\Command');
         $mock->shouldReceive('factory')->withArgs(['test command', 'before command', null])->once()->andReturnSelf();
@@ -29,7 +29,7 @@ class CallInBackgroundTest extends TestCase
     }
 
     /** @test */
-    public function it_works_with_only_after_parameter()
+    public function it_works_with_optional_after_parameter()
     {
         $mock = m::mock('alias:Illuminated\Helpers\Artisan\Command');
         $mock->shouldReceive('factory')->withArgs(['test command', null, 'after command'])->once()->andReturnSelf();
@@ -39,7 +39,7 @@ class CallInBackgroundTest extends TestCase
     }
 
     /** @test */
-    public function it_works_with_before_and_after_parameters_together()
+    public function it_works_with_optional_before_and_after_parameters_together()
     {
         $mock = m::mock('alias:Illuminated\Helpers\Artisan\Command');
         $mock->shouldReceive('factory')->withArgs(['test command', 'before', 'after'])->once()->andReturnSelf();
