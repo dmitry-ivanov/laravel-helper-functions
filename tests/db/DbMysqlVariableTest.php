@@ -17,7 +17,7 @@ class DbMysqlVariableTest extends TestCase
     }
 
     /** @test */
-    public function it_returns_value_for_known_mysql_variable()
+    public function it_returns_value_for_existing_mysql_variable()
     {
         $mock = m::mock('alias:Illuminate\Support\Facades\DB');
         $mock->shouldReceive('selectOne')
