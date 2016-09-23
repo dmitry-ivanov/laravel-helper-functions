@@ -39,7 +39,7 @@ class CallInBackgroundTest extends TestCase
     }
 
     /** @test */
-    public function it_works_with_before_and_after_parameters()
+    public function it_works_with_before_and_after_parameters_together()
     {
         $mock = m::mock('alias:Illuminated\Helpers\Artisan\Command');
         $mock->shouldReceive('factory')->withArgs(['test command', 'before', 'after'])->once()->andReturnSelf();
