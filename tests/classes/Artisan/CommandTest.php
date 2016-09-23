@@ -54,7 +54,7 @@ class CommandTest extends TestCase
     }
 
     /** @test */
-    public function run_in_background_supports_before_command()
+    public function run_in_background_supports_before_subcommand()
     {
         $this->shouldRecieveExecCallOnceWith('(before command && php artisan test:command) > /dev/null 2>&1 &');
 
@@ -63,7 +63,7 @@ class CommandTest extends TestCase
     }
 
     /** @test */
-    public function run_in_background_supports_after_command()
+    public function run_in_background_supports_after_subcommand()
     {
         $this->shouldRecieveExecCallOnceWith('(php artisan test:command && after command) > /dev/null 2>&1 &');
 
@@ -72,7 +72,7 @@ class CommandTest extends TestCase
     }
 
     /** @test */
-    public function run_in_background_supports_before_and_after_commands_together()
+    public function run_in_background_supports_before_and_after_subcommands_together()
     {
         $this->shouldRecieveExecCallOnceWith('(before && php artisan test:command && after) > /dev/null 2>&1 &');
 
