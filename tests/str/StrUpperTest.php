@@ -3,19 +3,19 @@
 class StrUpperTest extends TestCase
 {
     /** @test */
-    public function it_works_with_an_empty_string()
+    public function it_uppers_empty_string()
     {
         $this->assertEquals('', str_upper(''));
     }
 
     /** @test */
-    public function it_works_with_uppercased_string()
+    public function it_uppers_uppercased_string()
     {
         $this->assertEquals('TEST', str_upper('TEST'));
     }
 
     /** @test */
-    public function it_works_with_uppercased_sentence()
+    public function it_uppers_uppercased_sentence()
     {
         $this->assertEquals('ANOTHER TEST', str_upper('ANOTHER TEST'));
     }
