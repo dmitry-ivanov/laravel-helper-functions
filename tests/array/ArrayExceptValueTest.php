@@ -20,7 +20,7 @@ class ArrayExceptValueTest extends TestCase
     }
 
     /** @test */
-    public function it_excludes_all_multiple_occurrences()
+    public function it_excludes_all_occurrences_of_the_value()
     {
         $this->assertEquals(
             [0 => 'foo', 4 => 'bar'],
@@ -74,7 +74,7 @@ class ArrayExceptValueTest extends TestCase
     }
 
     /** @test */
-    public function it_supports_multiple_values()
+    public function it_can_exclude_multiple_different_values()
     {
         $array = ['foo', 'bar', 'baz', 'bax'];
         $this->assertEquals([1 => 'bar', 2 => 'baz'], array_except_value($array, ['foo', 'bax']));
