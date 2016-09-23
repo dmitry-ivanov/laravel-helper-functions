@@ -74,6 +74,13 @@ class ArrayExceptValueTest extends TestCase
     }
 
     /** @test */
+    public function it_supports_multiple_values()
+    {
+        $array = ['foo', 'bar', 'baz', 'bax'];
+        $this->assertEquals([1 => 'bar', 2 => 'baz'], array_except_value($array, ['foo', 'bax']));
+    }
+
+    /** @test */
     public function it_works_with_associative_array_and_single_value()
     {
         $array = [
