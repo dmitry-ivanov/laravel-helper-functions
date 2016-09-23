@@ -3,25 +3,25 @@
 class ArrayExceptValueTest extends TestCase
 {
     /** @test */
-    public function it_works_with_an_empty_array_and_empty_value()
+    public function it_returns_empty_array_after_excluding_empty_value_from_empty_array()
     {
         $this->assertEquals([], array_except_value([], null));
     }
 
     /** @test */
-    public function it_works_with_an_empty_array_and_not_empty_value()
+    public function it_returns_empty_array_after_excluding_not_empty_value_from_empty_array()
     {
         $this->assertEquals([], array_except_value([], 'foo'));
     }
 
     /** @test */
-    public function it_works_with_unexisting_value()
+    public function it_returns_array_itself_after_excluding_unexisting_value()
     {
         $this->assertEquals(['foo', 'bar', 'baz'], array_except_value(['foo', 'bar', 'baz'], 'bax'));
     }
 
     /** @test */
-    public function it_preserves_keys()
+    public function it_preserves_keys_after_excluding_value()
     {
         $this->assertEquals(
             [0 => 'foo', 2 => 'baz'],
@@ -30,7 +30,7 @@ class ArrayExceptValueTest extends TestCase
     }
 
     /** @test */
-    public function it_works_with_multiple_occurrences()
+    public function it_excludes_all_multiple_occurrences()
     {
         $this->assertEquals(
             [0 => 'foo', 4 => 'bar'],
@@ -60,7 +60,7 @@ class ArrayExceptValueTest extends TestCase
     }
 
     /** @test */
-    public function it_works_with_integer_value()
+    public function it_works_with_integer_values()
     {
         $this->assertEquals(
             [0 => 23, 2 => 14, 3 => 11],
@@ -69,7 +69,7 @@ class ArrayExceptValueTest extends TestCase
     }
 
     /** @test */
-    public function it_works_with_float_value()
+    public function it_works_with_float_values()
     {
         $this->assertEquals(
             [0 => 23.3, 1 => 17.2, 3 => 11.1],
@@ -78,13 +78,13 @@ class ArrayExceptValueTest extends TestCase
     }
 
     /** @test */
-    public function it_works_with_string_value()
+    public function it_works_with_string_values()
     {
         $this->assertEquals(['foo', 'bar'], array_except_value(['foo', 'bar', 'baz'], 'baz'));
     }
 
     /** @test */
-    public function it_works_with_associative_array_and_string_value()
+    public function it_works_with_associative_array_and_single_value()
     {
         $array = [
             'foo' => 'bar',
@@ -95,7 +95,7 @@ class ArrayExceptValueTest extends TestCase
     }
 
     /** @test */
-    public function it_works_with_associative_array_and_array_value()
+    public function it_works_with_associative_array_and_multiple_values()
     {
         $array = [
             'foo' => 'bar',
