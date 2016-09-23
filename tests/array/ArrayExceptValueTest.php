@@ -29,19 +29,19 @@ class ArrayExceptValueTest extends TestCase
     }
 
     /** @test */
-    public function it_works_with_null_value()
+    public function it_can_exclude_null_value()
     {
         $this->assertEquals(['foo', 'bar', 'baz'], array_except_value(['foo', 'bar', 'baz', null], null));
     }
 
     /** @test */
-    public function it_works_with_boolean_true_value()
+    public function it_can_exclude_boolean_true_value()
     {
         $this->assertEquals(['foo', 'bar', 'baz'], array_except_value(['foo', 'bar', 'baz', true, true], true));
     }
 
     /** @test */
-    public function it_works_with_boolean_false_value()
+    public function it_can_exclude_boolean_false_value()
     {
         $this->assertEquals(
             ['foo', 'bar', 'baz', 5 => null],
@@ -50,7 +50,7 @@ class ArrayExceptValueTest extends TestCase
     }
 
     /** @test */
-    public function it_works_with_integer_values()
+    public function it_can_exclude_integer_value()
     {
         $this->assertEquals(
             [0 => 23, 2 => 14, 3 => 11],
@@ -59,7 +59,7 @@ class ArrayExceptValueTest extends TestCase
     }
 
     /** @test */
-    public function it_works_with_float_values()
+    public function it_can_exclude_float_value()
     {
         $this->assertEquals(
             [0 => 23.3, 1 => 17.2, 3 => 11.1],
@@ -68,7 +68,7 @@ class ArrayExceptValueTest extends TestCase
     }
 
     /** @test */
-    public function it_works_with_string_values()
+    public function it_can_exclude_string_value()
     {
         $this->assertEquals(['foo', 'bar'], array_except_value(['foo', 'bar', 'baz'], 'baz'));
     }
