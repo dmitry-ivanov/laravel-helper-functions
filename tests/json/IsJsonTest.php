@@ -33,6 +33,18 @@ class IsJsonTest extends TestCase
     }
 
     /** @test */
+    public function it_returns_false_for_an_empty_string()
+    {
+        $this->assertFalse(is_json(''));
+    }
+
+    /** @test */
+    public function it_returns_false_for_non_json_string()
+    {
+        $this->assertFalse(is_json('non-json string'));
+    }
+
+    /** @test */
     public function it_returns_false_for_empty_array()
     {
         $this->assertFalse(is_json([]));
@@ -48,18 +60,6 @@ class IsJsonTest extends TestCase
     public function it_returns_false_for_object()
     {
         $this->assertFalse(is_json(new StdClass()));
-    }
-
-    /** @test */
-    public function it_returns_false_for_an_empty_string()
-    {
-        $this->assertFalse(is_json(''));
-    }
-
-    /** @test */
-    public function it_returns_false_for_non_json_string()
-    {
-        $this->assertFalse(is_json('non-json string'));
     }
 
     /** @test */
@@ -104,6 +104,13 @@ class IsJsonTest extends TestCase
     }
 
     /** @test */
+    public function it_returns_true_for_json_encoded_string()
+    {
+        $json = json_encode('string to encode');
+        $this->assertTrue(is_json($json));
+    }
+
+    /** @test */
     public function it_returns_true_for_json_encoded_array()
     {
         $json = json_encode(['foo' => 'bar']);
@@ -114,13 +121,6 @@ class IsJsonTest extends TestCase
     public function it_returns_true_for_json_encoded_object()
     {
         $json = json_encode((object) ['foo' => 'bar', 'baz' => 'bax']);
-        $this->assertTrue(is_json($json));
-    }
-
-    /** @test */
-    public function it_returns_true_for_json_encoded_string()
-    {
-        $json = json_encode('string to encode');
         $this->assertTrue(is_json($json));
     }
 
