@@ -63,7 +63,7 @@ class IsJsonTest extends TestCase
     }
 
     /** @test */
-    public function it_returns_false_for_non_json_string_and_second_argument_passed()
+    public function it_returns_false_for_non_json_and_second_argument_passed()
     {
         $this->assertFalse(is_json('non-json string', true));
     }
