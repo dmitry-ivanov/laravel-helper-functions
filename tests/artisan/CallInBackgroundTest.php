@@ -1,7 +1,5 @@
 <?php
 
-use Mockery as m;
-
 /**
  * @runTestsInSeparateProcesses
  * @preserveGlobalState disabled
@@ -11,7 +9,7 @@ class CallInBackgroundTest extends TestCase
     /** @test */
     public function it_works_without_optional_before_and_after_parameters()
     {
-        $mock = m::mock('alias:Illuminated\Helpers\Artisan\Command');
+        $mock = Mockery::mock('alias:Illuminated\Helpers\Artisan\Command');
         $mock->shouldReceive('factory')->withArgs(['test command', null, null])->once()->andReturnSelf();
         $mock->shouldReceive('runInBackground')->withNoArgs()->once();
 
@@ -21,7 +19,7 @@ class CallInBackgroundTest extends TestCase
     /** @test */
     public function it_works_with_optional_before_parameter()
     {
-        $mock = m::mock('alias:Illuminated\Helpers\Artisan\Command');
+        $mock = Mockery::mock('alias:Illuminated\Helpers\Artisan\Command');
         $mock->shouldReceive('factory')->withArgs(['test command', 'before command', null])->once()->andReturnSelf();
         $mock->shouldReceive('runInBackground')->withNoArgs()->once();
 
@@ -31,7 +29,7 @@ class CallInBackgroundTest extends TestCase
     /** @test */
     public function it_works_with_optional_after_parameter()
     {
-        $mock = m::mock('alias:Illuminated\Helpers\Artisan\Command');
+        $mock = Mockery::mock('alias:Illuminated\Helpers\Artisan\Command');
         $mock->shouldReceive('factory')->withArgs(['test command', null, 'after command'])->once()->andReturnSelf();
         $mock->shouldReceive('runInBackground')->withNoArgs()->once();
 
@@ -41,7 +39,7 @@ class CallInBackgroundTest extends TestCase
     /** @test */
     public function it_works_with_optional_before_and_after_parameters_together()
     {
-        $mock = m::mock('alias:Illuminated\Helpers\Artisan\Command');
+        $mock = Mockery::mock('alias:Illuminated\Helpers\Artisan\Command');
         $mock->shouldReceive('factory')->withArgs(['test command', 'before', 'after'])->once()->andReturnSelf();
         $mock->shouldReceive('runInBackground')->withNoArgs()->once();
 
