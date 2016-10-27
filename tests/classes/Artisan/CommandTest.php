@@ -2,7 +2,7 @@
 
 namespace Illuminated\Helpers\Artisan;
 
-use Mockery as m;
+use Mockery;
 use PHPUnit_Framework_Error;
 use TestCase;
 
@@ -12,12 +12,12 @@ class CommandTest extends TestCase
 
     protected function setUp()
     {
-        self::$functions = m::mock();
+        self::$functions = Mockery::mock();
 
-        $phpBinaryMock = m::mock('overload:Symfony\Component\Process\PhpExecutableFinder');
+        $phpBinaryMock = Mockery::mock('overload:Symfony\Component\Process\PhpExecutableFinder');
         $phpBinaryMock->shouldReceive('find')->with(false)->zeroOrMoreTimes()->andReturn('php');
 
-        $utilsMock = m::mock('alias:Symfony\Component\Process\ProcessUtils');
+        $utilsMock = Mockery::mock('alias:Symfony\Component\Process\ProcessUtils');
         $utilsMock->shouldReceive('escapeArgument')->withAnyArgs()->zeroOrMoreTimes()->andReturnUsing(function ($value) {
             return $value;
         });
