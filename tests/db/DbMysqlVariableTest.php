@@ -1,13 +1,11 @@
 <?php
 
-use Mockery as m;
-
 class DbMysqlVariableTest extends TestCase
 {
     /** @test */
     public function it_returns_false_for_unexisting_mysql_variable()
     {
-        $mock = m::mock('alias:Illuminate\Support\Facades\DB');
+        $mock = Mockery::mock('alias:Illuminate\Support\Facades\DB');
         $mock->shouldReceive('selectOne')
             ->withArgs(['show variables where variable_name = ?', ['fake']])
             ->once()
@@ -19,7 +17,7 @@ class DbMysqlVariableTest extends TestCase
     /** @test */
     public function it_returns_value_for_existing_mysql_variable()
     {
-        $mock = m::mock('alias:Illuminate\Support\Facades\DB');
+        $mock = Mockery::mock('alias:Illuminate\Support\Facades\DB');
         $mock->shouldReceive('selectOne')
              ->withArgs(['show variables where variable_name = ?', ['hostname']])
              ->once()
