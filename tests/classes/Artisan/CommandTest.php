@@ -15,7 +15,7 @@ class CommandTest extends TestCase
         self::$functions = Mockery::mock();
 
         $phpBinaryMock = Mockery::mock('overload:Symfony\Component\Process\PhpExecutableFinder');
-        $phpBinaryMock->shouldReceive('find')->withNoArgs()->zeroOrMoreTimes()->andReturn('php');
+        $phpBinaryMock->shouldReceive('find')->withNoArgs()->once()->andReturn('php');
     }
 
     /** @test */

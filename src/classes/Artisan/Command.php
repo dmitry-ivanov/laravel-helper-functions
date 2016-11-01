@@ -9,12 +9,14 @@ class Command
     private $command;
     private $before;
     private $after;
+    private $phpBinary;
 
     public function __construct($command, $before = null, $after = null)
     {
         $this->command = $command;
         $this->before = $before;
         $this->after = $after;
+        $this->phpBinary = (new PhpExecutableFinder)->find();
     }
 
     public static function factory($command, $before = null, $after = null)
@@ -40,19 +42,13 @@ class Command
             $parts[] = (string) $this->before;
         }
 
-        $parts[] = "{$this->getPhpBinary()} {$this->getArtisan()} {$this->command}";
+        $parts[] = "{$this->phpBinary} {$this->getArtisan()} {$this->command}";
 
         if (!empty($this->after)) {
             $parts[] = (string) $this->after;
         }
 
         return implode(' && ', $parts);
-    }
-
-    protected function getPhpBinary()
-    {
-        $finder = new PhpExecutableFinder();
-        return $finder->find();
     }
 
     protected function getArtisan()
