@@ -3,7 +3,6 @@
 namespace Illuminated\Helpers\Artisan;
 
 use Symfony\Component\Process\PhpExecutableFinder;
-use Symfony\Component\Process\ProcessUtils;
 
 class Command
 {
@@ -53,23 +52,11 @@ class Command
     protected function getPhpBinary()
     {
         $finder = new PhpExecutableFinder();
-        $phpBinary = $finder->find(false);
-
-        $phpBinary = ProcessUtils::escapeArgument($phpBinary);
-        if (defined('HHVM_VERSION')) {
-            $phpBinary .= ' --php';
-        }
-
-        return $phpBinary;
+        return $finder->find();
     }
 
     protected function getArtisan()
     {
-        $artisan = 'artisan';
-        if (defined('ARTISAN_BINARY')) {
-            $artisan = ProcessUtils::escapeArgument(ARTISAN_BINARY);
-        }
-
-        return $artisan;
+        return defined('ARTISAN_BINARY') ? ARTISAN_BINARY : 'artisan';
     }
 }

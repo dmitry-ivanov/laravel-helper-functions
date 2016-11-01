@@ -15,12 +15,7 @@ class CommandTest extends TestCase
         self::$functions = Mockery::mock();
 
         $phpBinaryMock = Mockery::mock('overload:Symfony\Component\Process\PhpExecutableFinder');
-        $phpBinaryMock->shouldReceive('find')->with(false)->zeroOrMoreTimes()->andReturn('php');
-
-        $utilsMock = Mockery::mock('alias:Symfony\Component\Process\ProcessUtils');
-        $utilsMock->shouldReceive('escapeArgument')->withAnyArgs()->zeroOrMoreTimes()->andReturnUsing(function ($value) {
-            return $value;
-        });
+        $phpBinaryMock->shouldReceive('find')->withNoArgs()->zeroOrMoreTimes()->andReturn('php');
     }
 
     /** @test */
@@ -76,20 +71,6 @@ class CommandTest extends TestCase
     {
         $this->shouldReceiveExecCallOnceWith('(before && php artisan test:command && after) > /dev/null 2>&1 &');
 
-        $command = Command::factory('test:command', 'before', 'after');
-        $command->runInBackground();
-    }
-
-    /**
-     * @test
-     * @runInSeparateProcess
-     * @preserveGlobalState disabled
-     */
-    public function it_adds_php_option_for_hhvm()
-    {
-        $this->shouldReceiveExecCallOnceWith('(before && php --php artisan test:command && after) > /dev/null 2>&1 &');
-
-        define('HHVM_VERSION', true);
         $command = Command::factory('test:command', 'before', 'after');
         $command->runInBackground();
     }
