@@ -84,6 +84,7 @@ $array = array_except_value($array, ['bar', 'baz']);
 #### `call_in_background()`
 
 Calls artisan console command in background, with optional `before` and `after` sub-commands:
+
 ```php
 call_in_background('foo');
 
@@ -101,6 +102,7 @@ call_in_background('foo:bar baz', 'sleep 0.3');
 #### `db_is_mysql()`
 
 Checks if default database connection is `mysql` or not:
+
 ```php
 if (db_is_mysql()) {
     // mysql-specific code here
@@ -110,6 +112,7 @@ if (db_is_mysql()) {
 #### `db_mysql_now()`
 
 Returns database datetime, using `mysql` connection:
+
 ```php
 $now = db_mysql_now();
 
@@ -119,6 +122,7 @@ $now = db_mysql_now();
 #### `db_mysql_variable()`
 
 Returns value of specified `mysql` variable, or `false` if variable doesn't exist:
+
 ```php
 $hostname = db_mysql_variable('hostname');
 
@@ -130,6 +134,7 @@ $hostname = db_mysql_variable('hostname');
 #### `get_dump()`
 
 Returns nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html) with all of it's benefits:
+
 ```php
 $array = [
     'a simple string' => 'in an array of 5 elements',
@@ -154,6 +159,7 @@ $dump = get_dump($array);
 #### `is_email()`
 
 Checks if specified string is valid email address or not:
+
 ```php
 $isEmail = is_email('john.doe@example.com');
 
@@ -163,6 +169,7 @@ $isEmail = is_email('john.doe@example.com');
 #### `to_rfc2822_email()`
 
 Converts addresses data to [RFC 2822](http://www.faqs.org/rfcs/rfc2822.html) string, suitable for PHP [mail()](http://ua2.php.net/manual/en/function.mail.php) function:
+
 ```php
 $address = to_rfc2822_email([
     ['address' => 'john.doe@example.com', 'name' => 'John Doe'],
@@ -173,6 +180,7 @@ $address = to_rfc2822_email([
 ```
 
 Also supports simplified syntax for single address item:
+
 ```php
 $address = to_rfc2822_email(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
 
@@ -182,6 +190,7 @@ $address = to_rfc2822_email(['address' => 'john.doe@example.com', 'name' => 'Joh
 #### `to_swiftmailer_emails()`
 
 Converts addresses data to format, which is suitable for [SwiftMailer library](http://swiftmailer.org/docs/messages.html):
+
 ```php
 $addresses = to_swiftmailer_emails([
     ['address' => 'john.doe@example.com', 'name' => 'John Doe'],
@@ -192,6 +201,7 @@ $addresses = to_swiftmailer_emails([
 ```
 
 Also supports simplified syntax for single address item:
+
 ```php
 $address = to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
 
@@ -203,6 +213,7 @@ $address = to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' =>
 #### `format_bytes()`
 
 Formats bytes into kilobytes, megabytes, gigabytes or terabytes, with specified precision:
+
 ```php
 $formatted = format_bytes(3333333);
 
@@ -214,6 +225,7 @@ $formatted = format_bytes(3333333);
 #### `is_json()`
 
 Checks if specified variable is valid json-encoded string or not:
+
 ```php
 $isJson = is_json('{"foo":1,"bar":2,"baz":3}');
 
@@ -221,6 +233,7 @@ $isJson = is_json('{"foo":1,"bar":2,"baz":3}');
 ```
 
 Function can return decoded json, if you pass the second `return` argument as `true`:
+
 ```php
 $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
 
@@ -232,6 +245,7 @@ $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
 #### `str_lower()`
 
 Converts string to lowercase:
+
 ```php
 $lower = str_lower('TeSt');
 
@@ -241,6 +255,7 @@ $lower = str_lower('TeSt');
 #### `str_upper()`
 
 Converts string to uppercase:
+
 ```php
 $upper = str_upper('TeSt');
 
