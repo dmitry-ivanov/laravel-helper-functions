@@ -21,6 +21,7 @@ Provides Laravel-specific and pure PHP helper functions.
 ## Usage
 
 1. Install package through `composer`:
+
     ```shell
     composer require illuminated/helper-functions
     ```
@@ -63,6 +64,7 @@ Provides Laravel-specific and pure PHP helper functions.
 #### `array_except_value()`
 
 Removes the given values from array:
+
 ```php
 $array = ['foo', 'bar', 'baz'];
 $array = array_except_value($array, 'baz');
