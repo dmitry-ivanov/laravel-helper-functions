@@ -30,6 +30,8 @@ Provides Laravel-specific and pure PHP helper functions.
 
 ## Available functions
 
+> New functions are always adding. Feel free to contribute.
+
 - [Array](#array)
     - [array_except_value](#array_except_value)
 
