@@ -8,11 +8,9 @@ use TestCase;
 
 class CommandTest extends TestCase
 {
-    public static $functions;
-
     protected function setUp()
     {
-        self::$functions = Mockery::mock();
+        parent::setUp();
 
         $phpBinaryMock = Mockery::mock('overload:Symfony\Component\Process\PhpExecutableFinder');
         $phpBinaryMock->shouldReceive('find')->withNoArgs()->once()->andReturn('php');
@@ -88,14 +86,11 @@ class CommandTest extends TestCase
         $command = Command::factory('test:command', 'before', 'after');
         $command->runInBackground();
     }
-
-    private function shouldReceiveExecCallOnceWith($with)
-    {
-        self::$functions->shouldReceive('exec')->with($with)->once();
-    }
 }
 
-function exec($command)
-{
-    return CommandTest::$functions->exec($command);
+if (!function_exists(__NAMESPACE__ . '\exec')) {
+    function exec($command)
+    {
+        return TestCase::$functions->exec($command);
+    }
 }
