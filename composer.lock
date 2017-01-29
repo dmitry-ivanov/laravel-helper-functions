@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b30723c083655b09330ee6e83bef247",
+    "content-hash": "64623d08c222ccd2b7ed48aa46e31d3a",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1289,16 +1289,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "1.2.3",
+            "version": "1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "6554a8aff8735fcd859b44279d5c03a6d1b1cb23"
+                "reference": "2b7424b55f5047b47ac6e5ccb20b2aea4011d9be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/6554a8aff8735fcd859b44279d5c03a6d1b1cb23",
-                "reference": "6554a8aff8735fcd859b44279d5c03a6d1b1cb23",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/2b7424b55f5047b47ac6e5ccb20b2aea4011d9be",
+                "reference": "2b7424b55f5047b47ac6e5ccb20b2aea4011d9be",
                 "shasum": ""
             },
             "require": {
@@ -1349,7 +1349,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2017-01-29T07:17:51+00:00"
+            "time": "2017-01-29T09:50:25+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -1867,7 +1867,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6.4"
+        "php": ">=5.5.9"
     },
     "platform-dev": []
 }
