@@ -3,7 +3,6 @@
 namespace Illuminated\Helpers\Artisan;
 
 use Mockery;
-use PHPUnit_Framework_Error;
 use TestCase;
 
 class CommandTest extends TestCase
@@ -14,13 +13,6 @@ class CommandTest extends TestCase
 
         $phpBinaryMock = Mockery::mock('overload:Symfony\Component\Process\PhpExecutableFinder');
         $phpBinaryMock->shouldReceive('find')->withNoArgs()->once()->andReturn('php');
-    }
-
-    /** @test */
-    public function it_can_not_be_initiated_without_constructor_arguments()
-    {
-        $this->expectException(PHPUnit_Framework_Error::class);
-        return new Command();
     }
 
     /** @test */
