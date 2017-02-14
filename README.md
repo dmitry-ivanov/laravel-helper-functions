@@ -43,15 +43,13 @@ Provides Laravel-specific and pure PHP helper functions.
     - [db_mysql_now](#db_mysql_now)
     - [db_mysql_variable](#db_mysql_variable)
 
-- [Dump](#dump)
-    - [get_dump](#get_dump)
-
 - [Email](#email)
     - [is_email](#is_email)
     - [to_rfc2822_email](#to_rfc2822_email)
     - [to_swiftmailer_emails](#to_swiftmailer_emails)
 
 - [Format](#format)
+    - [get_dump](#get_dump)
     - [format_bytes](#format_bytes)
 
 - [Json](#json)
@@ -131,31 +129,6 @@ $hostname = db_mysql_variable('hostname');
 // localhost
 ```
 
-## Dump
-
-#### `get_dump()`
-
-Returns nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html) with all of it's benefits:
-
-```php
-$array = [
-    'a simple string' => 'in an array of 5 elements',
-    'a float' => 1.0,
-    'an integer' => 1,
-    'a boolean' => true,
-    'an empty array' => [],
-];
-$dump = get_dump($array);
-
-// array:5 [
-//     "a simple string" => "in an array of 5 elements"
-//     "a float" => 1.0
-//     "an integer" => 1
-//     "a boolean" => true
-//     "an empty array" => []
-// ]
-```
-
 ## Email
 
 #### `is_email()`
@@ -211,6 +184,29 @@ $address = to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' =>
 ```
 
 ## Format
+
+#### `get_dump()`
+
+Returns nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html) with all of it's benefits:
+
+```php
+$array = [
+    'a simple string' => 'in an array of 5 elements',
+    'a float' => 1.0,
+    'an integer' => 1,
+    'a boolean' => true,
+    'an empty array' => [],
+];
+$dump = get_dump($array);
+
+// array:5 [
+//     "a simple string" => "in an array of 5 elements"
+//     "a float" => 1.0
+//     "an integer" => 1
+//     "a boolean" => true
+//     "an empty array" => []
+// ]
+```
 
 #### `format_bytes()`
 
