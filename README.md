@@ -51,6 +51,8 @@ Provides Laravel-specific and pure PHP helper functions.
 - [Format](#format)
     - [get_dump](#get_dump)
     - [format_bytes](#format_bytes)
+    - [backtrace_as_string](#backtrace_as_string)
+    - [minimized_backtrace_as_string](#minimized_backtrace_as_string)
 
 - [Json](#json)
     - [is_json](#is_json)
@@ -216,6 +218,32 @@ Formats bytes into kilobytes, megabytes, gigabytes or terabytes, with specified 
 $formatted = format_bytes(3333333);
 
 // 3.18 MB
+```
+
+#### `backtrace_as_string()`
+
+Returns backtrace without arguments as string:
+
+```php
+$backtrace = backtrace_as_string();
+
+// #0  backtrace_as_string() called at [/full/path/here/example.php:13]
+// #1  Example->getBacktrace() called at [/full/path/here/example.php:23]
+// #2  Core->run() called at [/full/path/here/src/core.php:33]
+// #3  Application->initialize() called at [/full/path/here/src/app.php:45]
+```
+
+#### `minimized_backtrace_as_string()`
+
+Returns minimized backtrace as string:
+
+```php
+$backtrace = minimized_backtrace_as_string();
+
+// #0 /full/path/here/example.php:13
+// #1 /full/path/here/example.php:23
+// #2 /full/path/here/src/core.php:33
+// #3 /full/path/here/src/app.php:45
 ```
 
 ## Json
