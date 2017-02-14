@@ -227,9 +227,9 @@ Returns backtrace without arguments as string:
 ```php
 $backtrace = backtrace_as_string();
 
-#0  backtrace_as_string() called at [/Applications/MAMP/htdocs/laravel/laravel-54/routes/web.php:15]
-#1  Illuminate\Routing\Router->{closure}() called at [/Applications/MAMP/htdocs/laravel/laravel-54/vendor/laravel/framework/src/Illuminate/Routing/Route.php:189]
-#2  Illuminate\Foundation\Http\Kernel->handle() called at [/Applications/MAMP/htdocs/laravel/laravel-54/public/index.php:53]
+#0  backtrace_as_string() called at [/htdocs/example/routes/web.php:15]
+#1  Illuminate\Routing\Router->{closure}() called at [/htdocs/example/vendor/laravel/framework/src/Illuminate/Routing/Route.php:189]
+#2  Illuminate\Foundation\Http\Kernel->handle() called at [/htdocs/example/public/index.php:53]
 ```
 
 #### `minimized_backtrace_as_string()`
@@ -239,9 +239,9 @@ Returns minimized backtrace as string:
 ```php
 $backtrace = minimized_backtrace_as_string();
 
-#0 /Applications/MAMP/htdocs/laravel/laravel-54/routes/web.php:15
-#1 /Applications/MAMP/htdocs/laravel/laravel-54/vendor/laravel/framework/src/Illuminate/Routing/Route.php:189
-#2 /Applications/MAMP/htdocs/laravel/laravel-54/public/index.php:53
+#0 /htdocs/example/routes/web.php:15
+#1 /htdocs/example/vendor/laravel/framework/src/Illuminate/Routing/Route.php:189
+#2 /htdocs/example/public/index.php:53
 ```
 
 ## Json
