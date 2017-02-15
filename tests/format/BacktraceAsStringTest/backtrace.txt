@@ -1,4 +1,4 @@
-#0  backtrace_as_string() called at [/Applications/MAMP/htdocs/illuminated/helper-functions/tests/format/BacktraceAsStringTest.php:24]
-#1  BacktraceAsStringTest->anotherExtraMethod() called at [/Applications/MAMP/htdocs/illuminated/helper-functions/tests/format/BacktraceAsStringTest.php:19]
-#2  BacktraceAsStringTest->getBacktrace() called at [/Applications/MAMP/htdocs/illuminated/helper-functions/tests/format/BacktraceAsStringTest.php:12]
+#0  backtrace_as_string() called at [/Applications/MAMP/htdocs/illuminated/helper-functions/tests/format/BacktraceAsStringTest.php:28]
+#1  BacktraceAsStringTest->anotherExtraMethod() called at [/Applications/MAMP/htdocs/illuminated/helper-functions/tests/format/BacktraceAsStringTest.php:23]
+#2  BacktraceAsStringTest->getBacktrace() called at [/Applications/MAMP/htdocs/illuminated/helper-functions/tests/format/BacktraceAsStringTest.php:9]
 #3  BacktraceAsStringTest->it_returns_backtrace_as_string_without_args()

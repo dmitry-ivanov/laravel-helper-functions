@@ -5,13 +5,17 @@ class MinimizedBacktraceAsStringTest extends TestCase
     /** @test */
     public function it_returns_minimized_backtrace_as_string()
     {
-        $travis = $this->isTravis() ? '.travis' : '';
-        $path = __DIR__ . "/MinimizedBacktraceAsStringTest/backtrace{$travis}.txt";
-
-        $start = file_get_contents($path);
+        $start = file_get_contents($this->getPath());
         $backtrace = $this->getBacktrace();
 
         $this->assertStringStartsWith($start, $backtrace);
+    }
+
+    private function getPath()
+    {
+        $travis = $this->isTravis() ? '.travis' : '';
+
+        return __DIR__ . "/MinimizedBacktraceAsStringTest/backtrace{$travis}.txt";
     }
 
     private function getBacktrace()
