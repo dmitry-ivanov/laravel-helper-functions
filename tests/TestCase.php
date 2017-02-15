@@ -1,7 +1,11 @@
 <?php
 
+use Illuminated\Testing\TestingTools;
+
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
+    use TestingTools;
+
     public static $functions;
 
     protected function setUp()

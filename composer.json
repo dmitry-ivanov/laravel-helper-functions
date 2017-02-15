@@ -18,7 +18,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^5.0",
-        "mockery/mockery": "^0.9"
+        "mockery/mockery": "^0.9",
+        "illuminated/testing-tools": "^0.5"
     },
     "autoload": {
         "files": ["src/autoload.php"],
