@@ -5,7 +5,7 @@ class MinimizedBacktraceAsStringTest extends TestCase
     /** @test */
     public function it_returns_minimized_backtrace_as_string()
     {
-        $travis = getenv('TRAVIS') ? '.travis' : '';
+        $travis = $this->isTravis() ? '.travis' : '';
         $path = __DIR__ . "/MinimizedBacktraceAsStringTest/backtrace{$travis}.txt";
 
         $start = file_get_contents($path);
