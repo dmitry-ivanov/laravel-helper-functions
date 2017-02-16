@@ -38,6 +38,19 @@ if (!function_exists('format_bytes')) {
     }
 }
 
+if (!function_exists('format_xml')) {
+    function format_xml($xml)
+    {
+        $dom = new DOMDocument();
+
+        $dom->loadXML($xml);
+        $dom->formatOutput = true;
+        $dom->preserveWhiteSpace = false;
+
+        return $dom->saveXml();
+    }
+}
+
 if (!function_exists('backtrace_as_string')) {
     function backtrace_as_string()
     {
