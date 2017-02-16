@@ -64,6 +64,7 @@ Provides Laravel-specific and pure PHP helper functions.
 
 - [Xml](#xml)
     - [xml_to_array](#xml_to_array)
+    - [array_to_xml](#array_to_xml)
 
 ## Array
 
@@ -379,3 +380,34 @@ $array = xml_to_array('<?xml version="1.0" encoding="UTF-8"?>
 ```
 
 Alternatively, you can pass an instance of `SimpleXMLElement` object, to get the same results.
+
+#### `array_to_xml()`
+
+Converts array to xml string using [spatie/array-to-xml](https://github.com/spatie/array-to-xml) package:
+
+```php
+$array = [
+    'Good guy' => [
+        'name' => 'Luke Skywalker',
+        'weapon' => 'Lightsaber',
+    ],
+    'Bad guy' => [
+        'name' => 'Sauron',
+        'weapon' => 'Evil Eye',
+    ]
+];
+
+$xml = array_to_xml($array);
+
+// <?xml version="1.0"?>
+// <root>
+//    <Good_guy>
+//        <name>Luke Skywalker</name>
+//        <weapon>Lightsaber</weapon>
+//    </Good_guy>
+//    <Bad_guy>
+//        <name>Sauron</name>
+//        <weapon>Evil Eye</weapon>
+//    </Bad_guy>
+// </root>
+```
