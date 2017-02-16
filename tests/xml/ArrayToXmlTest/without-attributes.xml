@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<root><task><to>John</to><from>Jane</from><title>Go to the shop</title></task><task><to>John</to><from>Paul</from><title>Finish the report</title></task><task><to>Jane</to><from>Jeff</from><title>Clean the house</title></task></root>
