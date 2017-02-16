@@ -403,10 +403,10 @@ $array = [
     ]
 ];
 
-$xml = array_to_xml($array);
+$xml = array_to_xml($array, 'Guys');
 
 // <?xml version="1.0"?>
-// <root>
+// <Guys>
 //    <Good_guy Rating="100">
 //        <name>Luke Skywalker</name>
 //        <weapon>Lightsaber</weapon>
@@ -415,5 +415,5 @@ $xml = array_to_xml($array);
 //        <name>Sauron</name>
 //        <weapon>Evil Eye</weapon>
 //    </Bad_guy>
-// </root>
+// </Guys>
 ```
