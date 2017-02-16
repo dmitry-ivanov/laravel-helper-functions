@@ -325,58 +325,35 @@ $upper = str_upper('TeSt');
 Converts xml string to array:
 
 ```php
-$array = xml_to_array('<?xml version="1.0" encoding="UTF-8"?>
-<root>
-    <tasks>
-        <task priority="low">
-            <to>John</to>
-            <from>Jane</from>
-            <title>Go to the shop</title>
-        </task>
-        <task priority="medium">
-            <to>John</to>
-            <from>Paul</from>
-            <title>Finish the report</title>
-        </task>
-        <task priority="high">
-            <to>Jane</to>
-            <from>Jeff</from>
-            <title>Clean the house</title>
-        </task>
-    </tasks>
-</root>
+$array = xml_to_array('<?xml version="1.0"?>
+<Guys>
+    <Good_guy Rating="100">
+        <name>Luke Skywalker</name>
+        <weapon>Lightsaber</weapon>
+    </Good_guy>
+    <Bad_guy Rating="90">
+        <name>Sauron</name>
+        <weapon>Evil Eye</weapon>
+    </Bad_guy>
+</Guys>
 ');
 
 // [
-//     'tasks' => [
-//         'task' => [
-//             0 => [
-//                 'to' => 'John',
-//                 'from' => 'Jane',
-//                 'title' => 'Go to the shop',
-//                 '@attributes' => [
-//                     'priority' => 'low',
-//                 ],
-//             ],
-//             1 => [
-//                 'to' => 'John',
-//                 'from' => 'Paul',
-//                 'title' => 'Finish the report',
-//                 '@attributes' => [
-//                     'priority' => 'medium',
-//                 ],
-//             ],
-//             2 => [
-//                 'to' => 'Jane',
-//                 'from' => 'Jeff',
-//                 'title' => 'Clean the house',
-//                 '@attributes' => [
-//                     'priority' => 'high',
-//                 ],
-//             ],
+//     "Good_guy" => [
+//         "@attributes" => [
+//             "Rating" => "100",
 //         ],
+//         "name" => "Luke Skywalker",
+//         "weapon" => "Lightsaber",
 //     ],
-// ];
+//     "Bad_guy" => [
+//         "@attributes" => [
+//             "Rating" => "90",
+//         ],
+//         "name" => "Sauron",
+//         "weapon" => "Evil Eye",
+//     ],
+// ]
 ```
 
 Alternatively, you can pass an instance of `SimpleXMLElement` object, to get the same results.
