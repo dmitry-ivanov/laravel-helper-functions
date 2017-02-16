@@ -118,7 +118,7 @@ class ArrayToXmlTest extends TestCase
             ],
         ];
 
-        $expected = file_get_contents(__DIR__ . '/ArrayToXmlTest/with-spaces.xml');
+        $expected = file_get_contents(__DIR__ . '/ArrayToXmlTest/with-spaces-in-keys.xml');
 
         $this->assertEquals($expected, array_to_xml($array));
     }
