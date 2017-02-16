@@ -340,18 +340,18 @@ $array = xml_to_array('<?xml version="1.0"?>
 
 // [
 //     "Good_guy" => [
+//         "name" => "Luke Skywalker",
+//         "weapon" => "Lightsaber",
 //         "@attributes" => [
 //             "Rating" => "100",
 //         ],
-//         "name" => "Luke Skywalker",
-//         "weapon" => "Lightsaber",
 //     ],
 //     "Bad_guy" => [
+//         "name" => "Sauron",
+//         "weapon" => "Evil Eye",
 //         "@attributes" => [
 //             "Rating" => "90",
 //         ],
-//         "name" => "Sauron",
-//         "weapon" => "Evil Eye",
 //     ],
 // ]
 ```
