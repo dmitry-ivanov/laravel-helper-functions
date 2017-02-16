@@ -41,13 +41,12 @@ if (!function_exists('format_bytes')) {
 if (!function_exists('format_xml')) {
     function format_xml($xml)
     {
-        $dom = new DOMDocument();
+        $dom = dom_import_simplexml(new SimpleXMLElement($xml))->ownerDocument;
 
-        $dom->loadXML($xml);
         $dom->formatOutput = true;
         $dom->preserveWhiteSpace = false;
 
-        return $dom->saveXml();
+        return $dom->saveXML();
     }
 }
 
