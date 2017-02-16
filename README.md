@@ -51,6 +51,7 @@ Provides Laravel-specific and pure PHP helper functions.
 - [Format](#format)
     - [get_dump](#get_dump)
     - [format_bytes](#format_bytes)
+    - [format_xml](#format_xml)
     - [backtrace_as_string](#backtrace_as_string)
     - [minimized_backtrace_as_string](#minimized_backtrace_as_string)
 
@@ -221,6 +222,33 @@ Formats bytes into kilobytes, megabytes, gigabytes or terabytes, with specified 
 $formatted = format_bytes(3333333);
 
 // 3.18 MB
+```
+
+#### `format_xml()`
+
+Formats xml string using new lines and indents:
+
+```php
+$formatted = format_xml('<?xml version="1.0"?><root><task priority="low"><to>John</to><from>Jane</from><title>Go to the shop</title></task><task priority="medium"><to>John</to><from>Paul</from><title>Finish the report</title></task><task priority="high"><to>Jane</to><from>Jeff</from><title>Clean the house</title></task></root>');
+
+// <?xml version="1.0"?>
+// <root>
+//   <task priority="low">
+//     <to>John</to>
+//     <from>Jane</from>
+//     <title>Go to the shop</title>
+//   </task>
+//   <task priority="medium">
+//     <to>John</to>
+//     <from>Paul</from>
+//     <title>Finish the report</title>
+//   </task>
+//   <task priority="high">
+//     <to>Jane</to>
+//     <from>Jeff</from>
+//     <title>Clean the house</title>
+//   </task>
+// </root>
 ```
 
 #### `backtrace_as_string()`
