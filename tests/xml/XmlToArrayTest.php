@@ -14,16 +14,25 @@ class XmlToArrayTest extends TestCase
                         'to' => 'John',
                         'from' => 'Jane',
                         'title' => 'Go to the shop',
+                        '@attributes' => [
+                            'priority' => 'low',
+                        ],
                     ],
                     1 => [
                         'to' => 'John',
                         'from' => 'Paul',
                         'title' => 'Finish the report',
+                        '@attributes' => [
+                            'priority' => 'medium',
+                        ],
                     ],
                     2 => [
                         'to' => 'Jane',
                         'from' => 'Jeff',
                         'title' => 'Clean the house',
+                        '@attributes' => [
+                            'priority' => 'high',
+                        ],
                     ],
                 ],
             ],
@@ -44,16 +53,25 @@ class XmlToArrayTest extends TestCase
                         'to' => 'John',
                         'from' => 'Jane',
                         'title' => 'Go to the shop',
+                        '@attributes' => [
+                            'priority' => 'low',
+                        ],
                     ],
                     1 => [
                         'to' => 'John',
                         'from' => 'Paul',
                         'title' => 'Finish the report',
+                        '@attributes' => [
+                            'priority' => 'medium',
+                        ],
                     ],
                     2 => [
                         'to' => 'Jane',
                         'from' => 'Jeff',
                         'title' => 'Clean the house',
+                        '@attributes' => [
+                            'priority' => 'high',
+                        ],
                     ],
                 ],
             ],
