@@ -299,17 +299,17 @@ Converts xml string to array:
 $array = xml_to_array('<?xml version="1.0" encoding="UTF-8"?>
 <root>
     <tasks>
-        <task>
+        <task priority="low">
             <to>John</to>
             <from>Jane</from>
             <title>Go to the shop</title>
         </task>
-        <task>
+        <task priority="medium">
             <to>John</to>
             <from>Paul</from>
             <title>Finish the report</title>
         </task>
-        <task>
+        <task priority="high">
             <to>Jane</to>
             <from>Jeff</from>
             <title>Clean the house</title>
@@ -325,16 +325,25 @@ $array = xml_to_array('<?xml version="1.0" encoding="UTF-8"?>
 //                 'to' => 'John',
 //                 'from' => 'Jane',
 //                 'title' => 'Go to the shop',
+//                 '@attributes' => [
+//                     'priority' => 'low',
+//                 ],
 //             ],
 //             1 => [
 //                 'to' => 'John',
 //                 'from' => 'Paul',
 //                 'title' => 'Finish the report',
+//                 '@attributes' => [
+//                     'priority' => 'medium',
+//                 ],
 //             ],
 //             2 => [
 //                 'to' => 'Jane',
 //                 'from' => 'Jeff',
 //                 'title' => 'Clean the house',
+//                 '@attributes' => [
+//                     'priority' => 'high',
+//                 ],
 //             ],
 //         ],
 //     ],
