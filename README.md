@@ -383,7 +383,7 @@ Alternatively, you can pass an instance of `SimpleXMLElement` object, to get the
 
 #### `array_to_xml()`
 
-Converts array to xml string using [spatie/array-to-xml](https://github.com/spatie/array-to-xml) package:
+Converts array to xml string using `[spatie/array-to-xml](https://github.com/spatie/array-to-xml)` package:
 
 ```php
 $array = [
