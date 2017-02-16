@@ -31,7 +31,7 @@ class ArrayToXmlTest extends TestCase
     }
 
     /** @test */
-    public function is_supports_xml_attributes_in_converting()
+    public function it_supports_xml_attributes_in_converting()
     {
         $array = [
             'task' => [
@@ -68,7 +68,7 @@ class ArrayToXmlTest extends TestCase
     }
 
     /** @test */
-    public function is_supports_custom_root_element_name()
+    public function it_supports_custom_root_element_name()
     {
         $array = [
             'task' => [
@@ -93,5 +93,33 @@ class ArrayToXmlTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/ArrayToXmlTest/with-custom-root.xml');
 
         $this->assertEquals($expected, array_to_xml($array, 'tasks'));
+    }
+
+    /** @test */
+    public function it_replaces_spaces_by_under_scores_in_key_names_by_default()
+    {
+        $array = [
+            'task' => [
+                0 => [
+                    'to who' => 'John',
+                    'from who' => 'Jane',
+                    'title' => 'Go to the shop',
+                ],
+                1 => [
+                    'to who' => 'John',
+                    'from who' => 'Paul',
+                    'title' => 'Finish the report',
+                ],
+                2 => [
+                    'to who' => 'Jane',
+                    'from who' => 'Jeff',
+                    'title' => 'Clean the house',
+                ],
+            ],
+        ];
+
+        $expected = file_get_contents(__DIR__ . '/ArrayToXmlTest/with-spaces.xml');
+
+        $this->assertEquals($expected, array_to_xml($array));
     }
 }
