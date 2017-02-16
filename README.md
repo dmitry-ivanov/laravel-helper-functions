@@ -390,10 +390,16 @@ $array = [
     'Good guy' => [
         'name' => 'Luke Skywalker',
         'weapon' => 'Lightsaber',
+        '_attributes' => [
+            'Rating' => '100',
+        ],
     ],
     'Bad guy' => [
         'name' => 'Sauron',
         'weapon' => 'Evil Eye',
+        '_attributes' => [
+            'Rating' => '90',
+        ],
     ]
 ];
 
@@ -401,11 +407,11 @@ $xml = array_to_xml($array);
 
 // <?xml version="1.0"?>
 // <root>
-//    <Good_guy>
+//    <Good_guy Rating="100">
 //        <name>Luke Skywalker</name>
 //        <weapon>Lightsaber</weapon>
 //    </Good_guy>
-//    <Bad_guy>
+//    <Bad_guy Rating="90">
 //        <name>Sauron</name>
 //        <weapon>Evil Eye</weapon>
 //    </Bad_guy>
