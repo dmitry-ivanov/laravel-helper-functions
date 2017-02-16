@@ -61,4 +61,12 @@ class XmlToArrayTest extends TestCase
 
         $this->assertEquals($expected, xml_to_array($xml));
     }
+
+    /** @test */
+    public function it_throws_an_exception_if_non_xml_string_passed()
+    {
+        $this->willSeeException(Exception::class, 'String could not be parsed as XML');
+
+        xml_to_array('Non XML');
+    }
 }
