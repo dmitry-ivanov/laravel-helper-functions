@@ -61,6 +61,9 @@ Provides Laravel-specific and pure PHP helper functions.
     - [str_lower](#str_lower)
     - [str_upper](#str_upper)
 
+- [Xml](#xml)
+    - [xml_to_array](#xml_to_array)
+
 ## Array
 
 #### `array_except_value()`
@@ -285,3 +288,57 @@ $upper = str_upper('TeSt');
 
 // TEST
 ```
+
+## Xml
+
+#### `xml_to_array()`
+
+Converts xml string to array:
+
+```php
+$array = xml_to_array('<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <tasks>
+        <task>
+            <to>John</to>
+            <from>Jane</from>
+            <title>Go to the shop</title>
+        </task>
+        <task>
+            <to>John</to>
+            <from>Paul</from>
+            <title>Finish the report</title>
+        </task>
+        <task>
+            <to>Jane</to>
+            <from>Jeff</from>
+            <title>Clean the house</title>
+        </task>
+    </tasks>
+</root>
+');
+
+// [
+//     'tasks' => [
+//         'task' => [
+//             0 => [
+//                 'to' => 'John',
+//                 'from' => 'Jane',
+//                 'title' => 'Go to the shop',
+//             ],
+//             1 => [
+//                 'to' => 'John',
+//                 'from' => 'Paul',
+//                 'title' => 'Finish the report',
+//             ],
+//             2 => [
+//                 'to' => 'Jane',
+//                 'from' => 'Jeff',
+//                 'title' => 'Clean the house',
+//             ],
+//         ],
+//     ],
+// ];
+```
+
+Alternatively, you can pass an instance of `SimpleXMLElement` object, to get the same results.
