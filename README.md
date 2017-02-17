@@ -138,6 +138,32 @@ $hostname = db_mysql_variable('hostname');
 // localhost
 ```
 
+## Debug
+
+#### `backtrace_as_string()`
+
+Returns backtrace without arguments as string:
+
+```php
+$backtrace = backtrace_as_string();
+
+#0  backtrace_as_string() called at [/htdocs/example/routes/web.php:15]
+#1  Illuminate\Routing\Router->{closure}() called at [/htdocs/example/vendor/laravel/framework/src/Illuminate/Routing/Route.php:189]
+#2  Illuminate\Foundation\Http\Kernel->handle() called at [/htdocs/example/public/index.php:53]
+```
+
+#### `minimized_backtrace_as_string()`
+
+Returns minimized backtrace as string:
+
+```php
+$backtrace = minimized_backtrace_as_string();
+
+#0 /htdocs/example/routes/web.php:15
+#1 /htdocs/example/vendor/laravel/framework/src/Illuminate/Routing/Route.php:189
+#2 /htdocs/example/public/index.php:53
+```
+
 ## Email
 
 #### `is_email()`
@@ -252,30 +278,6 @@ $formatted = format_xml('<?xml version="1.0"?><root><task priority="low"><to>Joh
 //     <title>Clean the house</title>
 //   </task>
 // </root>
-```
-
-#### `backtrace_as_string()`
-
-Returns backtrace without arguments as string:
-
-```php
-$backtrace = backtrace_as_string();
-
-#0  backtrace_as_string() called at [/htdocs/example/routes/web.php:15]
-#1  Illuminate\Routing\Router->{closure}() called at [/htdocs/example/vendor/laravel/framework/src/Illuminate/Routing/Route.php:189]
-#2  Illuminate\Foundation\Http\Kernel->handle() called at [/htdocs/example/public/index.php:53]
-```
-
-#### `minimized_backtrace_as_string()`
-
-Returns minimized backtrace as string:
-
-```php
-$backtrace = minimized_backtrace_as_string();
-
-#0 /htdocs/example/routes/web.php:15
-#1 /htdocs/example/vendor/laravel/framework/src/Illuminate/Routing/Route.php:189
-#2 /htdocs/example/public/index.php:53
 ```
 
 ## Json
