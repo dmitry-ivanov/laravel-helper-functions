@@ -43,6 +43,10 @@ Provides Laravel-specific and pure PHP helper functions.
     - [db_mysql_now](#db_mysql_now)
     - [db_mysql_variable](#db_mysql_variable)
 
+- [Debug](#debug)
+    - [backtrace_as_string](#backtrace_as_string)
+    - [minimized_backtrace_as_string](#minimized_backtrace_as_string)
+
 - [Email](#email)
     - [is_email](#is_email)
     - [to_rfc2822_email](#to_rfc2822_email)
@@ -52,8 +56,6 @@ Provides Laravel-specific and pure PHP helper functions.
     - [get_dump](#get_dump)
     - [format_bytes](#format_bytes)
     - [format_xml](#format_xml)
-    - [backtrace_as_string](#backtrace_as_string)
-    - [minimized_backtrace_as_string](#minimized_backtrace_as_string)
 
 - [Json](#json)
     - [is_json](#is_json)
