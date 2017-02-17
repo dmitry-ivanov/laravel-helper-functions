@@ -1,4 +1,0 @@
-#0  backtrace_as_string() called at [/home/travis/build/dmitry-ivanov/laravel-helper-functions/tests/format/BacktraceAsStringTest.php:28]
-#1  BacktraceAsStringTest->anotherExtraMethod() called at [/home/travis/build/dmitry-ivanov/laravel-helper-functions/tests/format/BacktraceAsStringTest.php:23]
-#2  BacktraceAsStringTest->getBacktrace() called at [/home/travis/build/dmitry-ivanov/laravel-helper-functions/tests/format/BacktraceAsStringTest.php:9]
-#3  BacktraceAsStringTest->it_returns_backtrace_as_string_without_args()

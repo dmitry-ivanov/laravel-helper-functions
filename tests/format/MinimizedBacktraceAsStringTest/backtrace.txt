@@ -1,4 +1,0 @@
-#0 /Applications/MAMP/htdocs/illuminated/helper-functions/src/format.php:72
-#1 /Applications/MAMP/htdocs/illuminated/helper-functions/tests/format/MinimizedBacktraceAsStringTest.php:28
-#2 /Applications/MAMP/htdocs/illuminated/helper-functions/tests/format/MinimizedBacktraceAsStringTest.php:23
-#3 /Applications/MAMP/htdocs/illuminated/helper-functions/tests/format/MinimizedBacktraceAsStringTest.php:9
