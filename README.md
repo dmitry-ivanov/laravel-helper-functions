@@ -92,7 +92,7 @@ $array = array_except_value($array, ['bar', 'baz']);
 
 #### `call_in_background()`
 
-Calls artisan console command in background. Code execution continues immediately, without waiting for the results.
+Calls artisan console command in background. Code execution continues immediately, without waiting for results.
 
 ```php
 call_in_background('foo');
