@@ -122,4 +122,39 @@ class ArrayToXmlTest extends TestCase
 
         $this->assertEquals($expected, array_to_xml($array));
     }
+
+    /** @test */
+    public function it_is_fully_compatible_with_xml_to_array_helper()
+    {
+        $array = [
+            'task' => [
+                0 => [
+                    'to' => 'John',
+                    'from' => 'Jane',
+                    'title' => 'Go to the shop',
+                    '@attributes' => [
+                        'priority' => 'low',
+                    ],
+                ],
+                1 => [
+                    'to' => 'John',
+                    'from' => 'Paul',
+                    'title' => 'Finish the report',
+                    '@attributes' => [
+                        'priority' => 'medium',
+                    ],
+                ],
+                2 => [
+                    'to' => 'Jane',
+                    'from' => 'Jeff',
+                    'title' => 'Clean the house',
+                    '@attributes' => [
+                        'priority' => 'high',
+                    ],
+                ],
+            ],
+        ];
+
+        $this->assertEquals($array, xml_to_array(array_to_xml($array)));
+    }
 }

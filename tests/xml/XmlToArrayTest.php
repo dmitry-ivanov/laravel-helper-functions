@@ -87,4 +87,12 @@ class XmlToArrayTest extends TestCase
 
         xml_to_array('Non XML');
     }
+
+    /** @test */
+    public function it_is_fully_compatible_with_array_to_xml_helper()
+    {
+        $xml = file_get_contents(__DIR__ . '/XmlToArrayTest/example.xml');
+
+        $this->assertEquals($xml, array_to_xml(xml_to_array($xml)));
+    }
 }
