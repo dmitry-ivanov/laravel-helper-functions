@@ -95,17 +95,17 @@ $array = array_except_value($array, ['bar', 'baz']);
 Calls artisan console command in background. Code execution continues immediately, without waiting for results.
 
 ```php
-call_in_background('foo');
+call_in_background('report:monthly');
 
-// "php artisan foo" would be called in background
+// "php artisan report:monthly" would be called in background
 ```
 
 Optional `before` and `after` sub-commands can be set as a second and third parameters:
 
 ```php
-call_in_background('foo:bar baz', 'sleep 0.3');
+call_in_background('report:monthly subscriptions', 'sleep 0.3');
 
-// "sleep 0.3 && php artisan foo:bar baz" would be called in background
+// "sleep 0.3 && php artisan report:monthly subscriptions" would be called in background
 ```
 
 ## Database
