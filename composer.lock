@@ -222,16 +222,16 @@
         },
         {
             "name": "spatie/array-to-xml",
-            "version": "2.2.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/array-to-xml.git",
-                "reference": "26344dae3450ca3efcb003343f292d9c31dc7a2d"
+                "reference": "48a71d57980a40a1f84d741df563a594272feae9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/array-to-xml/zipball/26344dae3450ca3efcb003343f292d9c31dc7a2d",
-                "reference": "26344dae3450ca3efcb003343f292d9c31dc7a2d",
+                "url": "https://api.github.com/repos/spatie/array-to-xml/zipball/48a71d57980a40a1f84d741df563a594272feae9",
+                "reference": "48a71d57980a40a1f84d741df563a594272feae9",
                 "shasum": ""
             },
             "require": {
@@ -266,7 +266,7 @@
                 "convert",
                 "xml"
             ],
-            "time": "2016-12-08T09:21:07+00:00"
+            "time": "2017-02-18T10:05:46+00:00"
         },
         {
             "name": "symfony/finder",
