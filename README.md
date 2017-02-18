@@ -371,14 +371,14 @@ $array = [
     'Good guy' => [
         'name' => 'Luke Skywalker',
         'weapon' => 'Lightsaber',
-        '_attributes' => [
+        '@attributes' => [
             'Rating' => '100',
         ],
     ],
     'Bad guy' => [
         'name' => 'Sauron',
         'weapon' => 'Evil Eye',
-        '_attributes' => [
+        '@attributes' => [
             'Rating' => '90',
         ],
     ]
