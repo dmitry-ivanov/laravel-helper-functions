@@ -39,7 +39,7 @@ class ArrayToXmlTest extends TestCase
                     'to' => 'John',
                     'from' => 'Jane',
                     'title' => 'Go to the shop',
-                    '_attributes' => [
+                    '@attributes' => [
                         'priority' => 'low',
                     ],
                 ],
@@ -47,7 +47,7 @@ class ArrayToXmlTest extends TestCase
                     'to' => 'John',
                     'from' => 'Paul',
                     'title' => 'Finish the report',
-                    '_attributes' => [
+                    '@attributes' => [
                         'priority' => 'medium',
                     ],
                 ],
@@ -55,7 +55,7 @@ class ArrayToXmlTest extends TestCase
                     'to' => 'Jane',
                     'from' => 'Jeff',
                     'title' => 'Clean the house',
-                    '_attributes' => [
+                    '@attributes' => [
                         'priority' => 'high',
                     ],
                 ],
