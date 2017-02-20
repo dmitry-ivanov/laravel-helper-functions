@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "illuminate/support": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
+        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
         "symfony/finder": "^2.7|^3.0",
         "symfony/process": "^2.7|^3.0",
         "symfony/var-dumper": "^2.7|^3.0",
