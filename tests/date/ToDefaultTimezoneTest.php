@@ -13,7 +13,7 @@ class ToDefaultTimezoneTest extends TestCase
     }
 
     /** @test */
-    public function it_converts_valid_datetime_strings_to_default_timezone()
+    public function it_converts_valid_datetime_string_to_default_timezone()
     {
         Config::shouldReceive('get')->with('app.timezone')->once()->andReturn('Europe/Kiev');
 
