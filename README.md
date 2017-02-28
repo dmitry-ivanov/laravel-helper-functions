@@ -43,6 +43,9 @@ Provides Laravel-specific and pure PHP helper functions.
     - [db_mysql_now](#db_mysql_now)
     - [db_mysql_variable](#db_mysql_variable)
 
+- [Date](#date)
+    - [to_default_timezone](#to_default_timezone)
+
 - [Debug](#debug)
     - [backtrace_as_string](#backtrace_as_string)
     - [minimized_backtrace_as_string](#minimized_backtrace_as_string)
@@ -138,6 +141,18 @@ Returns value of specified `mysql` variable, or `false` if variable doesn't exis
 $hostname = db_mysql_variable('hostname');
 
 // localhost
+```
+
+## Date
+
+#### `to_default_timezone()`
+
+Converts passed datetime string to datetime string in Laravel default timezone (`app.timezone` config setting):
+
+```php
+$date = to_default_timezone('2017-02-28T14:05:01Z');
+
+// 2017-02-28 16:05:01, assuming timezone is Europe/Kiev
 ```
 
 ## Debug
