@@ -20,21 +20,21 @@ if (!function_exists('array_except_value')) {
 if (!function_exists('multiarray_sort_by')) {
     function multiarray_sort_by(array $array, $field1 = null, $sort1 = null, $_ = null)
     {
-        $args = func_get_args();
+        $arguments = func_get_args();
 
-        $data = array_shift($args);
-        foreach ($args as $argKey => $argValue) {
+        $multiarray = array_shift($arguments);
+        foreach ($arguments as $argKey => $argValue) {
             if (is_string($argValue)) {
                 $column = [];
-                foreach ($data as $key => $item) {
+                foreach ($multiarray as $key => $item) {
                     $column[$key] = $item[$argValue];
                 }
-                $args[$argKey] = $column;
+                $arguments[$argKey] = $column;
             }
         }
-        $args[] = &$data;
-        call_user_func_array('array_multisort', $args);
+        $arguments[] = &$multiarray;
+        call_user_func_array('array_multisort', $arguments);
 
-        return array_pop($args);
+        return array_pop($arguments);
     }
 }
