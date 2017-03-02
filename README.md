@@ -94,7 +94,7 @@ $array = array_except_value($array, ['bar', 'baz']);
 
 #### `multiarray_sort_by()`
 
-Sorts multidimensional array by several fields:
+Sorts multidimensional array by multiple fields:
 
 ```php
 $array = [
