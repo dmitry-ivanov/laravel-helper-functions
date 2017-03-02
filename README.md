@@ -103,12 +103,31 @@ $array = [
     ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
     ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
 ];
-$sorted = multiarray_sort_by($array, 'name', 'model')
+$sorted = multiarray_sort_by($array, 'name', 'model');
 
 // [
 //     ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
 //     ['name' => 'Mercedes-Benz', 'model' => 'GLE Coupe', 'price' => 110000],
 //     ['name' => 'Mercedes-Benz', 'model' => 'GLS', 'price' => 120000],
+//     ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
+// ]
+```
+
+Optionally, you can set required sort order:
+
+```php
+$array = [
+    ['name' => 'Mercedes-Benz', 'model' => 'GLS', 'price' => 120000],
+    ['name' => 'Mercedes-Benz', 'model' => 'GLE Coupe', 'price' => 110000],
+    ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
+    ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
+];
+$sorted = multiarray_sort_by($array, 'name', SORT_ASC, 'model', SORT_DESC);
+
+// [
+//     ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
+//     ['name' => 'Mercedes-Benz', 'model' => 'GLS', 'price' => 120000],
+//     ['name' => 'Mercedes-Benz', 'model' => 'GLE Coupe', 'price' => 110000],
 //     ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
 // ]
 ```
