@@ -25,11 +25,7 @@ if (!function_exists('multiarray_sort_by')) {
         $multiarray = array_shift($arguments);
         foreach ($arguments as $argKey => $argValue) {
             if (is_string($argValue)) {
-                $column = [];
-                foreach ($multiarray as $key => $item) {
-                    $column[$key] = $item[$argValue];
-                }
-                $arguments[$argKey] = $column;
+                $arguments[$argKey] = array_pluck($multiarray, $argValue);
             }
         }
         $arguments[] = &$multiarray;
