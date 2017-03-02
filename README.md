@@ -34,6 +34,7 @@ Provides Laravel-specific and pure PHP helper functions.
 
 - [Array](#array)
     - [array_except_value](#array_except_value)
+    - [multiarray_sort_by](#multiarray_sort_by)
 
 - [Artisan](#artisan)
     - [call_in_background](#call_in_background)
@@ -89,6 +90,27 @@ $array = ['foo', 'bar', 'baz'];
 $array = array_except_value($array, ['bar', 'baz']);
 
 // ['foo']
+```
+
+#### `multiarray_sort_by()`
+
+Sorts multidimensional array by several fields:
+
+```php
+$array = [
+    ['name' => 'Mercedes-Benz', 'model' => 'GLS', 'price' => 120000],
+    ['name' => 'Mercedes-Benz', 'model' => 'GLE Coupe', 'price' => 110000],
+    ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
+    ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
+];
+$sorted = multiarray_sort_by($array, 'name', 'model')
+
+// [
+//     ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
+//     ['name' => 'Mercedes-Benz', 'model' => 'GLE Coupe', 'price' => 110000],
+//     ['name' => 'Mercedes-Benz', 'model' => 'GLS', 'price' => 120000],
+//     ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
+// ]
 ```
 
 ## Artisan
