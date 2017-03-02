@@ -16,3 +16,25 @@ if (!function_exists('array_except_value')) {
         return $array;
     }
 }
+
+if (!function_exists('array_order_by')) {
+    function array_order_by(array $array, $field1 = null, $sort1 = null, $_ = null)
+    {
+        $args = func_get_args();
+
+        $data = array_shift($args);
+        foreach ($args as $argKey => $argValue) {
+            if (is_string($argValue)) {
+                $column = [];
+                foreach ($data as $key => $item) {
+                    $column[$key] = $item[$argValue];
+                }
+                $args[$argKey] = $column;
+            }
+        }
+        $args[] = &$data;
+        call_user_func_array('array_multisort', $args);
+
+        return array_pop($args);
+    }
+}
