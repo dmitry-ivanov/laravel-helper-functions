@@ -23,9 +23,9 @@ if (!function_exists('multiarray_sort_by')) {
         $arguments = func_get_args();
 
         $multiarray = array_shift($arguments);
-        foreach ($arguments as $argKey => $argValue) {
-            if (is_string($argValue)) {
-                $arguments[$argKey] = array_pluck($multiarray, $argValue);
+        foreach ($arguments as $key => $value) {
+            if (is_string($value)) {
+                $arguments[$key] = array_pluck($multiarray, $value);
             }
         }
         $arguments[] = &$multiarray;
