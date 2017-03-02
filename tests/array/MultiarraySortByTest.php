@@ -135,4 +135,24 @@ class MultiarraySortByTest extends TestCase
 
         $this->assertEquals($expected, multiarray_sort_by($array, 'name', SORT_ASC, 'model', SORT_ASC));
     }
+
+    /** @test */
+    public function it_can_sort_by_two_fields_with_specifying_desc_sort_orders()
+    {
+        $array = [
+            ['name' => 'Mercedes-Benz', 'model' => 'GLS', 'price' => 120000],
+            ['name' => 'Mercedes-Benz', 'model' => 'GLE Coupe', 'price' => 110000],
+            ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
+            ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
+        ];
+
+        $expected = [
+            ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
+            ['name' => 'Mercedes-Benz', 'model' => 'GLS', 'price' => 120000],
+            ['name' => 'Mercedes-Benz', 'model' => 'GLE Coupe', 'price' => 110000],
+            ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
+        ];
+
+        $this->assertEquals($expected, multiarray_sort_by($array, 'name', SORT_DESC, 'model', SORT_DESC));
+    }
 }
