@@ -21,7 +21,25 @@ class MultiarraySortByTest extends TestCase
     }
 
     /** @test */
-    public function it_can_sort_by_one_field_with_specifying_sort_order()
+    public function it_can_sort_by_one_field_with_specifying_asc_sort_order()
+    {
+        $array = [
+            ['name' => 'Mercedes-Benz', 'model' => 'GLE Coupe', 'price' => 110000],
+            ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
+            ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
+        ];
+
+        $expected = [
+            ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
+            ['name' => 'Mercedes-Benz', 'model' => 'GLE Coupe', 'price' => 110000],
+            ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
+        ];
+
+        $this->assertEquals($expected, multiarray_sort_by($array, 'price', SORT_ASC));
+    }
+
+    /** @test */
+    public function it_can_sort_by_one_field_with_specifying_desc_sort_order()
     {
         $array = [
             ['name' => 'Mercedes-Benz', 'model' => 'GLE Coupe', 'price' => 110000],
