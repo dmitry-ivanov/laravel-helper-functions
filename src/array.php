@@ -17,8 +17,8 @@ if (!function_exists('array_except_value')) {
     }
 }
 
-if (!function_exists('array_order_by')) {
-    function array_order_by(array $array, $field1 = null, $sort1 = null, $_ = null)
+if (!function_exists('multiarray_sort_by')) {
+    function multiarray_sort_by(array $array, $field1 = null, $sort1 = null, $_ = null)
     {
         $args = func_get_args();
 
