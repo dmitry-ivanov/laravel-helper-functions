@@ -1,5 +1,10 @@
 <?php
 
+namespace Illuminated\Helpers\HelperFunctions\Tests\Db;
+
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
+use Mockery;
+
 class DbMysqlNowTest extends TestCase
 {
     /** @test */
