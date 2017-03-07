@@ -1,5 +1,9 @@
 <?php
 
+namespace Illuminated\Helpers\HelperFunctions\Tests\Str;
+
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
+
 class StrUpperTest extends TestCase
 {
     /** @test */
