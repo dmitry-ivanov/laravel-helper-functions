@@ -2,8 +2,8 @@
 
 namespace Illuminated\Helpers\Artisan;
 
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
 use Mockery;
-use TestCase;
 
 class CommandTest extends TestCase
 {
