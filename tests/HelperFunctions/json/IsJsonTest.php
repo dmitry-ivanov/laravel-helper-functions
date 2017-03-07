@@ -1,5 +1,10 @@
 <?php
 
+namespace Illuminated\Helpers\HelperFunctions\Tests\Json;
+
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
+use StdClass;
+
 class IsJsonTest extends TestCase
 {
     /** @test */
