@@ -1,4 +1,4 @@
 #0 /home/travis/build/dmitry-ivanov/laravel-helper-functions/src/debug.php:22
-#1 /home/travis/build/dmitry-ivanov/laravel-helper-functions/tests/debug/MinimizedBacktraceAsStringTest.php:28
-#2 /home/travis/build/dmitry-ivanov/laravel-helper-functions/tests/debug/MinimizedBacktraceAsStringTest.php:23
-#3 /home/travis/build/dmitry-ivanov/laravel-helper-functions/tests/debug/MinimizedBacktraceAsStringTest.php:9
+#1 /home/travis/build/dmitry-ivanov/laravel-helper-functions/tests/HelperFunctions/debug/MinimizedBacktraceAsStringTest.php:32
+#2 /home/travis/build/dmitry-ivanov/laravel-helper-functions/tests/HelperFunctions/debug/MinimizedBacktraceAsStringTest.php:27
+#3 /home/travis/build/dmitry-ivanov/laravel-helper-functions/tests/HelperFunctions/debug/MinimizedBacktraceAsStringTest.php:13
