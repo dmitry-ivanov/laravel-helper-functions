@@ -1,5 +1,9 @@
 <?php
 
+namespace Illuminated\Helpers\HelperFunctions\Tests\ArrayTests;
+
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
+
 class MultiarraySortByTest extends TestCase
 {
     /** @test */
