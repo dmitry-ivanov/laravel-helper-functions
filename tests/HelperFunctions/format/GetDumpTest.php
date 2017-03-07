@@ -1,5 +1,9 @@
 <?php
 
+namespace Illuminated\Helpers\HelperFunctions\Tests\Format;
+
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
+
 class GetDumpTest extends TestCase
 {
     /** @test */

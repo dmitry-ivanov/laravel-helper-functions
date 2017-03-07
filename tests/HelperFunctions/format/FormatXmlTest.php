@@ -1,5 +1,10 @@
 <?php
 
+namespace Illuminated\Helpers\HelperFunctions\Tests\Format;
+
+use Exception;
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
+
 class FormatXmlTest extends TestCase
 {
     /** @test */
