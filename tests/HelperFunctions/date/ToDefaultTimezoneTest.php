@@ -1,6 +1,9 @@
 <?php
 
+namespace Illuminated\Helpers\HelperFunctions\Tests\Date;
+
 use Illuminate\Support\Facades\Config;
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
 
 class ToDefaultTimezoneTest extends TestCase
 {
