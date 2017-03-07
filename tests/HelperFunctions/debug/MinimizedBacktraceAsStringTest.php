@@ -1,5 +1,9 @@
 <?php
 
+namespace Illuminated\Helpers\HelperFunctions\Tests\Debug;
+
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
+
 class MinimizedBacktraceAsStringTest extends TestCase
 {
     /** @test */
