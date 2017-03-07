@@ -1,5 +1,9 @@
 <?php
 
+namespace Illuminated\Helpers\HelperFunctions\Tests\Xml;
+
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
+
 class ArrayToXmlTest extends TestCase
 {
     /** @test */
