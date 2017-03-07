@@ -1,5 +1,10 @@
 <?php
 
+namespace Illuminated\Helpers\HelperFunctions\Tests\Email;
+
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
+use StdClass;
+
 class IsEmailTest extends TestCase
 {
     /** @test */

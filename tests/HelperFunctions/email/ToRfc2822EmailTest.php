@@ -1,5 +1,9 @@
 <?php
 
+namespace Illuminated\Helpers\HelperFunctions\Tests\Email;
+
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
+
 class ToRfc2822EmailTest extends TestCase
 {
     /** @test */
