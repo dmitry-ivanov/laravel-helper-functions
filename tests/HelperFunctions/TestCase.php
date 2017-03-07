@@ -1,6 +1,9 @@
 <?php
 
+namespace Illuminated\Helpers\HelperFunctions\Tests;
+
 use Illuminated\Testing\TestingTools;
+use Mockery;
 
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
