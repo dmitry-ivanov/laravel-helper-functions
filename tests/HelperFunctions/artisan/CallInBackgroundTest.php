@@ -1,5 +1,10 @@
 <?php
 
+namespace Illuminated\Helpers\HelperFunctions\Tests\Artisan;
+
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
+use Mockery;
+
 /**
  * @runTestsInSeparateProcesses
  * @preserveGlobalState disabled
