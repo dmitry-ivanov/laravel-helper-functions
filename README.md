@@ -1,6 +1,4 @@
-![Logo](doc/img/logo.png)
-
-# Laravel helper functions
+![Laravel helper functions](doc/img/logo.png)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/df1af353-b377-4478-b57a-789d86eb35e9/big.png)](https://insight.sensiolabs.com/projects/df1af353-b377-4478-b57a-789d86eb35e9)
 
