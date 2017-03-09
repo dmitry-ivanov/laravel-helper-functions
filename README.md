@@ -1,17 +1,15 @@
 ![Laravel Helper Functions](doc/img/logo.png)
 
-<p align="center">
-    [![SensioLabsInsight](https://insight.sensiolabs.com/projects/df1af353-b377-4478-b57a-789d86eb35e9/big.png)](https://insight.sensiolabs.com/projects/df1af353-b377-4478-b57a-789d86eb35e9)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/df1af353-b377-4478-b57a-789d86eb35e9/big.png)](https://insight.sensiolabs.com/projects/df1af353-b377-4478-b57a-789d86eb35e9)
 
-    [![StyleCI](https://styleci.io/repos/61384075/shield?branch=master&style=flat)](https://styleci.io/repos/61384075)
-    [![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions.svg?branch=master)](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions)
-    [![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-helper-functions/badge.svg?branch=master)](https://coveralls.io/github/dmitry-ivanov/laravel-helper-functions?branch=master)
+[![StyleCI](https://styleci.io/repos/61384075/shield?branch=master&style=flat)](https://styleci.io/repos/61384075)
+[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions.svg?branch=master)](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions)
+[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-helper-functions/badge.svg?branch=master)](https://coveralls.io/github/dmitry-ivanov/laravel-helper-functions?branch=master)
 
-    [![Latest Stable Version](https://poser.pugx.org/illuminated/helper-functions/v/stable)](https://packagist.org/packages/illuminated/helper-functions)
-    [![Latest Unstable Version](https://poser.pugx.org/illuminated/helper-functions/v/unstable)](https://packagist.org/packages/illuminated/helper-functions)
-    [![Total Downloads](https://poser.pugx.org/illuminated/helper-functions/downloads)](https://packagist.org/packages/illuminated/helper-functions)
-    [![License](https://poser.pugx.org/illuminated/helper-functions/license)](https://packagist.org/packages/illuminated/helper-functions)
-</p>
+[![Latest Stable Version](https://poser.pugx.org/illuminated/helper-functions/v/stable)](https://packagist.org/packages/illuminated/helper-functions)
+[![Latest Unstable Version](https://poser.pugx.org/illuminated/helper-functions/v/unstable)](https://packagist.org/packages/illuminated/helper-functions)
+[![Total Downloads](https://poser.pugx.org/illuminated/helper-functions/downloads)](https://packagist.org/packages/illuminated/helper-functions)
+[![License](https://poser.pugx.org/illuminated/helper-functions/license)](https://packagist.org/packages/illuminated/helper-functions)
 
 Provides Laravel-specific and pure PHP helper functions.
 
