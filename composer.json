@@ -13,6 +13,7 @@
         "php": ">=5.5.9",
         "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
         "nesbot/carbon": "^1.19",
+        "symfony/filesystem": "^2.7|^3.0",
         "symfony/finder": "^2.7|^3.0",
         "symfony/process": "^2.7|^3.0",
         "symfony/var-dumper": "^2.7|^3.0",
