@@ -56,6 +56,9 @@ Provides Laravel-specific and pure PHP helper functions.
     - [to_rfc2822_email](#to_rfc2822_email)
     - [to_swiftmailer_emails](#to_swiftmailer_emails)
 
+- [Filesystem](#filesystem)
+    - [relative_path](#relative_path)
+
 - [Format](#format)
     - [get_dump](#get_dump)
     - [format_bytes](#format_bytes)
@@ -274,6 +277,26 @@ Also supports simplified syntax for single address item:
 $address = to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
 
 // ["john.doe@example.com" => "John Doe"]
+```
+
+## Filesystem
+
+#### `relative_path()`
+
+Returns the relative path of a directory given another one:
+
+```php
+$path = relative_path('/var/www/htdocs', '/var/www/htdocs/example')
+
+// '../'
+```
+
+You can pass relative paths as a parameters:
+
+```php
+$path = relative_path('/var/www/htdocs/example/public/../../', '/var/')
+
+// 'www/htdocs/'
 ```
 
 ## Format

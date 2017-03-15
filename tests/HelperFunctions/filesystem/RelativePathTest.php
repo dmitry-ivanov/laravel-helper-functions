@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Helpers\HelperFunctions\Tests\FileSystem;
+namespace Illuminated\Helpers\HelperFunctions\Tests\Filesystem;
 
 use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
 
