@@ -17,8 +17,19 @@ if (!function_exists('array_except_value')) {
     }
 }
 
+if (!function_exists('multiarray_set')) {
+    function multiarray_set(array &$multiarray, $key, $value)
+    {
+        foreach ($multiarray as &$array) {
+            array_set($array, $key, $value);
+        }
+
+        return $multiarray;
+    }
+}
+
 if (!function_exists('multiarray_sort_by')) {
-    function multiarray_sort_by(array $array, $field1 = null, $sort1 = null, $_ = null)
+    function multiarray_sort_by(array $multiarray, $field1 = null, $sort1 = null, $_ = null)
     {
         $arguments = func_get_args();
 
