@@ -34,6 +34,7 @@ Provides Laravel-specific and pure PHP helper functions.
 
 - [Array](#array)
     - [array_except_value](#array_except_value)
+    - [multiarray_set](#multiarray_set)
     - [multiarray_sort_by](#multiarray_sort_by)
 
 - [Artisan](#artisan)
@@ -93,6 +94,26 @@ $array = ['foo', 'bar', 'baz'];
 $array = array_except_value($array, ['bar', 'baz']);
 
 // ['foo']
+```
+
+#### `multiarray_set()`
+
+Sets a value for each item of multidimensional array using "dot" notation:
+
+```php
+$array = [
+    ['name' => 'Mercedes-Benz', 'details' => ['type' => 'SUV']],
+    ['name' => 'BMW', 'details' => ['type' => 'SUV']],
+    ['name' => 'Porsche', 'details' => ['type' => 'SUV']],
+];
+
+multiarray_set($array, 'details.country', 'Germany');
+
+// [
+//     ['name' => 'Mercedes-Benz', 'details' => ['type' => 'SUV', 'country' => 'Germany']],
+//     ['name' => 'BMW', 'details' => ['type' => 'SUV', 'country' => 'Germany']],
+//     ['name' => 'Porsche', 'details' => ['type' => 'SUV', 'country' => 'Germany']],
+// ]
 ```
 
 #### `multiarray_sort_by()`
