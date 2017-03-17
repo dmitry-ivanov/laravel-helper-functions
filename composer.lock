@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6a7535b4dfbe0121a9101e15fd7bfa7",
+    "content-hash": "66b7c748d1f1d49c887a228325523c5e",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -759,26 +759,130 @@
             "time": "2015-05-11T14:41:42+00:00"
         },
         {
-            "name": "illuminated/testing-tools",
-            "version": "0.5.5",
+            "name": "illuminate/container",
+            "version": "v5.4.13",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dmitry-ivanov/laravel-testing-tools.git",
-                "reference": "e352127e0ca3a483a81a164fe4b7b1c6e836b020"
+                "url": "https://github.com/illuminate/container.git",
+                "reference": "ccbfa2c69369a11b419d071ad11147b59eb9f052"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/e352127e0ca3a483a81a164fe4b7b1c6e836b020",
-                "reference": "e352127e0ca3a483a81a164fe4b7b1c6e836b020",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/ccbfa2c69369a11b419d071ad11147b59eb9f052",
+                "reference": "ccbfa2c69369a11b419d071ad11147b59eb9f052",
                 "shasum": ""
             },
             "require": {
+                "illuminate/contracts": "5.4.*",
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Container\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Container package.",
+            "homepage": "https://laravel.com",
+            "time": "2017-01-28T17:55:54+00:00"
+        },
+        {
+            "name": "illuminate/database",
+            "version": "v5.4.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/database.git",
+                "reference": "607d5e1c8e2ecc61d312a455a5e93d6793f694df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/607d5e1c8e2ecc61d312a455a5e93d6793f694df",
+                "reference": "607d5e1c8e2ecc61d312a455a5e93d6793f694df",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "5.4.*",
+                "illuminate/contracts": "5.4.*",
+                "illuminate/support": "5.4.*",
+                "nesbot/carbon": "~1.20",
+                "php": ">=5.6.4"
+            },
+            "suggest": {
+                "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.5).",
+                "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
+                "illuminate/console": "Required to use the database commands (5.4.*).",
+                "illuminate/events": "Required to use the observers with Eloquent (5.4.*).",
+                "illuminate/filesystem": "Required to use the migrations (5.4.*).",
+                "illuminate/pagination": "Required to paginate the result set (5.4.*)."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Database\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Database package.",
+            "homepage": "https://laravel.com",
+            "keywords": [
+                "database",
+                "laravel",
+                "orm",
+                "sql"
+            ],
+            "time": "2017-02-22T14:16:49+00:00"
+        },
+        {
+            "name": "illuminated/testing-tools",
+            "version": "0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dmitry-ivanov/laravel-testing-tools.git",
+                "reference": "d18a011f3ea3cc341e6d369d4e1d01b59503f851"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/d18a011f3ea3cc341e6d369d4e1d01b59503f851",
+                "reference": "d18a011f3ea3cc341e6d369d4e1d01b59503f851",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.1.*|5.2.*|5.3.*|5.4.*",
                 "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
                 "mockery/mockery": "^0.9",
                 "php": ">=5.5.9"
             },
             "require-dev": {
-                "orchestra/database": "^3.1",
+                "illuminated/helper-functions": "^1.0",
                 "orchestra/testbench": "^3.1",
                 "phpunit/phpunit": "^5.0"
             },
@@ -805,7 +909,7 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2017-03-06T17:55:25+00:00"
+            "time": "2017-03-17T11:03:51+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -1374,16 +1478,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.15",
+            "version": "5.7.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "b99112aecc01f62acf3d81a3f59646700a1849e5"
+                "reference": "dafc78e2a7d12139b0e97078d1082326bd09363d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b99112aecc01f62acf3d81a3f59646700a1849e5",
-                "reference": "b99112aecc01f62acf3d81a3f59646700a1849e5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/dafc78e2a7d12139b0e97078d1082326bd09363d",
+                "reference": "dafc78e2a7d12139b0e97078d1082326bd09363d",
                 "shasum": ""
             },
             "require": {
@@ -1452,7 +1556,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-03-02T15:22:43+00:00"
+            "time": "2017-03-15T13:02:34+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
