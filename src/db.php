@@ -1,11 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 
 if (!function_exists('db_is_mysql')) {
     function db_is_mysql()
     {
-        return (DB::getDefaultConnection() == 'mysql');
+        $connection = DB::getDefaultConnection();
+        $driver = Config::get("database.connections.{$connection}.driver");
+
+        return ($driver == 'mysql');
     }
 }
 
