@@ -16,7 +16,7 @@ class DbIsSqliteTest extends TestCase
     public function it_returns_true_if_laravel_database_default_connection_driver_is_sqlite()
     {
         DB::shouldReceive('getDefaultConnection')->withNoArgs()->once()->andReturn('sqlite');
-        Config::shouldReceive('get')->with("database.connections.sqlite.driver")->once()->andReturn('sqlite');
+        Config::shouldReceive('get')->with('database.connections.sqlite.driver')->once()->andReturn('sqlite');
 
         $this->assertTrue(db_is_sqlite());
     }
@@ -25,7 +25,7 @@ class DbIsSqliteTest extends TestCase
     public function it_returns_false_if_laravel_database_default_connection_driver_is_not_sqlite()
     {
         DB::shouldReceive('getDefaultConnection')->withNoArgs()->once()->andReturn('mysql');
-        Config::shouldReceive('get')->with("database.connections.mysql.driver")->once()->andReturn('mysql');
+        Config::shouldReceive('get')->with('database.connections.mysql.driver')->once()->andReturn('mysql');
 
         $this->assertFalse(db_is_sqlite());
     }
