@@ -41,6 +41,7 @@ Provides Laravel-specific and pure PHP helper functions.
     - [call_in_background](#call_in_background)
 
 - [Database](#database)
+    - [db_is_sqlite](#db_is_sqlite)
     - [db_is_mysql](#db_is_mysql)
     - [db_mysql_now](#db_mysql_now)
     - [db_mysql_variable](#db_mysql_variable)
@@ -178,9 +179,19 @@ call_in_background('report:monthly subscriptions', 'sleep 0.3');
 
 ## Database
 
+#### `db_is_sqlite()`
+
+Checks if default database connection driver is `sqlite` or not:
+
+```php
+if (db_is_sqlite()) {
+    // sqlite-specific code here
+}
+```
+
 #### `db_is_mysql()`
 
-Checks if default database connection is `mysql` or not:
+Checks if default database connection driver is `mysql` or not:
 
 ```php
 if (db_is_mysql()) {
