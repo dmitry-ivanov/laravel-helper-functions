@@ -3,6 +3,16 @@
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 
+if (!function_exists('db_is_sqlite')) {
+    function db_is_sqlite()
+    {
+        $connection = DB::getDefaultConnection();
+        $driver = Config::get("database.connections.{$connection}.driver");
+
+        return ($driver == 'sqlite');
+    }
+}
+
 if (!function_exists('db_is_mysql')) {
     function db_is_mysql()
     {

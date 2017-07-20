@@ -13,7 +13,7 @@ use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
 class DbIsMysqlTest extends TestCase
 {
     /** @test */
-    public function it_returns_true_if_laravel_database_default_connection_is_mysql()
+    public function it_returns_true_if_laravel_database_default_connection_driver_is_mysql()
     {
         DB::shouldReceive('getDefaultConnection')->withNoArgs()->once()->andReturn('mysql');
         Config::shouldReceive('get')->with("database.connections.mysql.driver")->once()->andReturn('mysql');
@@ -22,7 +22,7 @@ class DbIsMysqlTest extends TestCase
     }
 
     /** @test */
-    public function it_returns_false_if_laravel_database_default_connection_is_not_mysql()
+    public function it_returns_false_if_laravel_database_default_connection_driver_is_not_mysql()
     {
         DB::shouldReceive('getDefaultConnection')->withNoArgs()->once()->andReturn('sqlite');
         Config::shouldReceive('get')->with("database.connections.sqlite.driver")->once()->andReturn('sqlite');
