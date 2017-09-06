@@ -11,12 +11,12 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "illuminate/support": "5.1.*",
-        "nesbot/carbon": "^1.19",
-        "symfony/filesystem": "2.7.*",
-        "symfony/finder": "2.7.*",
-        "symfony/process": "2.7.*",
-        "symfony/var-dumper": "2.7.*",
+        "illuminate/support": "5.2.*",
+        "nesbot/carbon": "^1.20",
+        "symfony/filesystem": "2.8.*|3.0.*",
+        "symfony/finder": "2.8.*|3.0.*",
+        "symfony/process": "2.8.*|3.0.*",
+        "symfony/var-dumper": "2.8.*|3.0.*",
         "spatie/array-to-xml": "^2.2"
     },
     "require-dev": {
