@@ -13,10 +13,6 @@
 
 Provides Laravel-specific and pure PHP helper functions.
 
-## Requirements
-
-- `Laravel 5.1`
-
 ## Usage
 
 1. Install package through `composer`:
