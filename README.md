@@ -18,7 +18,7 @@ Provides Laravel-specific and pure PHP helper functions.
 1. Install package through `composer`:
 
     ```shell
-    composer require illuminated/helper-functions
+    composer require "illuminated/helper-functions:5.3.*"
     ```
 
 2. That's it! Now you can use any of provided helper functions.
