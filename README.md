@@ -2,9 +2,9 @@
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/df1af353-b377-4478-b57a-789d86eb35e9/big.png)](https://insight.sensiolabs.com/projects/df1af353-b377-4478-b57a-789d86eb35e9)
 
-[![StyleCI](https://styleci.io/repos/61384075/shield?branch=5.1&style=flat)](https://styleci.io/repos/61384075)
-[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions.svg?branch=5.1)](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions)
-[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-helper-functions/badge.svg?branch=5.1)](https://coveralls.io/github/dmitry-ivanov/laravel-helper-functions?branch=5.1)
+[![StyleCI](https://styleci.io/repos/61384075/shield?branch=5.2&style=flat)](https://styleci.io/repos/61384075)
+[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions.svg?branch=5.2)](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions)
+[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-helper-functions/badge.svg?branch=5.2)](https://coveralls.io/github/dmitry-ivanov/laravel-helper-functions?branch=5.2)
 
 [![Latest Stable Version](https://poser.pugx.org/illuminated/helper-functions/v/stable)](https://packagist.org/packages/illuminated/helper-functions)
 [![Latest Unstable Version](https://poser.pugx.org/illuminated/helper-functions/v/unstable)](https://packagist.org/packages/illuminated/helper-functions)
