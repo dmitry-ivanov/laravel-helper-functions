@@ -412,7 +412,7 @@ $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
 
 #### `str_lower()`
 
-Converts string to lowercase:
+Converts string to lowercase, using `mb_strtolower` in `UTF-8` encoding:
 
 ```php
 $lower = str_lower('TeSt');
@@ -422,7 +422,7 @@ $lower = str_lower('TeSt');
 
 #### `str_upper()`
 
-Converts string to uppercase:
+Converts string to uppercase, using `mb_strtoupper` in `UTF-8` encoding:
 
 ```php
 $upper = str_upper('TeSt');
