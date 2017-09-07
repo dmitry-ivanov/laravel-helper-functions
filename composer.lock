@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a87d056db8da9bb30d942ab7c625f8f2",
+    "content-hash": "867278ac94a56299085defac681c70c3",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -914,27 +914,27 @@
         },
         {
             "name": "illuminated/testing-tools",
-            "version": "0.6.6",
+            "version": "5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-testing-tools.git",
-                "reference": "e4232bf62ba834904a3a2b93d0d4a7e98272225b"
+                "reference": "a4b13a04e46f80fb10b3fcc24becf7504fa0e34b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/e4232bf62ba834904a3a2b93d0d4a7e98272225b",
-                "reference": "e4232bf62ba834904a3a2b93d0d4a7e98272225b",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/a4b13a04e46f80fb10b3fcc24becf7504fa0e34b",
+                "reference": "a4b13a04e46f80fb10b3fcc24becf7504fa0e34b",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": "5.1.*|5.2.*|5.3.*|5.4.*",
-                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/database": "5.1.*",
+                "illuminate/support": "5.1.*",
                 "mockery/mockery": "^0.9",
                 "php": ">=5.5.9"
             },
             "require-dev": {
-                "illuminated/helper-functions": "^1.0",
-                "orchestra/testbench": "^3.1",
+                "illuminated/helper-functions": "5.1.*",
+                "orchestra/testbench": "3.1.*",
                 "phpunit/phpunit": "^5.0"
             },
             "type": "library",
@@ -960,7 +960,7 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2017-08-08T10:31:43+00:00"
+            "time": "2017-09-07T07:11:14+00:00"
         },
         {
             "name": "mockery/mockery",
