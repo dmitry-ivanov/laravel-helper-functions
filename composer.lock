@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "80d5552bae32fe446d97848dedd597f0",
+    "content-hash": "4ad0940cd5e692ba17f08d57f1453fa8",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -862,28 +862,28 @@
         },
         {
             "name": "illuminated/testing-tools",
-            "version": "0.6.6",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-testing-tools.git",
-                "reference": "e4232bf62ba834904a3a2b93d0d4a7e98272225b"
+                "reference": "dbd1cdedc6336bc15e779d6a6709f2de31cf7ea2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/e4232bf62ba834904a3a2b93d0d4a7e98272225b",
-                "reference": "e4232bf62ba834904a3a2b93d0d4a7e98272225b",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/dbd1cdedc6336bc15e779d6a6709f2de31cf7ea2",
+                "reference": "dbd1cdedc6336bc15e779d6a6709f2de31cf7ea2",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": "5.1.*|5.2.*|5.3.*|5.4.*",
-                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/database": "5.3.*",
+                "illuminate/support": "5.3.*",
                 "mockery/mockery": "^0.9",
-                "php": ">=5.5.9"
+                "php": ">=5.6.4"
             },
             "require-dev": {
-                "illuminated/helper-functions": "^1.0",
-                "orchestra/testbench": "^3.1",
-                "phpunit/phpunit": "^5.0"
+                "illuminated/helper-functions": "5.3.*",
+                "orchestra/testbench": "3.3.*",
+                "phpunit/phpunit": "^5.4"
             },
             "type": "library",
             "autoload": {
@@ -908,7 +908,7 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2017-08-08T10:31:43+00:00"
+            "time": "2017-09-07T07:41:59+00:00"
         },
         {
             "name": "mockery/mockery",

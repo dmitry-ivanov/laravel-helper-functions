@@ -22,7 +22,7 @@
     "require-dev": {
         "phpunit/phpunit": "^5.4",
         "mockery/mockery": "^0.9",
-        "illuminated/testing-tools": "^0.6"
+        "illuminated/testing-tools": "5.3.*"
     },
     "autoload": {
         "files": ["src/autoload.php"],
