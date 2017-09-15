@@ -53,6 +53,6 @@ class Command
 
     protected function getArtisan()
     {
-        return defined('ARTISAN_BINARY') ? ARTISAN_BINARY : 'artisan';
+        return base_path(defined('ARTISAN_BINARY') ? ARTISAN_BINARY : 'artisan');
     }
 }
