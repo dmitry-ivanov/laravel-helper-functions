@@ -17,6 +17,7 @@
         "symfony/finder": "^3.2",
         "symfony/process": "^3.2",
         "symfony/var-dumper": "^3.2",
+        "symfony/yaml": "^3.2",
         "spatie/array-to-xml": "^2.2"
     },
     "require-dev": {
