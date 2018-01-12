@@ -13,6 +13,14 @@
 
 Provides Laravel-specific and pure PHP helper functions.
 
+| Laravel | Laravel Helper Functions                                                    |
+| ------- | :-------------------------------------------------------------------------: |
+| 5.1.*   | [5.1.*](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/5.1) |
+| 5.2.*   | [5.2.*](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/5.2) |
+| 5.3.*   | [5.3.*](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/5.3) |
+| 5.4.*   | [5.4.*](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/5.4) |
+| 5.5.*   | [5.5.*](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/5.5) |
+
 ## Usage
 
 1. Install package through `composer`:
