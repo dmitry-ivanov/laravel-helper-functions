@@ -929,16 +929,16 @@
         },
         {
             "name": "illuminated/testing-tools",
-            "version": "5.4.0",
+            "version": "5.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-testing-tools.git",
-                "reference": "75816799a1b4930be810ab1d0e277887949460a3"
+                "reference": "9b0684e6d341a4c856325d2abf2fc0b87aeb3fb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/75816799a1b4930be810ab1d0e277887949460a3",
-                "reference": "75816799a1b4930be810ab1d0e277887949460a3",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/9b0684e6d341a4c856325d2abf2fc0b87aeb3fb8",
+                "reference": "9b0684e6d341a4c856325d2abf2fc0b87aeb3fb8",
                 "shasum": ""
             },
             "require": {
@@ -975,7 +975,7 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2017-09-07T07:53:40+00:00"
+            "time": "2018-01-12T12:57:01+00:00"
         },
         {
             "name": "mockery/mockery",
