@@ -3,7 +3,6 @@
 namespace Illuminated\Helpers\Artisan;
 
 use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
-use Mockery;
 
 class CommandTest extends TestCase
 {
@@ -11,8 +10,8 @@ class CommandTest extends TestCase
     {
         parent::setUp();
 
-        $phpBinaryMock = Mockery::mock('overload:Symfony\Component\Process\PhpExecutableFinder');
-        $phpBinaryMock->shouldReceive('find')->withNoArgs()->once()->andReturn('php');
+        $phpBinaryMock = mock('overload:Symfony\Component\Process\PhpExecutableFinder');
+        $phpBinaryMock->expects()->find()->andReturn('php');
     }
 
     /** @test */
