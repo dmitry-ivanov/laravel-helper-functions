@@ -3,7 +3,6 @@
 namespace Illuminated\Helpers\HelperFunctions\Tests\Artisan;
 
 use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
-use Mockery;
 
 /**
  * @runTestsInSeparateProcesses
@@ -14,9 +13,9 @@ class CallInBackgroundTest extends TestCase
     /** @test */
     public function it_works_without_optional_before_and_after_parameters()
     {
-        $mock = Mockery::mock('alias:Illuminated\Helpers\Artisan\Command');
-        $mock->shouldReceive('factory')->withArgs(['test command', null, null])->once()->andReturnSelf();
-        $mock->shouldReceive('runInBackground')->withNoArgs()->once();
+        $mock = mock('alias:Illuminated\Helpers\Artisan\Command');
+        $mock->expects()->factory('test command', null, null)->andReturnSelf();
+        $mock->expects()->runInBackground();
 
         call_in_background('test command');
     }
@@ -24,9 +23,9 @@ class CallInBackgroundTest extends TestCase
     /** @test */
     public function it_works_with_optional_before_parameter()
     {
-        $mock = Mockery::mock('alias:Illuminated\Helpers\Artisan\Command');
-        $mock->shouldReceive('factory')->withArgs(['test command', 'before command', null])->once()->andReturnSelf();
-        $mock->shouldReceive('runInBackground')->withNoArgs()->once();
+        $mock = mock('alias:Illuminated\Helpers\Artisan\Command');
+        $mock->expects()->factory('test command', 'before command', null)->andReturnSelf();
+        $mock->expects()->runInBackground();
 
         call_in_background('test command', 'before command');
     }
@@ -34,9 +33,9 @@ class CallInBackgroundTest extends TestCase
     /** @test */
     public function it_works_with_optional_after_parameter()
     {
-        $mock = Mockery::mock('alias:Illuminated\Helpers\Artisan\Command');
-        $mock->shouldReceive('factory')->withArgs(['test command', null, 'after command'])->once()->andReturnSelf();
-        $mock->shouldReceive('runInBackground')->withNoArgs()->once();
+        $mock = mock('alias:Illuminated\Helpers\Artisan\Command');
+        $mock->expects()->factory('test command', null, 'after command')->andReturnSelf();
+        $mock->expects()->runInBackground();
 
         call_in_background('test command', null, 'after command');
     }
@@ -44,9 +43,9 @@ class CallInBackgroundTest extends TestCase
     /** @test */
     public function it_works_with_optional_before_and_after_parameters_together()
     {
-        $mock = Mockery::mock('alias:Illuminated\Helpers\Artisan\Command');
-        $mock->shouldReceive('factory')->withArgs(['test command', 'before', 'after'])->once()->andReturnSelf();
-        $mock->shouldReceive('runInBackground')->withNoArgs()->once();
+        $mock = mock('alias:Illuminated\Helpers\Artisan\Command');
+        $mock->expects()->factory('test command', 'before', 'after')->andReturnSelf();
+        $mock->expects()->runInBackground();
 
         call_in_background('test command', 'before', 'after');
     }

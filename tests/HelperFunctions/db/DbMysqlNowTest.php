@@ -3,17 +3,14 @@
 namespace Illuminated\Helpers\HelperFunctions\Tests\Db;
 
 use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
-use Mockery;
 
 class DbMysqlNowTest extends TestCase
 {
     /** @test */
     public function it_returns_valid_mysql_datetime()
     {
-        $mock = Mockery::mock('alias:Illuminate\Support\Facades\DB');
-        $mock->shouldReceive('selectOne')->withArgs(['select now() as now'])->once()->andReturnUsing(function () {
-            return (object) ['now' => '2016-09-17 18:49:46'];
-        });
+        $mock = mock('alias:Illuminate\Support\Facades\DB');
+        $mock->expects()->selectOne('select now() as now')->andReturn((object) ['now' => '2016-09-17 18:49:46']);
 
         $this->assertEquals('2016-09-17 18:49:46', db_mysql_now());
     }

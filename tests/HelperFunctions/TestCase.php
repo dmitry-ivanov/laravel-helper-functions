@@ -4,25 +4,24 @@ namespace Illuminated\Helpers\HelperFunctions\Tests;
 
 use Illuminated\Testing\TestingTools;
 use Mockery;
+use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+
+Mockery::globalHelpers();
 
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     use TestingTools;
+    use MockeryPHPUnitIntegration;
 
     public static $functions;
 
     protected function setUp()
     {
-        self::$functions = Mockery::mock();
+        self::$functions = mock();
     }
 
-    protected function shouldReceiveExecCallOnceWith($with)
+    protected function expectsExecWith($command)
     {
-        self::$functions->shouldReceive('exec')->with($with)->once();
-    }
-
-    protected function tearDown()
-    {
-        Mockery::close();
+        self::$functions->expects()->exec($command);
     }
 }

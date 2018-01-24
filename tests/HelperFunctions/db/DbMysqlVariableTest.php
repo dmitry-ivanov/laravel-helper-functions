@@ -3,18 +3,14 @@
 namespace Illuminated\Helpers\HelperFunctions\Tests\Db;
 
 use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
-use Mockery;
 
 class DbMysqlVariableTest extends TestCase
 {
     /** @test */
     public function it_returns_false_for_unexisting_mysql_variable()
     {
-        $mock = Mockery::mock('alias:Illuminate\Support\Facades\DB');
-        $mock->shouldReceive('selectOne')
-            ->withArgs(['show variables where variable_name = ?', ['fake']])
-            ->once()
-            ->andReturnNull();
+        $mock = mock('alias:Illuminate\Support\Facades\DB');
+        $mock->expects()->selectOne('show variables where variable_name = ?', ['fake'])->andReturnNull();
 
         $this->assertFalse(db_mysql_variable('fake'));
     }
@@ -22,13 +18,9 @@ class DbMysqlVariableTest extends TestCase
     /** @test */
     public function it_returns_value_for_existing_mysql_variable()
     {
-        $mock = Mockery::mock('alias:Illuminate\Support\Facades\DB');
-        $mock->shouldReceive('selectOne')
-             ->withArgs(['show variables where variable_name = ?', ['hostname']])
-             ->once()
-             ->andReturnUsing(function () {
-                 return (object) ['Variable_name' => 'hostname', 'Value' => 'localhost'];
-             });
+        $mock = mock('alias:Illuminate\Support\Facades\DB');
+        $mock->expects()->selectOne('show variables where variable_name = ?', ['hostname'])
+                        ->andReturn((object) ['Variable_name' => 'hostname', 'Value' => 'localhost']);
 
         $this->assertEquals('localhost', db_mysql_variable('hostname'));
     }
