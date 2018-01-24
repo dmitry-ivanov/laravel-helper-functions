@@ -6,6 +6,8 @@ use Illuminated\Testing\TestingTools;
 use Mockery;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 
+Mockery::globalHelpers();
+
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     use TestingTools;
@@ -15,11 +17,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
     protected function setUp()
     {
-        self::$functions = Mockery::mock();
+        self::$functions = mock();
     }
 
-    protected function shouldReceiveExecCallOnceWith($with)
+    protected function expectsExecWith($command)
     {
-        self::$functions->shouldReceive('exec')->with($with)->once();
+        self::$functions->expects()->exec($command);
     }
 }
