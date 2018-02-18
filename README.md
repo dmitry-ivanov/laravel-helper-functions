@@ -1,8 +1,8 @@
 # Laravel Helper Functions
 
-[![StyleCI](https://styleci.io/repos/61384075/shield?branch=master&style=flat)](https://styleci.io/repos/61384075)
-[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions.svg?branch=master)](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions)
-[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-helper-functions/badge.svg?branch=master)](https://coveralls.io/github/dmitry-ivanov/laravel-helper-functions?branch=master)
+[![StyleCI](https://styleci.io/repos/61384075/shield?branch=5.6&style=flat)](https://styleci.io/repos/61384075)
+[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions.svg?branch=5.6)](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions)
+[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-helper-functions/badge.svg?branch=5.6)](https://coveralls.io/github/dmitry-ivanov/laravel-helper-functions?branch=5.6)
 
 [![Latest Stable Version](https://poser.pugx.org/illuminated/helper-functions/v/stable)](https://packagist.org/packages/illuminated/helper-functions)
 [![Latest Unstable Version](https://poser.pugx.org/illuminated/helper-functions/v/unstable)](https://packagist.org/packages/illuminated/helper-functions)
@@ -25,7 +25,7 @@ Provides Laravel-specific and pure PHP helper functions.
 1. Install package through `composer`:
 
     ```shell
-    composer require illuminated/helper-functions
+    composer require "illuminated/helper-functions:5.6.*"
     ```
 
 2. That's it! Now you can use any of provided helper functions.
