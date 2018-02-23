@@ -31,6 +31,10 @@ class Command
 
     protected function composeForRunInBackground()
     {
+        if (is_windows_os()) {
+            return "start /B {$this->composeForRun()}";
+        }
+
         return "({$this->composeForRun()}) > /dev/null 2>&1 &";
     }
 
