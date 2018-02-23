@@ -28,7 +28,11 @@ class CommandTest extends TestCase
         $this->assertInstanceOf(Command::class, $command);
     }
 
-    /** @test */
+    /**
+     * @test
+     * @runInSeparateProcess
+     * @preserveGlobalState disabled
+     */
     public function it_can_run_command_in_background()
     {
         $this->expectsExecWith('(php artisan test:command) > /dev/null 2>&1 &');
@@ -37,7 +41,11 @@ class CommandTest extends TestCase
         $command->runInBackground();
     }
 
-    /** @test */
+    /**
+     * @test
+     * @runInSeparateProcess
+     * @preserveGlobalState disabled
+     */
     public function run_in_background_supports_before_subcommand()
     {
         $this->expectsExecWith('(before command && php artisan test:command) > /dev/null 2>&1 &');
@@ -46,7 +54,11 @@ class CommandTest extends TestCase
         $command->runInBackground();
     }
 
-    /** @test */
+    /**
+     * @test
+     * @runInSeparateProcess
+     * @preserveGlobalState disabled
+     */
     public function run_in_background_supports_after_subcommand()
     {
         $this->expectsExecWith('(php artisan test:command && after command) > /dev/null 2>&1 &');
@@ -55,7 +67,11 @@ class CommandTest extends TestCase
         $command->runInBackground();
     }
 
-    /** @test */
+    /**
+     * @test
+     * @runInSeparateProcess
+     * @preserveGlobalState disabled
+     */
     public function run_in_background_supports_before_and_after_subcommands_together()
     {
         $this->expectsExecWith('(before && php artisan test:command && after) > /dev/null 2>&1 &');
