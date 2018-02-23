@@ -32,8 +32,9 @@ class Command
     protected function composeForRunInBackground()
     {
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-            return 'start /B ' . $this->composeForRun();
+            return "start /B {$this->composeForRun()}";
         }
+
         return "({$this->composeForRun()}) > /dev/null 2>&1 &";
     }
 
