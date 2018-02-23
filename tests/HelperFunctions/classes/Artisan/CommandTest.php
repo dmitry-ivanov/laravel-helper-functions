@@ -41,6 +41,18 @@ class CommandTest extends TestCase
         $command->runInBackground();
     }
 
+    /** @test */
+    public function which_also_works_for_windows()
+    {
+        require_once 'mocks.php';
+
+        $this->emulateWindowsOs();
+        $this->expectsExecWith('start /B php artisan test:command');
+
+        $command = Command::factory('test:command');
+        $command->runInBackground();
+    }
+
     /**
      * @test
      * @runInSeparateProcess
