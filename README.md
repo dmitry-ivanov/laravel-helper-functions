@@ -75,6 +75,9 @@ Provides Laravel-specific and pure PHP helper functions.
     - [str_lower](#str_lower)
     - [str_upper](#str_upper)
 
+- [System](#system)
+    - [is_windows_os](#is_windows_os)
+
 - [Xml](#xml)
     - [xml_to_array](#xml_to_array)
     - [array_to_xml](#array_to_xml)
@@ -435,6 +438,18 @@ Converts string to uppercase, using `mb_strtoupper` in `UTF-8` encoding:
 $upper = str_upper('TeSt');
 
 // TEST
+```
+
+## System
+
+#### `is_windows_os()`
+
+Checks if php is running on Windows OS or not:
+
+```php
+$isWindowsOs = is_windows_os();
+
+// boolean
 ```
 
 ## Xml
