@@ -31,7 +31,7 @@ class Command
 
     protected function composeForRunInBackground()
     {
-        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+        if (is_windows_os()) {
             return "start /B {$this->composeForRun()}";
         }
 
