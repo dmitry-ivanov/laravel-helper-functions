@@ -410,7 +410,7 @@ $isJson = is_json('{"foo":1,"bar":2,"baz":3}');
 // true
 ```
 
-Function can return decoded json, if you pass the second `return` argument as `true`:
+It can return decoded JSON if you pass the second `return` argument as `true`:
 
 ```php
 $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
