@@ -444,7 +444,7 @@ $upper = str_upper('TeSt');
 
 #### `is_windows_os()`
 
-Checks if php is running on Windows OS or not:
+Check if PHP is running on Windows OS or not:
 
 ```php
 $isWindowsOs = is_windows_os();
