@@ -240,7 +240,7 @@ $date = to_default_timezone('2017-02-28T14:05:01Z');
 
 #### `backtrace_as_string()`
 
-Returns backtrace without arguments as string:
+Returns backtrace without arguments as a string:
 
 ```php
 $backtrace = backtrace_as_string();
