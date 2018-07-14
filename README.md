@@ -174,7 +174,7 @@ call_in_background('report');
 // "php artisan report" would be called in background
 ```
 
-Optional `before` and `after` sub-commands can be set as a second and third parameters:
+Optional `before` and `after` sub-commands can be set as a second and third parameter:
 
 ```php
 call_in_background('report:monthly subscriptions', 'sleep 0.3');
