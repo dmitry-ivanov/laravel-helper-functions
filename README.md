@@ -240,7 +240,7 @@ $date = to_default_timezone('2017-02-28T14:05:01Z');
 
 #### `backtrace_as_string()`
 
-Return backtrace without arguments as a string:
+Get backtrace without arguments as a string:
 
 ```php
 $backtrace = backtrace_as_string();
@@ -252,7 +252,7 @@ $backtrace = backtrace_as_string();
 
 #### `minimized_backtrace_as_string()`
 
-Return minimized backtrace as a string:
+Get minimized backtrace as a string:
 
 ```php
 $backtrace = minimized_backtrace_as_string();
@@ -340,7 +340,7 @@ $path = relative_path('/var/www/htdocs/example/public/../../', '/var/')
 
 #### `get_dump()`
 
-Return nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html):
+Get nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html):
 
 ```php
 $array = [
@@ -410,7 +410,7 @@ $isJson = is_json('{"foo":1,"bar":2,"baz":3}');
 // true
 ```
 
-It can return decoded JSON if you pass the second `return` argument as `true`:
+It can return decoded JSON if you pass the second argument as `true`:
 
 ```php
 $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
