@@ -328,7 +328,7 @@ $path = relative_path('/var/www/htdocs', '/var/www/htdocs/example')
 // '../'
 ```
 
-You can pass relative path as a parameter:
+You can pass relative path as a parameter too:
 
 ```php
 $path = relative_path('/var/www/htdocs/example/public/../../', '/var/')
