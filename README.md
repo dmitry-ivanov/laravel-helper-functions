@@ -104,7 +104,7 @@ $array = array_except_value($array, ['bar', 'baz']);
 
 #### `multiarray_set()`
 
-Sets a value for each item of multidimensional array using "dot" notation:
+Sets a value for each item of the multidimensional array using "dot" notation:
 
 ```php
 $array = [
