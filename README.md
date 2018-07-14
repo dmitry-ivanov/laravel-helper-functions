@@ -86,7 +86,7 @@ Laravel-specific and pure PHP helper functions.
 
 #### `array_except_value()`
 
-Removes the given values from array:
+Removes the given values from the array:
 
 ```php
 $array = ['foo', 'bar', 'baz'];
