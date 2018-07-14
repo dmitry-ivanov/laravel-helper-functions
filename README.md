@@ -494,7 +494,7 @@ Alternatively, you can pass an instance of a `SimpleXMLElement` object, to get t
 
 #### `array_to_xml()`
 
-Converts array to xml string using [spatie/array-to-xml](https://github.com/spatie/array-to-xml) package:
+Convert array to XML string using [spatie/array-to-xml](https://github.com/spatie/array-to-xml) package:
 
 ```php
 $array = [
