@@ -320,7 +320,7 @@ $address = to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' =>
 
 #### `relative_path()`
 
-Return the relative path of a directory given another one:
+Get the relative path for two directories:
 
 ```php
 $path = relative_path('/var/www/htdocs', '/var/www/htdocs/example')
