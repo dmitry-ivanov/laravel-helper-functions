@@ -490,7 +490,7 @@ $array = xml_to_array('<?xml version="1.0"?>
 // ]
 ```
 
-Alternatively, you can pass an instance of `SimpleXMLElement` object, to get the same results.
+Alternatively, you can pass an instance of a `SimpleXMLElement` object, to get the same results.
 
 #### `array_to_xml()`
 
