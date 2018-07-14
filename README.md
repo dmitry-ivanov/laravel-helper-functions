@@ -456,7 +456,7 @@ $isWindowsOs = is_windows_os();
 
 #### `xml_to_array()`
 
-Converts xml string to array:
+Convert XML string to the array:
 
 ```php
 $array = xml_to_array('<?xml version="1.0"?>
