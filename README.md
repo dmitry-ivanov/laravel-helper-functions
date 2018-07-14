@@ -206,7 +206,7 @@ if (db_is_mysql()) {
 
 #### `db_mysql_now()`
 
-Return database datetime, using `mysql` connection:
+Get database datetime, using `mysql` connection:
 
 ```php
 $now = db_mysql_now();
@@ -216,7 +216,7 @@ $now = db_mysql_now();
 
 #### `db_mysql_variable()`
 
-Return value of specified `mysql` variable, or `false` if the variable doesn't exist:
+Get the value of specified `mysql` variable, or `false` if the variable doesn't exist:
 
 ```php
 $hostname = db_mysql_variable('hostname');
