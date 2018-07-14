@@ -143,7 +143,7 @@ $sorted = multiarray_sort_by($array, 'name', 'model');
 // ]
 ```
 
-Optionally, you can set required sort order:
+You can set required sort order:
 
 ```php
 $array = [
