@@ -402,7 +402,7 @@ $formatted = format_xml('<?xml version="1.0"?><root><task priority="low"><to>Joh
 
 #### `is_json()`
 
-Checks if specified variable is valid json-encoded string or not:
+Check if specified variable is a valid JSON-encoded string or not:
 
 ```php
 $isJson = is_json('{"foo":1,"bar":2,"baz":3}');
