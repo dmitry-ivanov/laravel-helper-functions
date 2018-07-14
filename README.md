@@ -166,7 +166,7 @@ $sorted = multiarray_sort_by($array, 'name', SORT_ASC, 'model', SORT_DESC);
 
 #### `call_in_background()`
 
-Calls artisan console command in background. Code execution continues immediately, without waiting for results.
+Call artisan console command in the background. Code execution continues immediately, without waiting for results.
 
 ```php
 call_in_background('report');
