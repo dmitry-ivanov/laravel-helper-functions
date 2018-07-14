@@ -252,7 +252,7 @@ $backtrace = backtrace_as_string();
 
 #### `minimized_backtrace_as_string()`
 
-Returns minimized backtrace as string:
+Returns minimized backtrace as a string:
 
 ```php
 $backtrace = minimized_backtrace_as_string();
