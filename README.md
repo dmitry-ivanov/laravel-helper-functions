@@ -28,7 +28,7 @@ Laravel-specific and pure PHP helper functions.
     composer require "illuminated/helper-functions:5.6.*"
     ```
 
-2. That's it! Now you can use any of provided helper functions.
+2. Use any of the provided helper functions.
 
 ## Available functions
 
@@ -86,7 +86,7 @@ Laravel-specific and pure PHP helper functions.
 
 #### `array_except_value()`
 
-Removes the given values from array:
+Remove the given values from the array:
 
 ```php
 $array = ['foo', 'bar', 'baz'];
@@ -104,7 +104,7 @@ $array = array_except_value($array, ['bar', 'baz']);
 
 #### `multiarray_set()`
 
-Sets a value for each item of multidimensional array using "dot" notation:
+Set a value for each item of the multidimensional array using "dot" notation:
 
 ```php
 $array = [
@@ -124,7 +124,7 @@ multiarray_set($array, 'details.country', 'Germany');
 
 #### `multiarray_sort_by()`
 
-Sorts multidimensional array by multiple fields:
+Sort the multidimensional array by few fields:
 
 ```php
 $array = [
@@ -143,7 +143,7 @@ $sorted = multiarray_sort_by($array, 'name', 'model');
 // ]
 ```
 
-Optionally, you can set required sort order:
+You can set required sort order:
 
 ```php
 $array = [
@@ -166,7 +166,7 @@ $sorted = multiarray_sort_by($array, 'name', SORT_ASC, 'model', SORT_DESC);
 
 #### `call_in_background()`
 
-Calls artisan console command in background. Code execution continues immediately, without waiting for results.
+Call artisan console command in the background. Code execution continues immediately, without waiting for results.
 
 ```php
 call_in_background('report');
@@ -174,7 +174,7 @@ call_in_background('report');
 // "php artisan report" would be called in background
 ```
 
-Optional `before` and `after` sub-commands can be set as a second and third parameters:
+Optional `before` and `after` sub-commands can be set as a second and third parameter:
 
 ```php
 call_in_background('report:monthly subscriptions', 'sleep 0.3');
@@ -186,7 +186,7 @@ call_in_background('report:monthly subscriptions', 'sleep 0.3');
 
 #### `db_is_sqlite()`
 
-Checks if default database connection driver is `sqlite` or not:
+Check if the default database connection driver is `sqlite` or not:
 
 ```php
 if (db_is_sqlite()) {
@@ -196,7 +196,7 @@ if (db_is_sqlite()) {
 
 #### `db_is_mysql()`
 
-Checks if default database connection driver is `mysql` or not:
+Check if the default database connection driver is `mysql` or not:
 
 ```php
 if (db_is_mysql()) {
@@ -206,7 +206,7 @@ if (db_is_mysql()) {
 
 #### `db_mysql_now()`
 
-Returns database datetime, using `mysql` connection:
+Get database datetime, using `mysql` connection:
 
 ```php
 $now = db_mysql_now();
@@ -216,7 +216,7 @@ $now = db_mysql_now();
 
 #### `db_mysql_variable()`
 
-Returns value of specified `mysql` variable, or `false` if variable doesn't exist:
+Get the value of specified `mysql` variable, or `false` if the variable doesn't exist:
 
 ```php
 $hostname = db_mysql_variable('hostname');
@@ -228,7 +228,7 @@ $hostname = db_mysql_variable('hostname');
 
 #### `to_default_timezone()`
 
-Converts passed datetime string to default timezone, which is `app.timezone` config setting:
+Convert passed datetime string to the default timezone, which is `app.timezone` config setting:
 
 ```php
 $date = to_default_timezone('2017-02-28T14:05:01Z');
@@ -240,7 +240,7 @@ $date = to_default_timezone('2017-02-28T14:05:01Z');
 
 #### `backtrace_as_string()`
 
-Returns backtrace without arguments as string:
+Get backtrace without arguments, as a string:
 
 ```php
 $backtrace = backtrace_as_string();
@@ -252,7 +252,7 @@ $backtrace = backtrace_as_string();
 
 #### `minimized_backtrace_as_string()`
 
-Returns minimized backtrace as string:
+Get minimized backtrace as a string:
 
 ```php
 $backtrace = minimized_backtrace_as_string();
@@ -266,7 +266,7 @@ $backtrace = minimized_backtrace_as_string();
 
 #### `is_email()`
 
-Checks if specified string is valid email address or not:
+Check if the specified string is a valid email address or not:
 
 ```php
 $isEmail = is_email('john.doe@example.com');
@@ -276,7 +276,7 @@ $isEmail = is_email('john.doe@example.com');
 
 #### `to_rfc2822_email()`
 
-Converts addresses data to [RFC 2822](http://www.faqs.org/rfcs/rfc2822.html) string, suitable for PHP [mail()](http://ua2.php.net/manual/en/function.mail.php) function:
+Convert addresses data to [RFC 2822](http://www.faqs.org/rfcs/rfc2822.html) string, suitable for PHP [mail()](http://ua2.php.net/manual/en/function.mail.php) function:
 
 ```php
 $address = to_rfc2822_email([
@@ -297,7 +297,7 @@ $address = to_rfc2822_email(['address' => 'john.doe@example.com', 'name' => 'Joh
 
 #### `to_swiftmailer_emails()`
 
-Converts addresses data to format, which is suitable for [SwiftMailer library](http://swiftmailer.org/docs/messages.html):
+Convert addresses data to format, which is suitable for [SwiftMailer library](http://swiftmailer.org/docs/messages.html):
 
 ```php
 $addresses = to_swiftmailer_emails([
@@ -320,7 +320,7 @@ $address = to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' =>
 
 #### `relative_path()`
 
-Returns the relative path of a directory given another one:
+Get the relative path for two directories:
 
 ```php
 $path = relative_path('/var/www/htdocs', '/var/www/htdocs/example')
@@ -328,7 +328,7 @@ $path = relative_path('/var/www/htdocs', '/var/www/htdocs/example')
 // '../'
 ```
 
-You can pass relative paths as a parameters:
+You can pass relative path as a parameter too:
 
 ```php
 $path = relative_path('/var/www/htdocs/example/public/../../', '/var/')
@@ -340,7 +340,7 @@ $path = relative_path('/var/www/htdocs/example/public/../../', '/var/')
 
 #### `get_dump()`
 
-Returns nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html) with all of it's benefits:
+Get nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html):
 
 ```php
 $array = [
@@ -363,7 +363,7 @@ $dump = get_dump($array);
 
 #### `format_bytes()`
 
-Formats bytes into kilobytes, megabytes, gigabytes or terabytes, with specified precision:
+Format bytes into kilobytes, megabytes, gigabytes or terabytes, with specified precision:
 
 ```php
 $formatted = format_bytes(3333333);
@@ -373,7 +373,7 @@ $formatted = format_bytes(3333333);
 
 #### `format_xml()`
 
-Formats xml string using new lines and indents:
+Format XML string using new lines and indents:
 
 ```php
 $formatted = format_xml('<?xml version="1.0"?><root><task priority="low"><to>John</to><from>Jane</from><title>Go to the shop</title></task><task priority="medium"><to>John</to><from>Paul</from><title>Finish the report</title></task><task priority="high"><to>Jane</to><from>Jeff</from><title>Clean the house</title></task></root>');
@@ -402,7 +402,7 @@ $formatted = format_xml('<?xml version="1.0"?><root><task priority="low"><to>Joh
 
 #### `is_json()`
 
-Checks if specified variable is valid json-encoded string or not:
+Check if specified variable is a valid JSON-encoded string or not:
 
 ```php
 $isJson = is_json('{"foo":1,"bar":2,"baz":3}');
@@ -410,7 +410,7 @@ $isJson = is_json('{"foo":1,"bar":2,"baz":3}');
 // true
 ```
 
-Function can return decoded json, if you pass the second `return` argument as `true`:
+It can return decoded JSON if you pass the second argument as `true`:
 
 ```php
 $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
@@ -422,7 +422,7 @@ $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
 
 #### `str_lower()`
 
-Converts string to lowercase, using `mb_strtolower` in `UTF-8` encoding:
+Convert string to lowercase, using `mb_strtolower` in `UTF-8` encoding:
 
 ```php
 $lower = str_lower('TeSt');
@@ -432,7 +432,7 @@ $lower = str_lower('TeSt');
 
 #### `str_upper()`
 
-Converts string to uppercase, using `mb_strtoupper` in `UTF-8` encoding:
+Convert string to uppercase, using `mb_strtoupper` in `UTF-8` encoding:
 
 ```php
 $upper = str_upper('TeSt');
@@ -444,7 +444,7 @@ $upper = str_upper('TeSt');
 
 #### `is_windows_os()`
 
-Checks if php is running on Windows OS or not:
+Check if PHP is running on Windows OS or not:
 
 ```php
 $isWindowsOs = is_windows_os();
@@ -456,7 +456,7 @@ $isWindowsOs = is_windows_os();
 
 #### `xml_to_array()`
 
-Converts xml string to array:
+Convert XML string to the array:
 
 ```php
 $array = xml_to_array('<?xml version="1.0"?>
@@ -490,11 +490,11 @@ $array = xml_to_array('<?xml version="1.0"?>
 // ]
 ```
 
-Alternatively, you can pass an instance of `SimpleXMLElement` object, to get the same results.
+Alternatively, you can pass an instance of a `SimpleXMLElement` object, to get the same results.
 
 #### `array_to_xml()`
 
-Converts array to xml string using [spatie/array-to-xml](https://github.com/spatie/array-to-xml) package:
+Convert array to XML string using [spatie/array-to-xml](https://github.com/spatie/array-to-xml) package:
 
 ```php
 $array = [
