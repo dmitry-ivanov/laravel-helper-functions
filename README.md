@@ -86,7 +86,7 @@ Laravel-specific and pure PHP helper functions.
 
 #### `array_except_value()`
 
-Removes the given values from the array:
+Remove the given values from the array:
 
 ```php
 $array = ['foo', 'bar', 'baz'];
@@ -104,7 +104,7 @@ $array = array_except_value($array, ['bar', 'baz']);
 
 #### `multiarray_set()`
 
-Sets a value for each item of the multidimensional array using "dot" notation:
+Set a value for each item of the multidimensional array using "dot" notation:
 
 ```php
 $array = [
@@ -124,7 +124,7 @@ multiarray_set($array, 'details.country', 'Germany');
 
 #### `multiarray_sort_by()`
 
-Sorts the multidimensional array by few fields:
+Sort the multidimensional array by few fields:
 
 ```php
 $array = [
@@ -186,7 +186,7 @@ call_in_background('report:monthly subscriptions', 'sleep 0.3');
 
 #### `db_is_sqlite()`
 
-Checks if the default database connection driver is `sqlite` or not:
+Check if the default database connection driver is `sqlite` or not:
 
 ```php
 if (db_is_sqlite()) {
@@ -196,7 +196,7 @@ if (db_is_sqlite()) {
 
 #### `db_is_mysql()`
 
-Checks if the default database connection driver is `mysql` or not:
+Check if the default database connection driver is `mysql` or not:
 
 ```php
 if (db_is_mysql()) {
@@ -206,7 +206,7 @@ if (db_is_mysql()) {
 
 #### `db_mysql_now()`
 
-Returns database datetime, using `mysql` connection:
+Return database datetime, using `mysql` connection:
 
 ```php
 $now = db_mysql_now();
@@ -216,7 +216,7 @@ $now = db_mysql_now();
 
 #### `db_mysql_variable()`
 
-Returns value of specified `mysql` variable, or `false` if the variable doesn't exist:
+Return value of specified `mysql` variable, or `false` if the variable doesn't exist:
 
 ```php
 $hostname = db_mysql_variable('hostname');
@@ -228,7 +228,7 @@ $hostname = db_mysql_variable('hostname');
 
 #### `to_default_timezone()`
 
-Converts passed datetime string to the default timezone, which is `app.timezone` config setting:
+Convert passed datetime string to the default timezone, which is `app.timezone` config setting:
 
 ```php
 $date = to_default_timezone('2017-02-28T14:05:01Z');
@@ -240,7 +240,7 @@ $date = to_default_timezone('2017-02-28T14:05:01Z');
 
 #### `backtrace_as_string()`
 
-Returns backtrace without arguments as a string:
+Return backtrace without arguments as a string:
 
 ```php
 $backtrace = backtrace_as_string();
@@ -252,7 +252,7 @@ $backtrace = backtrace_as_string();
 
 #### `minimized_backtrace_as_string()`
 
-Returns minimized backtrace as a string:
+Return minimized backtrace as a string:
 
 ```php
 $backtrace = minimized_backtrace_as_string();
@@ -266,7 +266,7 @@ $backtrace = minimized_backtrace_as_string();
 
 #### `is_email()`
 
-Checks if the specified string is a valid email address or not:
+Check if the specified string is a valid email address or not:
 
 ```php
 $isEmail = is_email('john.doe@example.com');
@@ -276,7 +276,7 @@ $isEmail = is_email('john.doe@example.com');
 
 #### `to_rfc2822_email()`
 
-Converts addresses data to [RFC 2822](http://www.faqs.org/rfcs/rfc2822.html) string, suitable for PHP [mail()](http://ua2.php.net/manual/en/function.mail.php) function:
+Convert addresses data to [RFC 2822](http://www.faqs.org/rfcs/rfc2822.html) string, suitable for PHP [mail()](http://ua2.php.net/manual/en/function.mail.php) function:
 
 ```php
 $address = to_rfc2822_email([
@@ -297,7 +297,7 @@ $address = to_rfc2822_email(['address' => 'john.doe@example.com', 'name' => 'Joh
 
 #### `to_swiftmailer_emails()`
 
-Converts addresses data to format, which is suitable for [SwiftMailer library](http://swiftmailer.org/docs/messages.html):
+Convert addresses data to format, which is suitable for [SwiftMailer library](http://swiftmailer.org/docs/messages.html):
 
 ```php
 $addresses = to_swiftmailer_emails([
@@ -320,7 +320,7 @@ $address = to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' =>
 
 #### `relative_path()`
 
-Returns the relative path of a directory given another one:
+Return the relative path of a directory given another one:
 
 ```php
 $path = relative_path('/var/www/htdocs', '/var/www/htdocs/example')
@@ -340,7 +340,7 @@ $path = relative_path('/var/www/htdocs/example/public/../../', '/var/')
 
 #### `get_dump()`
 
-Returns nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html):
+Return nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html):
 
 ```php
 $array = [
