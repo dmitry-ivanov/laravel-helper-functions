@@ -124,7 +124,7 @@ multiarray_set($array, 'details.country', 'Germany');
 
 #### `multiarray_sort_by()`
 
-Sorts multidimensional array by multiple fields:
+Sorts the multidimensional array by few fields:
 
 ```php
 $array = [
