@@ -216,7 +216,7 @@ $now = db_mysql_now();
 
 #### `db_mysql_variable()`
 
-Returns value of specified `mysql` variable, or `false` if variable doesn't exist:
+Returns value of specified `mysql` variable, or `false` if the variable doesn't exist:
 
 ```php
 $hostname = db_mysql_variable('hostname');
