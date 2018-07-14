@@ -186,7 +186,7 @@ call_in_background('report:monthly subscriptions', 'sleep 0.3');
 
 #### `db_is_sqlite()`
 
-Checks if default database connection driver is `sqlite` or not:
+Checks if the default database connection driver is `sqlite` or not:
 
 ```php
 if (db_is_sqlite()) {
@@ -196,7 +196,7 @@ if (db_is_sqlite()) {
 
 #### `db_is_mysql()`
 
-Checks if default database connection driver is `mysql` or not:
+Checks if the default database connection driver is `mysql` or not:
 
 ```php
 if (db_is_mysql()) {
