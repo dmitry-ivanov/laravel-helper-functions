@@ -9,7 +9,7 @@
 [![Total Downloads](https://poser.pugx.org/illuminated/helper-functions/downloads)](https://packagist.org/packages/illuminated/helper-functions)
 [![License](https://poser.pugx.org/illuminated/helper-functions/license)](https://packagist.org/packages/illuminated/helper-functions)
 
-Provides Laravel-specific and pure PHP helper functions.
+Laravel-specific and pure PHP helper functions.
 
 | Laravel | Helper Functions                                                            |
 | ------- | :-------------------------------------------------------------------------: |
