@@ -266,7 +266,7 @@ $backtrace = minimized_backtrace_as_string();
 
 #### `is_email()`
 
-Checks if specified string is valid email address or not:
+Checks if the specified string is a valid email address or not:
 
 ```php
 $isEmail = is_email('john.doe@example.com');
