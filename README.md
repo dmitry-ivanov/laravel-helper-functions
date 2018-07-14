@@ -340,7 +340,7 @@ $path = relative_path('/var/www/htdocs/example/public/../../', '/var/')
 
 #### `get_dump()`
 
-Returns nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html) with all of it's benefits:
+Returns nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html) with all of its benefits:
 
 ```php
 $array = [
