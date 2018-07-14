@@ -228,7 +228,7 @@ $hostname = db_mysql_variable('hostname');
 
 #### `to_default_timezone()`
 
-Converts passed datetime string to default timezone, which is `app.timezone` config setting:
+Converts passed datetime string to the default timezone, which is `app.timezone` config setting:
 
 ```php
 $date = to_default_timezone('2017-02-28T14:05:01Z');
