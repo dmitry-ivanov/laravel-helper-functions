@@ -1,5 +1,7 @@
 # Laravel Helper Functions
 
+[<img src="https://user-images.githubusercontent.com/1286821/43083932-4915853a-8ea0-11e8-8983-db9e0f04e772.png" alt="Become a Patron" width="160" />](https://www.patreon.com/illuminated)
+
 [![StyleCI](https://styleci.io/repos/61384075/shield?branch=5.3&style=flat)](https://styleci.io/repos/61384075)
 [![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions.svg?branch=5.3)](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions)
 [![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-helper-functions/badge.svg?branch=5.3)](https://coveralls.io/github/dmitry-ivanov/laravel-helper-functions?branch=5.3)
@@ -512,3 +514,9 @@ $xml = array_to_xml($array, 'Guys');
 //    </Bad_guy>
 // </Guys>
 ```
+
+## License
+
+The MIT License. Please see [License File](LICENSE) for more information.
+
+[<img src="https://user-images.githubusercontent.com/1286821/43086829-ff7c006e-8ea6-11e8-8b03-ecf97ca95b2e.png" alt="Support on Patreon" width="125" />](https://www.patreon.com/illuminated)
