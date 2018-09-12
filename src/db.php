@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Config;
 
 if (!function_exists('db_is_sqlite')) {
     function db_is_sqlite()

@@ -3,8 +3,8 @@
 namespace Illuminated\Helpers\HelperFunctions\Tests\Xml;
 
 use Exception;
-use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
 use SimpleXMLElement;
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
 
 class XmlToArrayTest extends TestCase
 {

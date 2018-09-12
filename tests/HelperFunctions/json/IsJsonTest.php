@@ -2,8 +2,8 @@
 
 namespace Illuminated\Helpers\HelperFunctions\Tests\Json;
 
-use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
 use StdClass;
+use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
 
 class IsJsonTest extends TestCase
 {

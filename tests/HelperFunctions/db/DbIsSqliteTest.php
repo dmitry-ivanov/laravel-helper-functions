@@ -2,8 +2,8 @@
 
 namespace Illuminated\Helpers\HelperFunctions\Tests\Db;
 
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Config;
 use Illuminated\Helpers\HelperFunctions\Tests\TestCase;
 
 /**
