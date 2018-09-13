@@ -1,7 +1,7 @@
 {
     "name": "illuminated/helper-functions",
     "description": "Laravel-specific and pure PHP helper functions.",
-    "keywords": ["laravel", "helper", "function"],
+    "keywords": ["laravel", "helpers", "functions", "collection"],
     "license": "MIT",
     "authors": [
         {
