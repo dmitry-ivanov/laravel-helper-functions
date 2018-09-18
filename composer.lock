@@ -330,16 +330,16 @@
         },
         {
             "name": "spatie/array-to-xml",
-            "version": "2.7.1",
+            "version": "2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/array-to-xml.git",
-                "reference": "cb8befcd0c58ccf8baa5491e61a5c1d02a3acbba"
+                "reference": "2b01cb1a04b4b65f0db03cd8a78df4b978fe5cd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/array-to-xml/zipball/cb8befcd0c58ccf8baa5491e61a5c1d02a3acbba",
-                "reference": "cb8befcd0c58ccf8baa5491e61a5c1d02a3acbba",
+                "url": "https://api.github.com/repos/spatie/array-to-xml/zipball/2b01cb1a04b4b65f0db03cd8a78df4b978fe5cd7",
+                "reference": "2b01cb1a04b4b65f0db03cd8a78df4b978fe5cd7",
                 "shasum": ""
             },
             "require": {
@@ -375,7 +375,7 @@
                 "convert",
                 "xml"
             ],
-            "time": "2018-02-20T15:21:24+00:00"
+            "time": "2018-09-17T11:45:05+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -1593,20 +1593,23 @@
         },
         {
             "name": "phpunit/php-file-iterator",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "cecbc684605bb0cc288828eb5d65d93d5c676d3c"
+                "reference": "050bedf145a257b1ff02746c31894800e5122946"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/cecbc684605bb0cc288828eb5d65d93d5c676d3c",
-                "reference": "cecbc684605bb0cc288828eb5d65d93d5c676d3c",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/050bedf145a257b1ff02746c31894800e5122946",
+                "reference": "050bedf145a257b1ff02746c31894800e5122946",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.1"
             },
             "type": "library",
             "extra": {
@@ -1636,7 +1639,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2018-06-11T11:44:00+00:00"
+            "time": "2018-09-13T20:33:42+00:00"
         },
         {
             "name": "phpunit/php-text-template",
