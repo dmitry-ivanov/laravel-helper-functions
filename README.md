@@ -22,6 +22,7 @@ Laravel-specific and pure PHP helper functions.
 | 5.5.*   | [5.5.*](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/5.5) |
 | 5.6.*   | [5.6.*](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/5.6) |
 | 5.7.*   | [5.7.*](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/5.7) |
+| 5.8.*   | [5.8.*](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/5.8) |
 
 ## Usage
 
