@@ -15,7 +15,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 
     public static $functions;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         self::$functions = mock();
     }

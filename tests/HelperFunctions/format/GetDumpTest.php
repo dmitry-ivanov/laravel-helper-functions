@@ -68,8 +68,8 @@ class GetDumpTest extends TestCase
     public function it_correctly_dumps_array_with_very_long_strings()
     {
         $dump = get_dump([str_repeat('x', 3000)]);
-        $this->assertNotContains('…', $dump);
-        $this->assertNotContains('...', $dump);
+        $this->assertStringNotContainsString('…', $dump);
+        $this->assertStringNotContainsString('...', $dump);
     }
 
     /** @test */
@@ -82,8 +82,8 @@ class GetDumpTest extends TestCase
         }, $array);
 
         $dump = get_dump($array);
-        $this->assertNotContains('…', $dump);
-        $this->assertNotContains('...', $dump);
+        $this->assertStringNotContainsString('…', $dump);
+        $this->assertStringNotContainsString('...', $dump);
     }
 
     /** @test */
@@ -93,7 +93,7 @@ class GetDumpTest extends TestCase
         $array = array_add([], $key, 'bar');
 
         $dump = get_dump($array);
-        $this->assertNotContains('…', $dump);
-        $this->assertNotContains('...', $dump);
+        $this->assertStringNotContainsString('…', $dump);
+        $this->assertStringNotContainsString('...', $dump);
     }
 }
