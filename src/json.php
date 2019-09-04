@@ -12,6 +12,6 @@ if (!function_exists('is_json')) {
             return false;
         }
 
-        return ($return ? $decoded : true);
+        return $return ? $decoded : true;
     }
 }

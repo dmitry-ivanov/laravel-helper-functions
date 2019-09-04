@@ -9,7 +9,7 @@ if (!function_exists('db_is_sqlite')) {
         $connection = DB::getDefaultConnection();
         $driver = Config::get("database.connections.{$connection}.driver");
 
-        return ($driver == 'sqlite');
+        return $driver === 'sqlite';
     }
 }
 
@@ -19,7 +19,7 @@ if (!function_exists('db_is_mysql')) {
         $connection = DB::getDefaultConnection();
         $driver = Config::get("database.connections.{$connection}.driver");
 
-        return ($driver == 'mysql');
+        return $driver === 'mysql';
     }
 }
 
@@ -35,6 +35,6 @@ if (!function_exists('db_mysql_variable')) {
     function db_mysql_variable($name)
     {
         $result = (array) DB::selectOne('show variables where variable_name = ?', [$name]);
-        return (isset($result['Value']) ? $result['Value'] : false);
+        return isset($result['Value']) ? $result['Value'] : false;
     }
 }
