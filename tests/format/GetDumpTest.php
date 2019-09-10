@@ -2,6 +2,7 @@
 
 namespace Illuminated\Helpers\Tests\Format;
 
+use Illuminate\Support\Arr;
 use Illuminated\Helpers\Tests\TestCase;
 
 class GetDumpTest extends TestCase
@@ -90,7 +91,7 @@ class GetDumpTest extends TestCase
     public function it_correctly_dumps_array_with_depth_50()
     {
         $key = trim(str_repeat('foo.', 50), '.');
-        $array = array_add([], $key, 'bar');
+        $array = Arr::add([], $key, 'bar');
 
         $dump = get_dump($array);
         $this->assertStringNotContainsString('…', $dump);

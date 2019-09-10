@@ -7,7 +7,7 @@ use Illuminated\Helpers\Tests\TestCase;
 class DbMysqlVariableTest extends TestCase
 {
     /** @test */
-    public function it_returns_false_for_unexisting_mysql_variable()
+    public function it_returns_false_for_not_existing_mysql_variable()
     {
         $mock = mock('alias:Illuminate\Support\Facades\DB');
         $mock->expects()->selectOne('show variables where variable_name = ?', ['fake'])->andReturnNull();

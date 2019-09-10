@@ -7,7 +7,7 @@ use Illuminated\Helpers\Tests\TestCase;
 class ArrayExceptValueTest extends TestCase
 {
     /** @test */
-    public function it_returns_array_itself_after_excluding_unexisting_value()
+    public function it_returns_array_itself_after_excluding_not_existing_value()
     {
         $this->assertEquals([], array_except_value([], null));
         $this->assertEquals([], array_except_value([], 'foo'));

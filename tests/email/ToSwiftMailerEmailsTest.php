@@ -4,7 +4,7 @@ namespace Illuminated\Helpers\Tests\Email;
 
 use Illuminated\Helpers\Tests\TestCase;
 
-class ToSwiftmailerEmailsTest extends TestCase
+class ToSwiftMailerEmailsTest extends TestCase
 {
     /** @test */
     public function it_returns_an_empty_array_for_empty_array()
