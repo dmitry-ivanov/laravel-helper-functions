@@ -29,8 +29,8 @@
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/HelperFunctions/TestCase.php"
-        ]
+        "psr-4": {
+            "Illuminated\\Helpers\\Tests\\": "tests/"
+        }
     }
 }
