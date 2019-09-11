@@ -1,8 +1,12 @@
 {
     "name": "illuminated/helper-functions",
     "description": "Laravel-specific and pure PHP helper functions.",
-    "keywords": ["laravel", "helpers", "functions", "collection"],
+    "keywords": ["laravel", "helpers", "functions", "multiarray", "backtrace", "xml"],
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/dmitry-ivanov/laravel-helper-functions/issues",
+        "source": "https://github.com/dmitry-ivanov/laravel-helper-functions"
+    },
     "authors": [{
         "name": "Dmitry Ivanov",
         "email": "dmitry.g.ivanov@gmail.com"
@@ -26,7 +30,9 @@
         "illuminated/testing-tools": "5.8.*"
     },
     "autoload": {
-        "files": ["src/autoload.php"],
+        "files": [
+            "src/autoload.php"
+        ],
         "psr-4": {
             "Illuminated\\Helpers\\": "src/Helpers/"
         }
@@ -35,5 +41,10 @@
         "psr-4": {
             "Illuminated\\Helpers\\Tests\\": "tests/"
         }
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
