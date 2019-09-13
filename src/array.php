@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Arr;
+
 if (!function_exists('array_except_value')) {
     function array_except_value(array $array, $value)
     {
@@ -21,7 +23,7 @@ if (!function_exists('multiarray_set')) {
     function multiarray_set(array &$multiarray, $key, $value)
     {
         foreach ($multiarray as &$array) {
-            array_set($array, $key, $value);
+            Arr::set($array, $key, $value);
         }
 
         return $multiarray;
@@ -36,7 +38,7 @@ if (!function_exists('multiarray_sort_by')) {
         $multiarray = array_shift($arguments);
         foreach ($arguments as $key => $value) {
             if (is_string($value)) {
-                $arguments[$key] = array_pluck($multiarray, $value);
+                $arguments[$key] = Arr::pluck($multiarray, $value);
             }
         }
         $arguments[] = &$multiarray;
