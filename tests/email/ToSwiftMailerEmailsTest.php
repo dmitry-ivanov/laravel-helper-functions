@@ -87,9 +87,9 @@ class ToSwiftMailerEmailsTest extends TestCase
     {
         $this->assertEquals(
             [
-                'john.doe@example.com',
+                0 => 'john.doe@example.com',
                 'jane.doe@example.com' => 'Jane Doe',
-                'mary.doe@example.com',
+                2 => 'mary.doe@example.com',
             ],
             to_swiftmailer_emails([
                 ['address' => 'john.doe@example.com'],

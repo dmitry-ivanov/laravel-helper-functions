@@ -109,7 +109,7 @@ $array = array_except_value($array, ['bar', 'baz']);
 
 #### `multiarray_set()`
 
-Set a value for each item of the multidimensional array using "dot" notation:
+Set value for each item of the multidimensional array using "dot" notation:
 
 ```php
 $array = [
@@ -129,7 +129,7 @@ multiarray_set($array, 'details.country', 'Germany');
 
 #### `multiarray_sort_by()`
 
-Sort the multidimensional array by few fields:
+Sort the multidimensional array by several fields:
 
 ```php
 $array = [
@@ -171,7 +171,7 @@ $sorted = multiarray_sort_by($array, 'name', SORT_ASC, 'model', SORT_DESC);
 
 #### `call_in_background()`
 
-Call artisan console command in the background. Code execution continues immediately, without waiting for results.
+Call the given artisan console command in background. Code execution continues immediately, without waiting for results.
 
 ```php
 call_in_background('report');
@@ -179,7 +179,7 @@ call_in_background('report');
 // "php artisan report" would be called in background
 ```
 
-Optional `before` and `after` sub-commands can be set as a second and third parameter:
+Optional `before` and `after` sub-commands could be provided:
 
 ```php
 call_in_background('report:monthly subscriptions', 'sleep 0.3');
@@ -191,7 +191,7 @@ call_in_background('report:monthly subscriptions', 'sleep 0.3');
 
 #### `db_is_sqlite()`
 
-Check if the default database connection driver is `sqlite` or not:
+Check whether the default database connection driver is `sqlite` or not:
 
 ```php
 if (db_is_sqlite()) {
@@ -201,7 +201,7 @@ if (db_is_sqlite()) {
 
 #### `db_is_mysql()`
 
-Check if the default database connection driver is `mysql` or not:
+Check whether the default database connection driver is `mysql` or not:
 
 ```php
 if (db_is_mysql()) {
@@ -211,7 +211,7 @@ if (db_is_mysql()) {
 
 #### `db_mysql_now()`
 
-Get database datetime, using `mysql` connection:
+Get the current MySQL datetime:
 
 ```php
 $now = db_mysql_now();
@@ -221,7 +221,7 @@ $now = db_mysql_now();
 
 #### `db_mysql_variable()`
 
-Get the value of specified `mysql` variable, or `false` if the variable doesn't exist:
+Get value of the specified MySQL variable:
 
 ```php
 $hostname = db_mysql_variable('hostname');
@@ -233,7 +233,7 @@ $hostname = db_mysql_variable('hostname');
 
 #### `to_default_timezone()`
 
-Convert passed datetime string to the default timezone, which is `app.timezone` config setting:
+Convert datetime to the default timezone (`app.timezone` config parameter):
 
 ```php
 $date = to_default_timezone('2017-02-28T14:05:01Z');
@@ -257,7 +257,7 @@ $backtrace = backtrace_as_string();
 
 #### `minimized_backtrace_as_string()`
 
-Get minimized backtrace as a string:
+Get minimized backtrace, as a string:
 
 ```php
 $backtrace = minimized_backtrace_as_string();
@@ -271,7 +271,7 @@ $backtrace = minimized_backtrace_as_string();
 
 #### `is_email()`
 
-Check if the specified string is a valid email address or not:
+Check whether the given string is an email address or not:
 
 ```php
 $isEmail = is_email('john.doe@example.com');
@@ -281,7 +281,7 @@ $isEmail = is_email('john.doe@example.com');
 
 #### `to_rfc2822_email()`
 
-Convert addresses data to [RFC 2822](http://www.faqs.org/rfcs/rfc2822.html) string, suitable for PHP [mail()](http://ua2.php.net/manual/en/function.mail.php) function:
+Convert addresses data to [RFC 2822](http://faqs.org/rfcs/rfc2822.html) string, suitable for PHP [mail()](https://php.net/manual/en/function.mail.php) function:
 
 ```php
 $address = to_rfc2822_email([
@@ -292,7 +292,7 @@ $address = to_rfc2822_email([
 // John Doe <john.doe@example.com>, mary.smith@example.com
 ```
 
-Also supports simplified syntax for single address item:
+Also supports simplified syntax for single address:
 
 ```php
 $address = to_rfc2822_email(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
@@ -302,7 +302,7 @@ $address = to_rfc2822_email(['address' => 'john.doe@example.com', 'name' => 'Joh
 
 #### `to_swiftmailer_emails()`
 
-Convert addresses data to format, which is suitable for [SwiftMailer library](http://swiftmailer.org/docs/messages.html):
+Convert addresses data to [SwiftMailer-suitable format](https://swiftmailer.org/docs/messages.html):
 
 ```php
 $addresses = to_swiftmailer_emails([
@@ -313,7 +313,7 @@ $addresses = to_swiftmailer_emails([
 // ["john.doe@example.com" => "John Doe", "mary.smith@example.com"]
 ```
 
-Also supports simplified syntax for single address item:
+Also supports simplified syntax for single address:
 
 ```php
 $address = to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
@@ -325,7 +325,7 @@ $address = to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' =>
 
 #### `relative_path()`
 
-Get the relative path for two directories:
+Get relative path for the given folders:
 
 ```php
 $path = relative_path('/var/www/htdocs', '/var/www/htdocs/example')
@@ -345,7 +345,7 @@ $path = relative_path('/var/www/htdocs/example/public/../../', '/var/')
 
 #### `get_dump()`
 
-Get nicely formatted string representation of the variable, using [Symfony VarDumper Component](http://symfony.com/doc/current/components/var_dumper/introduction.html):
+Get nicely formatted string representation of the variable, using [Symfony VarDumper Component](https://symfony.com/doc/current/components/var_dumper/introduction.html):
 
 ```php
 $array = [
@@ -368,7 +368,7 @@ $dump = get_dump($array);
 
 #### `format_bytes()`
 
-Format bytes into kilobytes, megabytes, gigabytes or terabytes, with specified precision:
+Format bytes into kilobytes, megabytes, gigabytes or terabytes:
 
 ```php
 $formatted = format_bytes(3333333);
@@ -407,7 +407,7 @@ $formatted = format_xml('<?xml version="1.0"?><root><task priority="low"><to>Joh
 
 #### `is_json()`
 
-Check if specified variable is a valid JSON-encoded string or not:
+Check whether the given value is a valid JSON-encoded string or not:
 
 ```php
 $isJson = is_json('{"foo":1,"bar":2,"baz":3}');
@@ -415,7 +415,7 @@ $isJson = is_json('{"foo":1,"bar":2,"baz":3}');
 // true
 ```
 
-It can return decoded JSON if you pass the second argument as `true`:
+It returns decoded JSON if you pass `true` as a second argument:
 
 ```php
 $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
@@ -427,7 +427,7 @@ $decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
 
 #### `str_lower()`
 
-Convert string to lowercase, using `mb_strtolower` in `UTF-8` encoding:
+Convert string to lowercase, assuming it's using the `UTF-8` encoding:
 
 ```php
 $lower = str_lower('TeSt');
@@ -437,7 +437,7 @@ $lower = str_lower('TeSt');
 
 #### `str_upper()`
 
-Convert string to uppercase, using `mb_strtoupper` in `UTF-8` encoding:
+Convert string to uppercase, assuming it's using the `UTF-8` encoding:
 
 ```php
 $upper = str_upper('TeSt');
@@ -449,7 +449,7 @@ $upper = str_upper('TeSt');
 
 #### `is_windows_os()`
 
-Check if PHP is running on Windows OS or not:
+Check whether the operating system is Windows or not:
 
 ```php
 $isWindowsOs = is_windows_os();
@@ -461,7 +461,7 @@ $isWindowsOs = is_windows_os();
 
 #### `xml_to_array()`
 
-Convert XML string to the array:
+Convert XML string to array:
 
 ```php
 $array = xml_to_array('<?xml version="1.0"?>
@@ -495,11 +495,11 @@ $array = xml_to_array('<?xml version="1.0"?>
 // ]
 ```
 
-Alternatively, you can pass an instance of a `SimpleXMLElement` object, to get the same results.
+Alternatively, you can pass an instance of `SimpleXMLElement` as a first argument.
 
 #### `array_to_xml()`
 
-Convert array to XML string using [spatie/array-to-xml](https://github.com/spatie/array-to-xml) package:
+Convert array to XML string:
 
 ```php
 $array = [

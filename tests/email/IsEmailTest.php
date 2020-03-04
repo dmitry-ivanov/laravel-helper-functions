@@ -2,8 +2,8 @@
 
 namespace Illuminated\Helpers\Tests\Email;
 
-use StdClass;
 use Illuminated\Helpers\Tests\TestCase;
+use StdClass;
 
 class IsEmailTest extends TestCase
 {

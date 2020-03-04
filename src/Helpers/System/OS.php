@@ -4,8 +4,13 @@ namespace Illuminated\Helpers\System;
 
 class OS
 {
+    /**
+     * Check whether the operating system is Windows or not.
+     *
+     * @return bool
+     */
     public static function isWindows()
     {
-        return strtoupper(substr(php_uname(), 0, 7)) === 'WINDOWS';
+        return stripos(php_uname(), 'windows') === 0;
     }
 }
