@@ -6,26 +6,31 @@ use Illuminated\Helpers\Tests\TestCase;
 
 class CommandTest extends TestCase
 {
+    /**
+     * This method is called before each test.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         parent::setUp();
 
         $phpBinaryMock = mock('overload:Symfony\Component\Process\PhpExecutableFinder');
-        $phpBinaryMock->expects()->find()->andReturn('php');
+        $phpBinaryMock->expects('find')->andReturn('php');
     }
 
     /** @test */
     public function only_one_constructor_argument_is_required()
     {
-        $command = new Command('test');
-        $this->assertInstanceOf(Command::class, $command);
+        $command = new BackgroundCommand('test');
+        $this->assertInstanceOf(BackgroundCommand::class, $command);
     }
 
     /** @test */
     public function it_has_static_constructor_named_factory()
     {
-        $command = Command::factory('test');
-        $this->assertInstanceOf(Command::class, $command);
+        $command = BackgroundCommand::factory('test');
+        $this->assertInstanceOf(BackgroundCommand::class, $command);
     }
 
     /**
@@ -37,8 +42,7 @@ class CommandTest extends TestCase
     {
         $this->expectsExecWith('(php artisan test:command) > /dev/null 2>&1 &');
 
-        $command = Command::factory('test:command');
-        $command->runInBackground();
+        BackgroundCommand::factory('test:command')->run();
     }
 
     /** @test */
@@ -49,8 +53,7 @@ class CommandTest extends TestCase
         $this->emulateWindowsOs();
         $this->expectsExecWith('start /B php artisan test:command');
 
-        $command = Command::factory('test:command');
-        $command->runInBackground();
+        BackgroundCommand::factory('test:command')->run();
     }
 
     /**
@@ -58,12 +61,11 @@ class CommandTest extends TestCase
      * @runInSeparateProcess
      * @preserveGlobalState disabled
      */
-    public function run_in_background_supports_before_subcommand()
+    public function run_in_background_supports_the_before_command()
     {
         $this->expectsExecWith('(before command && php artisan test:command) > /dev/null 2>&1 &');
 
-        $command = Command::factory('test:command', 'before command');
-        $command->runInBackground();
+        BackgroundCommand::factory('test:command', 'before command')->run();
     }
 
     /**
@@ -71,12 +73,11 @@ class CommandTest extends TestCase
      * @runInSeparateProcess
      * @preserveGlobalState disabled
      */
-    public function run_in_background_supports_after_subcommand()
+    public function run_in_background_supports_the_after_command()
     {
         $this->expectsExecWith('(php artisan test:command && after command) > /dev/null 2>&1 &');
 
-        $command = Command::factory('test:command', null, 'after command');
-        $command->runInBackground();
+        BackgroundCommand::factory('test:command', '', 'after command')->run();
     }
 
     /**
@@ -84,12 +85,11 @@ class CommandTest extends TestCase
      * @runInSeparateProcess
      * @preserveGlobalState disabled
      */
-    public function run_in_background_supports_before_and_after_subcommands_together()
+    public function run_in_background_supports_the_before_and_after_commands_together()
     {
         $this->expectsExecWith('(before && php artisan test:command && after) > /dev/null 2>&1 &');
 
-        $command = Command::factory('test:command', 'before', 'after');
-        $command->runInBackground();
+        BackgroundCommand::factory('test:command', 'before', 'after')->run();
     }
 
     /**
@@ -102,13 +102,20 @@ class CommandTest extends TestCase
         $this->expectsExecWith('(before && php custom-artisan test:command && after) > /dev/null 2>&1 &');
 
         define('ARTISAN_BINARY', 'custom-artisan');
-        $command = Command::factory('test:command', 'before', 'after');
-        $command->runInBackground();
+        BackgroundCommand::factory('test:command', 'before', 'after')->run();
     }
 }
 
 if (!function_exists(__NAMESPACE__ . '\exec')) {
-    function exec($command)
+    /**
+     * Mock for the `exec` function.
+     *
+     * @param string $command
+     * @return mixed
+     *
+     * @noinspection PhpUndefinedMethodInspection
+     */
+    function exec(string $command)
     {
         return TestCase::$functions->exec($command);
     }

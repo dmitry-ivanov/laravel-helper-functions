@@ -1,10 +1,20 @@
 <?php
 
-use Illuminated\Helpers\Artisan\Command;
+use Illuminated\Helpers\Artisan\BackgroundCommand;
 
 if (!function_exists('call_in_background')) {
-    function call_in_background($command, $before = null, $after = null)
+    /**
+     * Call the given artisan console command in background.
+     *
+     * Code execution continues immediately, without waiting for results.
+     *
+     * @param string $command
+     * @param string $before
+     * @param string $after
+     * @return void
+     */
+    function call_in_background(string $command, string $before = '', string $after = '')
     {
-        Command::factory($command, $before, $after)->runInBackground();
+        BackgroundCommand::factory($command, $before, $after)->run();
     }
 }

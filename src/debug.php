@@ -1,32 +1,38 @@
 <?php
 
 if (!function_exists('backtrace_as_string')) {
+    /**
+     * Get backtrace without arguments, as a string.
+     *
+     * @return string
+     */
     function backtrace_as_string()
     {
         ob_start();
 
         debug_print_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
-        $backtrace = ob_get_contents();
 
-        ob_end_clean();
-
-        return $backtrace;
+        return ob_get_clean();
     }
 }
 
 if (!function_exists('minimized_backtrace_as_string')) {
+    /**
+     * Get minimized backtrace, as a string.
+     *
+     * @return string
+     */
     function minimized_backtrace_as_string()
     {
-        $minimized = [];
+        $backtrace = explode("\n", backtrace_as_string());
 
-        $backtrace = backtrace_as_string();
-        $backtrace = explode("\n", $backtrace);
-        foreach ($backtrace as $item) {
-            if (preg_match('/(#\d+) .*? called at \[(.*?)\]/', $item, $matches)) {
-                $minimized[] = $matches[1] . ' ' . $matches[2];
-            }
-        }
-
-        return implode("\n", $minimized);
+        return collect($backtrace)
+            ->map(function (string $line) {
+                return preg_match('/(#\d+) .*? called at \[(.*?)]/', $line, $matches)
+                    ? "{$matches[1]} {$matches[2]}"
+                    : false;
+            })
+            ->filter()
+            ->implode("\n");
     }
 }
