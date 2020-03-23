@@ -15,6 +15,7 @@ Laravel-specific and pure PHP helper functions.
 
 | Laravel | Helper Functions                                                            |
 | ------- | :-------------------------------------------------------------------------: |
+| 7.x     | [7.x](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/7.x)   |
 | 6.x     | [6.x](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/6.x)   |
 | 5.8.*   | [5.8.*](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/5.8) |
 | 5.7.*   | [5.7.*](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/5.7) |
