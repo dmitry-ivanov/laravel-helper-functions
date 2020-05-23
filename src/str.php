@@ -6,6 +6,8 @@ if (!function_exists('str_lower')) {
      *
      * @param string $string
      * @return string
+     *
+     * @deprecated Use Illuminate\Support\Str::lower() instead.
      */
     function str_lower(string $string)
     {
@@ -19,6 +21,8 @@ if (!function_exists('str_upper')) {
      *
      * @param string $string
      * @return string
+     *
+     * @deprecated Use Illuminate\Support\Str::upper() instead.
      */
     function str_upper(string $string)
     {
