@@ -4,7 +4,7 @@ use Spatie\ArrayToXml\ArrayToXml;
 
 if (!function_exists('xml_to_array')) {
     /**
-     * Convert XML string to array.
+     * Convert the given XML to array.
      *
      * @param SimpleXMLElement|string $xml
      * @return array
@@ -21,7 +21,7 @@ if (!function_exists('xml_to_array')) {
 
 if (!function_exists('array_to_xml')) {
     /**
-     * Convert array to XML string.
+     * Convert the given array to XML string.
      *
      * @param array $array
      * @param string $rootElement

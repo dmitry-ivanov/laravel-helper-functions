@@ -38,7 +38,7 @@ Laravel-specific and pure PHP helper functions.
 
 ## Available functions
 
-> New functions are always adding. Feel free to contribute.
+> Feel free to contribute.
 
 - [Array](#array)
     - [array_except_value](#array_except_value)
@@ -95,22 +95,20 @@ Laravel-specific and pure PHP helper functions.
 Remove the given values from the array:
 
 ```php
-$array = ['foo', 'bar', 'baz'];
-$array = array_except_value($array, 'baz');
+array_except_value(['foo', 'bar', 'baz'], 'baz');
 
-// ['foo', 'bar']
+// ["foo", "bar"]
 ```
 
 ```php
-$array = ['foo', 'bar', 'baz'];
-$array = array_except_value($array, ['bar', 'baz']);
+array_except_value(['foo', 'bar', 'baz'], ['bar', 'baz']);
 
-// ['foo']
+// ["foo"]
 ```
 
 #### `multiarray_set()`
 
-Set value for each item of the multidimensional array using "dot" notation:
+Set the value for each item of the multidimensional array using "dot" notation:
 
 ```php
 $array = [
@@ -122,9 +120,9 @@ $array = [
 multiarray_set($array, 'details.country', 'Germany');
 
 // [
-//     ['name' => 'Mercedes-Benz', 'details' => ['type' => 'SUV', 'country' => 'Germany']],
-//     ['name' => 'BMW', 'details' => ['type' => 'SUV', 'country' => 'Germany']],
-//     ['name' => 'Porsche', 'details' => ['type' => 'SUV', 'country' => 'Germany']],
+//     ["name" => "Mercedes-Benz", "details" => ["type" => "SUV", "country" => "Germany"]],
+//     ["name" => "BMW", "details" => ["type" => "SUV", "country" => "Germany"]],
+//     ["name" => "Porsche", "details" => ["type" => "SUV", "country" => "Germany"]],
 // ]
 ```
 
@@ -139,17 +137,18 @@ $array = [
     ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
     ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
 ];
+
 $sorted = multiarray_sort_by($array, 'name', 'model');
 
 // [
-//     ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
-//     ['name' => 'Mercedes-Benz', 'model' => 'GLE Coupe', 'price' => 110000],
-//     ['name' => 'Mercedes-Benz', 'model' => 'GLS', 'price' => 120000],
-//     ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
+//     ["name" => "BMW", "model" => "X6", "price" => 77000],
+//     ["name" => "Mercedes-Benz", "model" => "GLE Coupe", "price" => 110000],
+//     ["name" => "Mercedes-Benz", "model" => "GLS", "price" => 120000],
+//     ["name" => "Porsche", "model" => "Cayenne", "price" => 117000],
 // ]
 ```
 
-You can set required sort order:
+Also, you can change the sort order:
 
 ```php
 $array = [
@@ -158,13 +157,14 @@ $array = [
     ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
     ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
 ];
+
 $sorted = multiarray_sort_by($array, 'name', SORT_ASC, 'model', SORT_DESC);
 
 // [
-//     ['name' => 'BMW', 'model' => 'X6', 'price' => 77000],
-//     ['name' => 'Mercedes-Benz', 'model' => 'GLS', 'price' => 120000],
-//     ['name' => 'Mercedes-Benz', 'model' => 'GLE Coupe', 'price' => 110000],
-//     ['name' => 'Porsche', 'model' => 'Cayenne', 'price' => 117000],
+//     ["name" => "BMW", "model" => "X6", "price" => 77000],
+//     ["name" => "Mercedes-Benz", "model" => "GLS", "price" => 120000],
+//     ["name" => "Mercedes-Benz", "model" => "GLE Coupe", "price" => 110000],
+//     ["name" => "Porsche", "model" => "Cayenne", "price" => 117000],
 // ]
 ```
 
@@ -172,7 +172,9 @@ $sorted = multiarray_sort_by($array, 'name', SORT_ASC, 'model', SORT_DESC);
 
 #### `call_in_background()`
 
-Call the given artisan console command in background. Code execution continues immediately, without waiting for results.
+Call the given artisan console command in background.
+
+Code execution continues immediately, without waiting for results.
 
 ```php
 call_in_background('report');
@@ -180,7 +182,7 @@ call_in_background('report');
 // "php artisan report" would be called in background
 ```
 
-Optional `before` and `after` sub-commands could be provided:
+Optional `before` and `after` sub-commands could be used:
 
 ```php
 call_in_background('report:monthly subscriptions', 'sleep 0.3');
@@ -195,9 +197,9 @@ call_in_background('report:monthly subscriptions', 'sleep 0.3');
 Check whether the default database connection driver is `sqlite` or not:
 
 ```php
-if (db_is_sqlite()) {
-    // sqlite-specific code here
-}
+db_is_sqlite();
+
+// false
 ```
 
 #### `db_is_mysql()`
@@ -205,9 +207,9 @@ if (db_is_sqlite()) {
 Check whether the default database connection driver is `mysql` or not:
 
 ```php
-if (db_is_mysql()) {
-    // mysql-specific code here
-}
+db_is_mysql();
+
+// true
 ```
 
 #### `db_mysql_now()`
@@ -215,9 +217,9 @@ if (db_is_mysql()) {
 Get the current MySQL datetime:
 
 ```php
-$now = db_mysql_now();
+db_mysql_now();
 
-// 2016-06-23 15:23:16
+// "2020-05-25 20:09:33"
 ```
 
 #### `db_mysql_variable()`
@@ -225,21 +227,21 @@ $now = db_mysql_now();
 Get value of the specified MySQL variable:
 
 ```php
-$hostname = db_mysql_variable('hostname');
+db_mysql_variable('hostname');
 
-// localhost
+// "localhost"
 ```
 
 ## Date
 
 #### `to_default_timezone()`
 
-Convert datetime to the default timezone (`app.timezone` config parameter):
+Convert the given datetime to the default timezone (see `app.timezone` config):
 
 ```php
-$date = to_default_timezone('2017-02-28T14:05:01Z');
+to_default_timezone('2017-02-28T14:05:01Z');
 
-// 2017-02-28 16:05:01, assuming timezone is Europe/Kiev
+// "2017-02-28 16:05:01", assuming that `app.timezone` is "Europe/Kiev"
 ```
 
 ## Debug
@@ -275,7 +277,7 @@ $backtrace = minimized_backtrace_as_string();
 Check whether the given string is an email address or not:
 
 ```php
-$isEmail = is_email('john.doe@example.com');
+is_email('john.doe@example.com');
 
 // true
 ```
@@ -285,20 +287,20 @@ $isEmail = is_email('john.doe@example.com');
 Convert addresses data to [RFC 2822](http://faqs.org/rfcs/rfc2822.html) string, suitable for PHP [mail()](https://php.net/manual/en/function.mail.php) function:
 
 ```php
-$address = to_rfc2822_email([
+to_rfc2822_email([
     ['address' => 'john.doe@example.com', 'name' => 'John Doe'],
     ['address' => 'mary.smith@example.com'],
 ]);
 
-// John Doe <john.doe@example.com>, mary.smith@example.com
+// "John Doe <john.doe@example.com>, mary.smith@example.com"
 ```
 
-Also supports simplified syntax for single address:
+Also, it supports simplified syntax for a single address:
 
 ```php
-$address = to_rfc2822_email(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
+to_rfc2822_email(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
 
-// John Doe <john.doe@example.com>
+// "John Doe <john.doe@example.com>"
 ```
 
 #### `to_swiftmailer_emails()`
@@ -306,7 +308,7 @@ $address = to_rfc2822_email(['address' => 'john.doe@example.com', 'name' => 'Joh
 Convert addresses data to [SwiftMailer-suitable format](https://swiftmailer.org/docs/messages.html):
 
 ```php
-$addresses = to_swiftmailer_emails([
+to_swiftmailer_emails([
     ['address' => 'john.doe@example.com', 'name' => 'John Doe'],
     ['address' => 'mary.smith@example.com'],
 ]);
@@ -314,10 +316,10 @@ $addresses = to_swiftmailer_emails([
 // ["john.doe@example.com" => "John Doe", "mary.smith@example.com"]
 ```
 
-Also supports simplified syntax for single address:
+Also, it supports simplified syntax for a single address:
 
 ```php
-$address = to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
+to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
 
 // ["john.doe@example.com" => "John Doe"]
 ```
@@ -326,40 +328,41 @@ $address = to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' =>
 
 #### `relative_path()`
 
-Get relative path for the given folders:
+Get a relative path for the given folders:
 
 ```php
-$path = relative_path('/var/www/htdocs', '/var/www/htdocs/example')
+relative_path('/var/www/htdocs', '/var/www/htdocs/example');
 
-// '../'
+// "../"
 ```
 
-You can pass relative path as a parameter too:
+You can pass the relative path as a parameter too:
 
 ```php
-$path = relative_path('/var/www/htdocs/example/public/../../', '/var/')
+relative_path('/var/www/htdocs/example/public/../../', '/var/');
 
-// 'www/htdocs/'
+// "www/htdocs/"
 ```
 
 ## Format
 
 #### `get_dump()`
 
-Get nicely formatted string representation of the variable, using [Symfony VarDumper Component](https://symfony.com/doc/current/components/var_dumper/introduction.html):
+Get a nicely formatted string representation of the variable, using the [Symfony VarDumper Component](https://symfony.com/doc/current/components/var_dumper/introduction.html):
 
 ```php
 $array = [
-    'a simple string' => 'in an array of 5 elements',
+    'a simple string' => 'Hello!',
     'a float' => 1.0,
     'an integer' => 1,
     'a boolean' => true,
     'an empty array' => [],
 ];
+
 $dump = get_dump($array);
 
 // array:5 [
-//     "a simple string" => "in an array of 5 elements"
+//     "a simple string" => "Hello!"
 //     "a float" => 1.0
 //     "an integer" => 1
 //     "a boolean" => true
@@ -372,17 +375,17 @@ $dump = get_dump($array);
 Format bytes into kilobytes, megabytes, gigabytes or terabytes:
 
 ```php
-$formatted = format_bytes(3333333);
+format_bytes(3333333);
 
-// 3.18 MB
+// "3.18 MB"
 ```
 
 #### `format_xml()`
 
-Format XML string using new lines and indents:
+Format the given XML string using new lines and indents:
 
 ```php
-$formatted = format_xml('<?xml version="1.0"?><root><task priority="low"><to>John</to><from>Jane</from><title>Go to the shop</title></task><task priority="medium"><to>John</to><from>Paul</from><title>Finish the report</title></task><task priority="high"><to>Jane</to><from>Jeff</from><title>Clean the house</title></task></root>');
+format_xml('<?xml version="1.0"?><root><task priority="low"><to>John</to><from>Jane</from><title>Go to the shop</title></task><task priority="medium"><to>John</to><from>Paul</from><title>Finish the report</title></task><task priority="high"><to>Jane</to><from>Jeff</from><title>Clean the house</title></task></root>');
 
 // <?xml version="1.0"?>
 // <root>
@@ -411,7 +414,7 @@ $formatted = format_xml('<?xml version="1.0"?><root><task priority="low"><to>Joh
 Check whether the given value is a valid JSON-encoded string or not:
 
 ```php
-$isJson = is_json('{"foo":1,"bar":2,"baz":3}');
+is_json('{"foo":1,"bar":2,"baz":3}');
 
 // true
 ```
@@ -419,31 +422,35 @@ $isJson = is_json('{"foo":1,"bar":2,"baz":3}');
 It returns decoded JSON if you pass `true` as a second argument:
 
 ```php
-$decoded = is_json('{"foo":1,"bar":2,"baz":3}', true);
+is_json('{"foo":1,"bar":2,"baz":3}', true);
 
-// ['foo' => 1, 'bar' => 2, 'baz' => 3]
+// ["foo" => 1, "bar" => 2, "baz" => 3]
 ```
 
 ## Strings
 
 #### `str_lower()`
 
-Convert string to lowercase, assuming it's using the `UTF-8` encoding:
+> Deprecated, use the `Illuminate\Support\Str::lower()` instead.
+
+Convert string to lowercase, assuming it's in the `UTF-8` encoding:
 
 ```php
-$lower = str_lower('TeSt');
+str_lower('TeSt');
 
-// test
+// "test"
 ```
 
 #### `str_upper()`
 
-Convert string to uppercase, assuming it's using the `UTF-8` encoding:
+> Deprecated, use the `Illuminate\Support\Str::upper()` instead.
+
+Convert string to uppercase, assuming it's in the `UTF-8` encoding:
 
 ```php
-$upper = str_upper('TeSt');
+str_upper('TeSt');
 
-// TEST
+// "TEST"
 ```
 
 ## System
@@ -453,19 +460,19 @@ $upper = str_upper('TeSt');
 Check whether the operating system is Windows or not:
 
 ```php
-$isWindowsOs = is_windows_os();
+is_windows_os();
 
-// boolean
+// false
 ```
 
 ## Xml
 
 #### `xml_to_array()`
 
-Convert XML string to array:
+Convert the given XML to array:
 
 ```php
-$array = xml_to_array('<?xml version="1.0"?>
+xml_to_array('<?xml version="1.0"?>
 <Guys>
     <Good_guy Rating="100">
         <name>Luke Skywalker</name>
@@ -496,11 +503,11 @@ $array = xml_to_array('<?xml version="1.0"?>
 // ]
 ```
 
-Alternatively, you can pass an instance of `SimpleXMLElement` as a first argument.
+Alternatively, you can pass an instance of the `SimpleXMLElement` class instead of a string.
 
 #### `array_to_xml()`
 
-Convert array to XML string:
+Convert the given array to XML string:
 
 ```php
 $array = [
@@ -537,6 +544,6 @@ $xml = array_to_xml($array, 'Guys');
 
 ## License
 
-The MIT License. Please see [License File](LICENSE.md) for more information.
+The MIT License. Check the [License File](LICENSE.md) for more information.
 
 [<img src="https://user-images.githubusercontent.com/1286821/43086829-ff7c006e-8ea6-11e8-8b03-ecf97ca95b2e.png" alt="Support on Patreon" width="125" />](https://patreon.com/dmitryivanov)

@@ -5,7 +5,7 @@ use Symfony\Component\VarDumper\Dumper\CliDumper;
 
 if (!function_exists('get_dump')) {
     /**
-     * Get nicely formatted string representation of the variable, using Symfony VarDumper Component.
+     * Get a nicely formatted string representation of the variable, using the Symfony VarDumper Component.
      *
      * @see https://symfony.com/doc/current/components/var_dumper/introduction.html
      *
@@ -55,7 +55,7 @@ if (!function_exists('format_bytes')) {
 
 if (!function_exists('format_xml')) {
     /**
-     * Format XML string using new lines and indents.
+     * Format the given XML string using new lines and indents.
      *
      * @param string $xml
      * @return string
