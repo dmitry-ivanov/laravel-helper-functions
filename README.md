@@ -34,7 +34,13 @@ Laravel-specific and pure PHP helper functions.
     composer require illuminated/helper-functions
     ```
 
-2. Use any of the provided helper functions.
+2. Use any of the provided helper functions:
+
+    ```php
+    if (is_windows_os()) {
+        call_in_background('switch-to-mac');
+    }
+    ```
 
 ## Available functions
 
