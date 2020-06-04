@@ -2,10 +2,12 @@
 
 if (!function_exists('str_lower')) {
     /**
-     * Convert string to lowercase, assuming it's using the `UTF-8` encoding.
+     * Convert string to lowercase, assuming it's in the `UTF-8` encoding.
      *
      * @param string $string
      * @return string
+     *
+     * @deprecated Use Illuminate\Support\Str::lower() instead.
      */
     function str_lower(string $string)
     {
@@ -15,10 +17,12 @@ if (!function_exists('str_lower')) {
 
 if (!function_exists('str_upper')) {
     /**
-     * Convert string to uppercase, assuming it's using the `UTF-8` encoding.
+     * Convert string to uppercase, assuming it's in the `UTF-8` encoding.
      *
      * @param string $string
      * @return string
+     *
+     * @deprecated Use Illuminate\Support\Str::upper() instead.
      */
     function str_upper(string $string)
     {

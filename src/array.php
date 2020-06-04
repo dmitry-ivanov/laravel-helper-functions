@@ -26,7 +26,7 @@ if (!function_exists('array_except_value')) {
 
 if (!function_exists('multiarray_set')) {
     /**
-     * Set value for each item of the multidimensional array using "dot" notation.
+     * Set the value for each item of the multidimensional array using "dot" notation.
      *
      * @param array $multiarray
      * @param mixed $key
