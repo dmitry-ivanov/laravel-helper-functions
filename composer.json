@@ -1,7 +1,7 @@
 {
     "name": "illuminated/helper-functions",
     "description": "Laravel-specific and pure PHP Helper Functions.",
-    "keywords": ["laravel", "helpers", "functions", "multiarray", "backtrace", "xml"],
+    "keywords": ["laravel", "helpers", "functions", "background-command", "multiarray", "backtrace", "xml-parser", "xml-to-array", "array-to-xml"],
     "license": "MIT",
     "support": {
         "issues": "https://github.com/dmitry-ivanov/laravel-helper-functions/issues",
