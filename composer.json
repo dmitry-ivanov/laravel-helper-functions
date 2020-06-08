@@ -1,6 +1,6 @@
 {
     "name": "illuminated/helper-functions",
-    "description": "Laravel-specific and pure PHP helper functions.",
+    "description": "Laravel-specific and pure PHP Helper Functions.",
     "keywords": ["laravel", "helpers", "functions", "multiarray", "backtrace", "xml"],
     "license": "MIT",
     "support": {
