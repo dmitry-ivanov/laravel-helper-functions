@@ -17,6 +17,7 @@ Laravel-specific and pure PHP Helper Functions.
 
 | Laravel | Helper Functions                                                            |
 | ------- | :-------------------------------------------------------------------------: |
+| 8.x     | [8.x](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/8.x)   |
 | 7.x     | [7.x](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/7.x)   |
 | 6.x     | [6.x](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/6.x)   |
 | 5.8.*   | [5.8.*](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/5.8) |
@@ -84,10 +85,6 @@ Laravel-specific and pure PHP Helper Functions.
 
 - [Json](#json)
     - [is_json](#is_json)
-
-- [Strings](#strings)
-    - [str_lower](#str_lower)
-    - [str_upper](#str_upper)
 
 - [System](#system)
     - [is_windows_os](#is_windows_os)
@@ -433,32 +430,6 @@ It returns decoded JSON if you pass `true` as a second argument:
 is_json('{"foo":1,"bar":2,"baz":3}', true);
 
 // ["foo" => 1, "bar" => 2, "baz" => 3]
-```
-
-## Strings
-
-#### `str_lower()`
-
-> Deprecated, use the `Illuminate\Support\Str::lower()` instead.
-
-Convert string to lowercase, assuming it's in the `UTF-8` encoding:
-
-```php
-str_lower('TeSt');
-
-// "test"
-```
-
-#### `str_upper()`
-
-> Deprecated, use the `Illuminate\Support\Str::upper()` instead.
-
-Convert string to uppercase, assuming it's in the `UTF-8` encoding:
-
-```php
-str_upper('TeSt');
-
-// "TEST"
 ```
 
 ## System

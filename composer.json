@@ -12,22 +12,22 @@
         "email": "dmitry.g.ivanov@gmail.com"
     }],
     "require": {
-        "php": "^7.2.5",
+        "php": "^7.3",
         "ext-dom": "*",
         "ext-json": "*",
         "ext-simplexml": "*",
-        "illuminate/support": "^7.0",
+        "illuminate/support": "^8.0",
         "nesbot/carbon": "^2.17",
-        "symfony/filesystem": "^5.0",
-        "symfony/finder": "^5.0",
-        "symfony/process": "^5.0",
-        "symfony/var-dumper": "^5.0",
+        "symfony/filesystem": "^5.1",
+        "symfony/finder": "^5.1",
+        "symfony/process": "^5.1",
+        "symfony/var-dumper": "^5.1",
         "spatie/array-to-xml": "^2.7"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.4|^9.0",
         "mockery/mockery": "^1.3.1",
-        "illuminated/testing-tools": "^7.0"
+        "illuminated/testing-tools": "^8.0"
     },
     "autoload": {
         "files": [
