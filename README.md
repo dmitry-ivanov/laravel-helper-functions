@@ -2,9 +2,9 @@
 
 [<img src="https://user-images.githubusercontent.com/1286821/43083932-4915853a-8ea0-11e8-8983-db9e0f04e772.png" alt="Become a Patron" width="160" />](https://patreon.com/dmitryivanov)
 
-[![StyleCI](https://styleci.io/repos/61384075/shield?branch=6.x&style=flat)](https://styleci.io/repos/61384075)
-[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions.svg?branch=6.x)](https://travis-ci.org/dmitry-ivanov/laravel-helper-functions)
-[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-helper-functions/badge.svg?branch=6.x)](https://coveralls.io/github/dmitry-ivanov/laravel-helper-functions?branch=6.x)
+[![StyleCI](https://github.styleci.io/repos/61384075/shield?branch=6.x&style=flat)](https://github.styleci.io/repos/61384075?branch=6.x)
+[![Build Status](https://img.shields.io/github/workflow/status/dmitry-ivanov/laravel-helper-functions/tests/6.x)](https://github.com/dmitry-ivanov/laravel-helper-functions/actions?query=workflow%3Atests+branch%3A6.x)
+[![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-helper-functions/6.x)](https://app.codecov.io/gh/dmitry-ivanov/laravel-helper-functions/branch/6.x)
 
 [![Latest Stable Version](https://poser.pugx.org/illuminated/helper-functions/v/stable)](https://packagist.org/packages/illuminated/helper-functions)
 [![Latest Unstable Version](https://poser.pugx.org/illuminated/helper-functions/v/unstable)](https://packagist.org/packages/illuminated/helper-functions)
