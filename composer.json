@@ -25,7 +25,7 @@
         "spatie/array-to-xml": "^2.7"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.4|^9.0",
+        "phpunit/phpunit": "^9.0",
         "mockery/mockery": "^1.3.1",
         "illuminated/testing-tools": "^8.0"
     },
