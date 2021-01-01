@@ -9,22 +9,10 @@ class BacktraceAsStringTest extends TestCase
     /** @test */
     public function it_returns_backtrace_as_string_without_args()
     {
-        $start = file_get_contents($this->getExpectedBacktracePath());
+        $pattern = file_get_contents(__DIR__ . '/BacktraceAsStringTest/pattern.txt');
         $backtrace = $this->getBacktrace();
 
-        $this->assertStringStartsWith($start, $backtrace);
-    }
-
-    /**
-     * Get the expected backtrace path.
-     *
-     * @return string
-     */
-    private function getExpectedBacktracePath()
-    {
-        $travis = $this->isTravis() ? '.travis' : '';
-
-        return __DIR__ . "/BacktraceAsStringTest/backtrace{$travis}.txt";
+        $this->assertRegExp("/{$pattern}/m", $backtrace);
     }
 
     /**
