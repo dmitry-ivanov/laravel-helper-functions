@@ -9,7 +9,7 @@ class BacktraceAsStringTest extends TestCase
     /** @test */
     public function it_returns_backtrace_as_string_without_args()
     {
-        $pattern = file_get_contents(__DIR__ . "/BacktraceAsStringTest/pattern.txt");
+        $pattern = file_get_contents(__DIR__ . '/BacktraceAsStringTest/pattern.txt');
         $backtrace = $this->getBacktrace();
 
         $this->assertRegExp("/{$pattern}/m", $backtrace);

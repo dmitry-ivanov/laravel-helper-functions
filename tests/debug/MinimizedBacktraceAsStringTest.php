@@ -9,7 +9,7 @@ class MinimizedBacktraceAsStringTest extends TestCase
     /** @test */
     public function it_returns_minimized_backtrace_as_string()
     {
-        $pattern = file_get_contents(__DIR__ . "/MinimizedBacktraceAsStringTest/pattern.txt");
+        $pattern = file_get_contents(__DIR__ . '/MinimizedBacktraceAsStringTest/pattern.txt');
         $backtrace = $this->getBacktrace();
 
         $this->assertRegExp("/{$pattern}/m", $backtrace);
