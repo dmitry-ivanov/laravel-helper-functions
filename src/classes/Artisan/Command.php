@@ -57,6 +57,6 @@ class Command
 
     protected function getArtisan()
     {
-        return defined('ARTISAN_BINARY') ? ARTISAN_BINARY : 'artisan';
+        return env('ARTISAN_BINARY');
     }
 }
