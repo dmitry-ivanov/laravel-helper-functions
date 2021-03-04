@@ -8,10 +8,10 @@
 [![Build Status](https://img.shields.io/github/workflow/status/dmitry-ivanov/laravel-helper-functions/tests/8.x)](https://github.com/dmitry-ivanov/laravel-helper-functions/actions?query=workflow%3Atests+branch%3A8.x)
 [![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-helper-functions/8.x)](https://app.codecov.io/gh/dmitry-ivanov/laravel-helper-functions/branch/8.x)
 
-[![Latest Stable Version](https://poser.pugx.org/illuminated/helper-functions/v/stable)](https://packagist.org/packages/illuminated/helper-functions)
-[![Latest Unstable Version](https://poser.pugx.org/illuminated/helper-functions/v/unstable)](https://packagist.org/packages/illuminated/helper-functions)
-[![Total Downloads](https://poser.pugx.org/illuminated/helper-functions/downloads)](https://packagist.org/packages/illuminated/helper-functions)
-[![License](https://poser.pugx.org/illuminated/helper-functions/license)](https://packagist.org/packages/illuminated/helper-functions)
+![Packagist Version](https://img.shields.io/packagist/v/illuminated/helper-functions)
+![Packagist Stars](https://img.shields.io/packagist/stars/illuminated/helper-functions)
+![Packagist Downloads](https://img.shields.io/packagist/dt/illuminated/helper-functions)
+![Packagist License](https://img.shields.io/packagist/l/illuminated/helper-functions)
 
 Laravel-specific and pure PHP Helper Functions.
 
@@ -520,6 +520,10 @@ $xml = array_to_xml($array, 'Guys');
 //    </Bad_guy>
 // </Guys>
 ```
+
+## Sponsors
+
+[![Laravel Idea](art/sponsor-laravel-idea.png)](https://laravel-idea.com)
 
 ## License
 
