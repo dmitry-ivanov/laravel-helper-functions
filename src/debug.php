@@ -28,7 +28,7 @@ if (!function_exists('minimized_backtrace_as_string')) {
 
         return collect($backtrace)
             ->map(function (string $line) {
-                return preg_match('/(#\d+) (.*?):/', $line, $matches)
+                return preg_match('/(#\d+) .*? called at \[(.*?)]/', $line, $matches) || preg_match('/(#\d+) (.*?):/', $line, $matches)
                     ? "{$matches[1]} {$matches[2]}"
                     : false;
             })
