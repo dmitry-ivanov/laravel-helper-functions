@@ -508,7 +508,7 @@ $array = [
 
 $xml = array_to_xml($array, 'Guys');
 
-// <?xml version="1.0"?>
+// <?xml version="1.0" encoding="utf-8"?>
 // <Guys>
 //    <Good_guy Rating="100">
 //        <name>Luke Skywalker</name>

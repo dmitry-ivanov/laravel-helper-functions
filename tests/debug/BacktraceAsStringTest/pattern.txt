@@ -1,4 +1,4 @@
-#0  backtrace_as_string\(\) called at \[\/.*?\/tests\/debug\/BacktraceAsStringTest\.php:35\]
-#1  Illuminated\\Helpers\\Tests\\Debug\\BacktraceAsStringTest->anotherExtraMethod\(\) called at \[\/.*?\/tests\/debug\/BacktraceAsStringTest\.php:25\]
-#2  Illuminated\\Helpers\\Tests\\Debug\\BacktraceAsStringTest->getBacktrace\(\) called at \[\/.*?\/tests\/debug\/BacktraceAsStringTest\.php:13\]
-#3  Illuminated\\Helpers\\Tests\\Debug\\BacktraceAsStringTest->it_returns_backtrace_as_string_without_args\(\)
+#0 \/.*?\/tests\/debug\/BacktraceAsStringTest\.php\(35\): backtrace_as_string\(\)
+#1 \/.*?\/tests\/debug\/BacktraceAsStringTest\.php\(25\): Illuminated\\Helpers\\Tests\\Debug\\BacktraceAsStringTest->anotherExtraMethod\(\)
+#2 \/.*?\/tests\/debug\/BacktraceAsStringTest\.php\(13\): Illuminated\\Helpers\\Tests\\Debug\\BacktraceAsStringTest->getBacktrace\(\)
+#3 .*?: Illuminated\\Helpers\\Tests\\Debug\\BacktraceAsStringTest->it_returns_backtrace_as_string_without_args\(\)

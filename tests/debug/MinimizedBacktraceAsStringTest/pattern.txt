@@ -1,4 +1,4 @@
-#0 \/.*?\/src\/debug\.php:27
-#1 \/.*?\/tests\/debug\/MinimizedBacktraceAsStringTest\.php:35
-#2 \/.*?\/tests\/debug\/MinimizedBacktraceAsStringTest\.php:25
-#3 \/.*?\/tests\/debug\/MinimizedBacktraceAsStringTest\.php:13
+#0 \/.*?\/src\/debug\.php\(27\)
+#1 \/.*?\/tests\/debug\/MinimizedBacktraceAsStringTest\.php\(35\)
+#2 \/.*?\/tests\/debug\/MinimizedBacktraceAsStringTest\.php\(25\)
+#3 \/.*?\/tests\/debug\/MinimizedBacktraceAsStringTest\.php\(13\)

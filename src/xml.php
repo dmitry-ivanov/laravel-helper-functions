@@ -26,10 +26,11 @@ if (!function_exists('array_to_xml')) {
      * @param array $array
      * @param string $rootElement
      * @param bool $replaceSpacesByUnderscoresInKeyNames
+     * @param string $xmlEncoding
      * @return string
      */
-    function array_to_xml(array $array, string $rootElement = '', bool $replaceSpacesByUnderscoresInKeyNames = true)
+    function array_to_xml(array $array, string $rootElement = '', bool $replaceSpacesByUnderscoresInKeyNames = true, string $xmlEncoding = 'utf-8')
     {
-        return ArrayToXml::convert($array, $rootElement, $replaceSpacesByUnderscoresInKeyNames);
+        return ArrayToXml::convert($array, $rootElement, $replaceSpacesByUnderscoresInKeyNames, $xmlEncoding);
     }
 }
