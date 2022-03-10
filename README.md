@@ -75,6 +75,7 @@ Laravel-specific and pure PHP Helper Functions.
     - [is_email](#is_email)
     - [to_rfc2822_email](#to_rfc2822_email)
     - [to_swiftmailer_emails](#to_swiftmailer_emails)
+    - [to_symfony_emails](#to_symfony_emails)
 
 - [Filesystem](#filesystem)
     - [relative_path](#relative_path)
@@ -295,10 +296,10 @@ Convert addresses data to [RFC 2822](http://faqs.org/rfcs/rfc2822.html) string, 
 ```php
 to_rfc2822_email([
     ['address' => 'john.doe@example.com', 'name' => 'John Doe'],
-    ['address' => 'mary.smith@example.com'],
+    ['address' => 'jane.smith@example.com'],
 ]);
 
-// "John Doe <john.doe@example.com>, mary.smith@example.com"
+// "John Doe <john.doe@example.com>, jane.smith@example.com"
 ```
 
 Also, it supports simplified syntax for a single address:
@@ -316,10 +317,10 @@ Convert addresses data to [SwiftMailer-suitable format](https://swiftmailer.org/
 ```php
 to_swiftmailer_emails([
     ['address' => 'john.doe@example.com', 'name' => 'John Doe'],
-    ['address' => 'mary.smith@example.com'],
+    ['address' => 'jane.smith@example.com'],
 ]);
 
-// ["john.doe@example.com" => "John Doe", "mary.smith@example.com"]
+// ["john.doe@example.com" => "John Doe", "jane.smith@example.com"]
 ```
 
 Also, it supports simplified syntax for a single address:
@@ -328,6 +329,27 @@ Also, it supports simplified syntax for a single address:
 to_swiftmailer_emails(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
 
 // ["john.doe@example.com" => "John Doe"]
+```
+
+#### `to_symfony_emails()`
+
+Convert addresses data to [Symfony-suitable format](https://symfony.com/doc/current/mailer.html#email-addresses):
+
+```php
+to_symfony_emails([
+    ['address' => 'john.doe@example.com', 'name' => 'John Doe'],
+    ['address' => 'jane.smith@example.com'],
+]);
+
+// ["John Doe <john.doe@example.com>", "jane.smith@example.com"]
+```
+
+Also, it supports simplified syntax for a single address:
+
+```php
+to_symfony_emails(['address' => 'john.doe@example.com', 'name' => 'John Doe']);
+
+// ["John Doe <john.doe@example.com>"]
 ```
 
 ## Filesystem
