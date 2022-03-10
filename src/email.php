@@ -21,7 +21,6 @@ if (!function_exists('to_rfc2822_email')) {
      */
     function to_rfc2822_email(array $addresses): string
     {
-        // Check if we're dealing with one address, without multiarray
         $addresses = !empty($addresses['address']) ? [$addresses] : $addresses;
 
         return collect($addresses)
@@ -48,7 +47,6 @@ if (!function_exists('to_swiftmailer_emails')) {
      */
     function to_swiftmailer_emails(array $addresses): array
     {
-        // Check if we're dealing with one address, without multiarray
         $addresses = !empty($addresses['address']) ? [$addresses] : $addresses;
 
         return collect($addresses)
@@ -63,6 +61,33 @@ if (!function_exists('to_swiftmailer_emails')) {
                 return $name ? [$address => $name] : [$key => $address];
             })
             ->filter()
+            ->toArray();
+    }
+}
+
+if (!function_exists('to_symfony_emails')) {
+    /**
+     * Convert addresses data to Symfony-suitable format.
+     *
+     * @see https://symfony.com/doc/current/mailer.html#email-addresses
+     */
+    function to_symfony_emails(array $addresses): array
+    {
+        $addresses = !empty($addresses['address']) ? [$addresses] : $addresses;
+
+        return collect($addresses)
+            ->map(function (array $item) {
+                $name = Arr::get($item, 'name');
+                $address = Arr::get($item, 'address');
+
+                if (!is_email($address)) {
+                    return false;
+                }
+
+                return $name ? "{$name} <{$address}>" : $address;
+            })
+            ->filter()
+            ->values()
             ->toArray();
     }
 }
