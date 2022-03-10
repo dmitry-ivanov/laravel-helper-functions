@@ -295,10 +295,10 @@ Convert addresses data to [RFC 2822](http://faqs.org/rfcs/rfc2822.html) string, 
 ```php
 to_rfc2822_email([
     ['address' => 'john.doe@example.com', 'name' => 'John Doe'],
-    ['address' => 'mary.smith@example.com'],
+    ['address' => 'jane.smith@example.com'],
 ]);
 
-// "John Doe <john.doe@example.com>, mary.smith@example.com"
+// "John Doe <john.doe@example.com>, jane.smith@example.com"
 ```
 
 Also, it supports simplified syntax for a single address:
@@ -316,10 +316,10 @@ Convert addresses data to [SwiftMailer-suitable format](https://swiftmailer.org/
 ```php
 to_swiftmailer_emails([
     ['address' => 'john.doe@example.com', 'name' => 'John Doe'],
-    ['address' => 'mary.smith@example.com'],
+    ['address' => 'jane.smith@example.com'],
 ]);
 
-// ["john.doe@example.com" => "John Doe", "mary.smith@example.com"]
+// ["john.doe@example.com" => "John Doe", "jane.smith@example.com"]
 ```
 
 Also, it supports simplified syntax for a single address:
