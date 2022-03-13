@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Helpers\Tests\ArrayTests;
+namespace Illuminated\Helpers\Tests\array;
 
 use Illuminated\Helpers\Tests\TestCase;
 

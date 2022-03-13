@@ -3,12 +3,8 @@
 if (!function_exists('is_json')) {
     /**
      * Check whether the given value is a valid JSON-encoded string or not.
-     *
-     * @param mixed $value
-     * @param bool $return
-     * @return bool|array
      */
-    function is_json($value, bool $return = false)
+    function is_json(mixed $value, bool $return = false): array|bool
     {
         if (empty($value) || !is_string($value)) {
             return false;

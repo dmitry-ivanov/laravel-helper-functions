@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Helpers\Tests\Email;
+namespace Illuminated\Helpers\Tests\email;
 
 use Illuminated\Helpers\Tests\TestCase;
 use StdClass;

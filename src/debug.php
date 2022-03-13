@@ -3,10 +3,8 @@
 if (!function_exists('backtrace_as_string')) {
     /**
      * Get backtrace without arguments, as a string.
-     *
-     * @return string
      */
-    function backtrace_as_string()
+    function backtrace_as_string(): string
     {
         ob_start();
 
@@ -19,10 +17,8 @@ if (!function_exists('backtrace_as_string')) {
 if (!function_exists('minimized_backtrace_as_string')) {
     /**
      * Get minimized backtrace, as a string.
-     *
-     * @return string
      */
-    function minimized_backtrace_as_string()
+    function minimized_backtrace_as_string(): string
     {
         $backtrace = explode("\n", backtrace_as_string());
 

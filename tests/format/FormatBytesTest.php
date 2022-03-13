@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Helpers\Tests\Format;
+namespace Illuminated\Helpers\Tests\format;
 
 use Illuminated\Helpers\Tests\TestCase;
 

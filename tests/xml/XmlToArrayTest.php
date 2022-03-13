@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Helpers\Tests\Xml;
+namespace Illuminated\Helpers\Tests\xml;
 
 use Exception;
 use Illuminated\Helpers\Tests\TestCase;

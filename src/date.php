@@ -6,11 +6,8 @@ use Illuminate\Support\Facades\Config;
 if (!function_exists('to_default_timezone')) {
     /**
      * Convert the given datetime to the default timezone (see `app.timezone` config).
-     *
-     * @param mixed $datetime
-     * @return mixed
      */
-    function to_default_timezone($datetime)
+    function to_default_timezone(mixed $datetime): mixed
     {
         return empty($datetime)
             ? $datetime

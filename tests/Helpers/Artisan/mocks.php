@@ -8,11 +8,9 @@ if (!function_exists(__NAMESPACE__ . '\php_uname')) {
     /**
      * Mock for the `php_uname` function.
      *
-     * @return mixed
-     *
      * @noinspection PhpUndefinedMethodInspection
      */
-    function php_uname()
+    function php_uname(): mixed
     {
         return TestCase::$functions->php_uname();
     }
