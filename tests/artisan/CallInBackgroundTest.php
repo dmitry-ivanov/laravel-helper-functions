@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Helpers\Tests\Artisan;
+namespace Illuminated\Helpers\Tests\artisan;
 
 use Illuminated\Helpers\Tests\TestCase;
 

@@ -8,8 +8,6 @@ class CommandTest extends TestCase
 {
     /**
      * This method is called before each test.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -110,12 +108,9 @@ if (!function_exists(__NAMESPACE__ . '\exec')) {
     /**
      * Mock for the `exec` function.
      *
-     * @param string $command
-     * @return mixed
-     *
      * @noinspection PhpUndefinedMethodInspection
      */
-    function exec(string $command)
+    function exec(string $command): mixed
     {
         return TestCase::$functions->exec($command);
     }

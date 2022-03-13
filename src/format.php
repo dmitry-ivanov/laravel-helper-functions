@@ -8,11 +8,8 @@ if (!function_exists('get_dump')) {
      * Get a nicely formatted string representation of the variable, using the Symfony VarDumper Component.
      *
      * @see https://symfony.com/doc/current/components/var_dumper/introduction.html
-     *
-     * @param mixed $var
-     * @return string
      */
-    function get_dump($var)
+    function get_dump(mixed $var): string
     {
         $cloner = new VarCloner();
         $cloner->setMaxItems(-1);
@@ -35,12 +32,8 @@ if (!function_exists('get_dump')) {
 if (!function_exists('format_bytes')) {
     /**
      * Format bytes into kilobytes, megabytes, gigabytes or terabytes.
-     *
-     * @param int $bytes
-     * @param int $precision
-     * @return string
      */
-    function format_bytes(int $bytes, int $precision = 2)
+    function format_bytes(int $bytes, int $precision = 2): string
     {
         $units = ['B', 'KB', 'MB', 'GB', 'TB'];
 
@@ -56,11 +49,8 @@ if (!function_exists('format_bytes')) {
 if (!function_exists('format_xml')) {
     /**
      * Format the given XML string using new lines and indents.
-     *
-     * @param string $xml
-     * @return string
      */
-    function format_xml(string $xml)
+    function format_xml(string $xml): string
     {
         $dom = dom_import_simplexml(new SimpleXMLElement($xml))->ownerDocument;
 

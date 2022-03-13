@@ -5,12 +5,8 @@ use Illuminate\Support\Arr;
 if (!function_exists('array_except_value')) {
     /**
      * Remove the given values from the array.
-     *
-     * @param array $array
-     * @param mixed $except
-     * @return array
      */
-    function array_except_value(array $array, $except)
+    function array_except_value(array $array, mixed $except): array
     {
         if (!is_array($except)) {
             $except = [$except];
@@ -27,13 +23,8 @@ if (!function_exists('array_except_value')) {
 if (!function_exists('multiarray_set')) {
     /**
      * Set the value for each item of the multidimensional array using "dot" notation.
-     *
-     * @param array $multiarray
-     * @param mixed $key
-     * @param mixed $value
-     * @return array
      */
-    function multiarray_set(array &$multiarray, $key, $value)
+    function multiarray_set(array &$multiarray, mixed $key, mixed $value): array
     {
         foreach ($multiarray as &$array) {
             Arr::set($array, $key, $value);
@@ -48,14 +39,8 @@ if (!function_exists('multiarray_sort_by')) {
      * Sort the multidimensional array by several fields.
      *
      * Use either SORT_ASC or SORT_DESC for `sort` arguments.
-     *
-     * @param array $multiarray
-     * @param string $field1
-     * @param int $sort1
-     * @param null $_
-     * @return array
      */
-    function multiarray_sort_by(array $multiarray, $field1 = null, $sort1 = null, $_ = null)
+    function multiarray_sort_by(array $multiarray, mixed $field1 = null, mixed $sort1 = null, mixed $_ = null): array
     {
         $arguments = collect(func_get_args());
 

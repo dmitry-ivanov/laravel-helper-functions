@@ -9,45 +9,29 @@ class BackgroundCommand
 {
     /**
      * The artisan command.
-     *
-     * @var string
      */
-    private $command;
+    private string $command;
 
     /**
      * The command which should be executed before.
-     *
-     * @var string
      */
-    private $before;
+    private string $before;
 
     /**
      * The command which should be executed after.
-     *
-     * @var string
      */
-    private $after;
+    private string $after;
 
     /**
      * Create background command by the given parameters.
-     *
-     * @param string $command
-     * @param string $before
-     * @param string $after
-     * @return \Illuminated\Helpers\Artisan\BackgroundCommand
      */
-    public static function factory(string $command, string $before = '', string $after = '')
+    public static function factory(string $command, string $before = '', string $after = ''): self
     {
         return new self($command, $before, $after);
     }
 
     /**
      * Create a new instance of the background command.
-     *
-     * @param string $command
-     * @param string $before
-     * @param string $after
-     * @return void
      */
     public function __construct(string $command, string $before = '', string $after = '')
     {
@@ -58,10 +42,8 @@ class BackgroundCommand
 
     /**
      * Run the command in background.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         $command = $this->composeCommand();
 
@@ -74,10 +56,8 @@ class BackgroundCommand
 
     /**
      * Compose the command.
-     *
-     * @return string
      */
-    protected function composeCommand()
+    protected function composeCommand(): string
     {
         return collect()
             ->when($this->before, function (Collection $collection) {
@@ -92,20 +72,16 @@ class BackgroundCommand
 
     /**
      * Get the path to PHP executable.
-     *
-     * @return string
      */
-    protected function getPhpExecutable()
+    protected function getPhpExecutable(): string
     {
         return (new PhpExecutableFinder)->find();
     }
 
     /**
      * Get the path to artisan.
-     *
-     * @return string
      */
-    protected function getArtisan()
+    protected function getArtisan(): string
     {
         return defined('ARTISAN_BINARY') ? ARTISAN_BINARY : 'artisan';
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Helpers\Tests\Db;
+namespace Illuminated\Helpers\Tests\db;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;

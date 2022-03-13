@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Helpers\Tests\Db;
+namespace Illuminated\Helpers\Tests\db;
 
 use Illuminated\Helpers\Tests\TestCase;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Helpers\Tests\Date;
+namespace Illuminated\Helpers\Tests\date;
 
 use Illuminate\Support\Facades\Config;
 use Illuminated\Helpers\Tests\TestCase;

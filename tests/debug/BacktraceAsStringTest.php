@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Helpers\Tests\Debug;
+namespace Illuminated\Helpers\Tests\debug;
 
 use Illuminated\Helpers\Tests\TestCase;
 
@@ -17,20 +17,16 @@ class BacktraceAsStringTest extends TestCase
 
     /**
      * This method is used to simply add calls in the backtrace.
-     *
-     * @return string
      */
-    private function getBacktrace()
+    private function getBacktrace(): string
     {
         return $this->anotherExtraMethod();
     }
 
     /**
      * This method is used to simply add calls in the backtrace.
-     *
-     * @return string
      */
-    private function anotherExtraMethod()
+    private function anotherExtraMethod(): string
     {
         return backtrace_as_string();
     }

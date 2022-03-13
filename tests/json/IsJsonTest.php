@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Helpers\Tests\Json;
+namespace Illuminated\Helpers\Tests\json;
 
 use Illuminated\Helpers\Tests\TestCase;
 use StdClass;
