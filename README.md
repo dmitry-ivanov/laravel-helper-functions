@@ -546,7 +546,8 @@ $xml = array_to_xml($array, 'Guys');
 
 ## Sponsors
 
-[![Laravel Idea](art/sponsor-laravel-idea.png)](https://laravel-idea.com)
+[![Laravel Idea](art/sponsor-laravel-idea.png)](https://laravel-idea.com)<br>
+[![Material Theme UI Plugin](art/sponsor-material-theme.png)](https://material-theme.com)<br>
 
 ## License
 
