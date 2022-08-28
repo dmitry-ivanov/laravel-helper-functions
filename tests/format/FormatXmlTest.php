@@ -19,7 +19,8 @@ class FormatXmlTest extends TestCase
     /** @test */
     public function it_throws_an_exception_if_non_xml_string_passed()
     {
-        $this->willSeeException(Exception::class, 'String could not be parsed as XML');
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage('String could not be parsed as XML');
 
         format_xml('Non XML');
     }
