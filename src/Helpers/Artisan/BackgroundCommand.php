@@ -83,6 +83,6 @@ class BackgroundCommand
      */
     protected function getArtisan(): string
     {
-        return defined('ARTISAN_BINARY') ? ARTISAN_BINARY : 'artisan';
+        return defined('ARTISAN_BINARY') ? ARTISAN_BINARY : base_path() . '/artisan';
     }
 }
