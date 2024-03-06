@@ -17,6 +17,8 @@ Laravel-specific and pure PHP Helper Functions.
 
 | Laravel | Helper Functions                                                            |
 |---------|-----------------------------------------------------------------------------|
+| 11.x    | _[Support](https://buymeacoffee.com/dmitry.ivanov)_ ☕                       |
+| 10.x    | [10.x](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/10.x) |
 | 9.x     | [9.x](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/9.x)   |
 | 8.x     | [8.x](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/8.x)   |
 | 7.x     | [7.x](https://github.com/dmitry-ivanov/laravel-helper-functions/tree/7.x)   |
