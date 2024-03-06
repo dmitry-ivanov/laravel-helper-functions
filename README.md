@@ -4,9 +4,9 @@
 
 [<img src="https://user-images.githubusercontent.com/1286821/181085373-12eee197-187a-4438-90fe-571ac6d68900.png" alt="Buy me a coffee" width="200" />](https://buymeacoffee.com/dmitry.ivanov)
 
-[![StyleCI](https://github.styleci.io/repos/61384075/shield?branch=master&style=flat)](https://github.styleci.io/repos/61384075?branch=master)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/dmitry-ivanov/laravel-helper-functions/tests.yml?branch=master)](https://github.com/dmitry-ivanov/laravel-helper-functions/actions?query=workflow%3Atests+branch%3Amaster)
-[![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-helper-functions/master)](https://app.codecov.io/gh/dmitry-ivanov/laravel-helper-functions/tree/master)
+[![StyleCI](https://github.styleci.io/repos/61384075/shield?branch=10.x&style=flat)](https://github.styleci.io/repos/61384075?branch=10.x)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/dmitry-ivanov/laravel-helper-functions/tests.yml?branch=10.x)](https://github.com/dmitry-ivanov/laravel-helper-functions/actions?query=workflow%3Atests+branch%3A10.x)
+[![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-helper-functions/10.x)](https://app.codecov.io/gh/dmitry-ivanov/laravel-helper-functions/tree/10.x)
 
 ![Packagist Version](https://img.shields.io/packagist/v/illuminated/helper-functions)
 ![Packagist Stars](https://img.shields.io/packagist/stars/illuminated/helper-functions)
@@ -37,7 +37,7 @@ Laravel-specific and pure PHP Helper Functions.
 1. Install the package via Composer:
 
     ```shell script
-    composer require illuminated/helper-functions
+    composer require "illuminated/helper-functions:^10.0"
     ```
 
 2. Use any of the provided helper functions:
