@@ -5,7 +5,7 @@
 [<img src="https://user-images.githubusercontent.com/1286821/181085373-12eee197-187a-4438-90fe-571ac6d68900.png" alt="Buy me a coffee" width="200" />](https://buymeacoffee.com/dmitry.ivanov)
 
 [![StyleCI](https://github.styleci.io/repos/61384075/shield?branch=master&style=flat)](https://github.styleci.io/repos/61384075?branch=master)
-[![Build Status](https://img.shields.io/github/workflow/status/dmitry-ivanov/laravel-helper-functions/tests/master)](https://github.com/dmitry-ivanov/laravel-helper-functions/actions?query=workflow%3Atests+branch%3Amaster)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/dmitry-ivanov/laravel-helper-functions/tests.yml?branch=master)](https://github.com/dmitry-ivanov/laravel-helper-functions/actions?query=workflow%3Atests+branch%3Amaster)
 [![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-helper-functions/master)](https://app.codecov.io/gh/dmitry-ivanov/laravel-helper-functions/branch/master)
 
 ![Packagist Version](https://img.shields.io/packagist/v/illuminated/helper-functions)
