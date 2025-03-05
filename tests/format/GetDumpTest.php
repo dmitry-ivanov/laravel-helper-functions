@@ -4,47 +4,48 @@ namespace Illuminated\Helpers\Tests\format;
 
 use Illuminate\Support\Arr;
 use Illuminated\Helpers\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class GetDumpTest extends TestCase
 {
-    /** @test */
-    public function it_correctly_dumps_null()
+    #[Test]
+    public function it_correctly_dumps_null(): void
     {
         $this->assertEquals("null\n", get_dump(null));
     }
 
-    /** @test */
-    public function it_correctly_dumps_boolean_true()
+    #[Test]
+    public function it_correctly_dumps_boolean_true(): void
     {
         $this->assertEquals("true\n", get_dump(true));
     }
 
-    /** @test */
-    public function it_correctly_dumps_boolean_false()
+    #[Test]
+    public function it_correctly_dumps_boolean_false(): void
     {
         $this->assertEquals("false\n", get_dump(false));
     }
 
-    /** @test */
-    public function it_correctly_dumps_integer()
+    #[Test]
+    public function it_correctly_dumps_integer(): void
     {
         $this->assertEquals("123\n", get_dump(123));
     }
 
-    /** @test */
-    public function it_correctly_dumps_float()
+    #[Test]
+    public function it_correctly_dumps_float(): void
     {
         $this->assertEquals("123.45\n", get_dump(123.45));
     }
 
-    /** @test */
-    public function it_correctly_dumps_string()
+    #[Test]
+    public function it_correctly_dumps_string(): void
     {
         $this->assertEquals("\"some string to dump\"\n", get_dump('some string to dump'));
     }
 
-    /** @test */
-    public function it_correctly_dumps_array()
+    #[Test]
+    public function it_correctly_dumps_array(): void
     {
         $array = [
             'a simple string' => 'in an array of 5 elements',
@@ -65,16 +66,16 @@ class GetDumpTest extends TestCase
         $this->assertEquals($expected, get_dump($array));
     }
 
-    /** @test */
-    public function it_correctly_dumps_array_with_very_long_strings()
+    #[Test]
+    public function it_correctly_dumps_array_with_very_long_strings(): void
     {
         $dump = get_dump([str_repeat('x', 3000)]);
         $this->assertStringNotContainsString('…', $dump);
         $this->assertStringNotContainsString('...', $dump);
     }
 
-    /** @test */
-    public function it_correctly_dumps_array_with_huge_amount_of_items()
+    #[Test]
+    public function it_correctly_dumps_array_with_huge_amount_of_items(): void
     {
         $array = range(1, 3);
         $subArray = range(1, 3000);
@@ -87,8 +88,8 @@ class GetDumpTest extends TestCase
         $this->assertStringNotContainsString('...', $dump);
     }
 
-    /** @test */
-    public function it_correctly_dumps_array_with_depth_50()
+    #[Test]
+    public function it_correctly_dumps_array_with_depth_50(): void
     {
         $key = trim(str_repeat('foo.', 50), '.');
         $array = Arr::add([], $key, 'bar');

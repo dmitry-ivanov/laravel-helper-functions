@@ -3,15 +3,14 @@
 namespace Illuminated\Helpers\Tests\artisan;
 
 use Illuminated\Helpers\Tests\TestCase;
+use PHPUnit\Framework\Attributes\PreserveGlobalState;
+use PHPUnit\Framework\Attributes\RunInSeparateProcess;
+use PHPUnit\Framework\Attributes\Test;
 
-/**
- * @runTestsInSeparateProcesses
- * @preserveGlobalState disabled
- */
 class CallInBackgroundTest extends TestCase
 {
-    /** @test */
-    public function it_works_without_optional_before_and_after_parameters()
+    #[Test] #[RunInSeparateProcess] #[PreserveGlobalState(false)]
+    public function it_works_without_optional_before_and_after_parameters(): void
     {
         $mock = mock('alias:Illuminated\Helpers\Artisan\BackgroundCommand');
         $mock->expects('factory')->with('test command', '', '')->andReturnSelf();
@@ -20,8 +19,8 @@ class CallInBackgroundTest extends TestCase
         call_in_background('test command');
     }
 
-    /** @test */
-    public function it_works_with_optional_before_parameter()
+    #[Test] #[RunInSeparateProcess] #[PreserveGlobalState(false)]
+    public function it_works_with_optional_before_parameter(): void
     {
         $mock = mock('alias:Illuminated\Helpers\Artisan\BackgroundCommand');
         $mock->expects('factory')->with('test command', 'before command', '')->andReturnSelf();
@@ -30,8 +29,8 @@ class CallInBackgroundTest extends TestCase
         call_in_background('test command', 'before command');
     }
 
-    /** @test */
-    public function it_works_with_optional_after_parameter()
+    #[Test] #[RunInSeparateProcess] #[PreserveGlobalState(false)]
+    public function it_works_with_optional_after_parameter(): void
     {
         $mock = mock('alias:Illuminated\Helpers\Artisan\BackgroundCommand');
         $mock->expects('factory')->with('test command', '', 'after command')->andReturnSelf();
@@ -40,8 +39,8 @@ class CallInBackgroundTest extends TestCase
         call_in_background('test command', '', 'after command');
     }
 
-    /** @test */
-    public function it_works_with_optional_before_and_after_parameters_together()
+    #[Test] #[RunInSeparateProcess] #[PreserveGlobalState(false)]
+    public function it_works_with_optional_before_and_after_parameters_together(): void
     {
         $mock = mock('alias:Illuminated\Helpers\Artisan\BackgroundCommand');
         $mock->expects('factory')->with('test command', 'before', 'after')->andReturnSelf();

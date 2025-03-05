@@ -3,11 +3,12 @@
 namespace Illuminated\Helpers\Tests\debug;
 
 use Illuminated\Helpers\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class MinimizedBacktraceAsStringTest extends TestCase
 {
-    /** @test */
-    public function it_returns_minimized_backtrace_as_string()
+    #[Test]
+    public function it_returns_minimized_backtrace_as_string(): void
     {
         $pattern = file_get_contents(__DIR__ . '/MinimizedBacktraceAsStringTest/pattern.txt');
         $backtrace = $this->getBacktrace();

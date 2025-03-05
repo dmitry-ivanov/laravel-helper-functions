@@ -7,11 +7,10 @@ use Illuminated\Helpers\Tests\TestCase;
 if (!function_exists(__NAMESPACE__ . '\php_uname')) {
     /**
      * Mock for the `php_uname` function.
-     *
-     * @noinspection PhpUndefinedMethodInspection
      */
     function php_uname(): mixed
     {
+        /** @noinspection PhpUndefinedMethodInspection */
         return TestCase::$functions->php_uname();
     }
 }

@@ -3,11 +3,12 @@
 namespace Illuminated\Helpers\Tests\xml;
 
 use Illuminated\Helpers\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class ArrayToXmlTest extends TestCase
 {
-    /** @test */
-    public function it_converts_array_to_xml()
+    #[Test]
+    public function it_converts_array_to_xml(): void
     {
         $array = [
             'task' => [
@@ -34,8 +35,8 @@ class ArrayToXmlTest extends TestCase
         $this->assertEquals($expected, array_to_xml($array));
     }
 
-    /** @test */
-    public function it_supports_xml_attributes_in_converting()
+    #[Test]
+    public function it_supports_xml_attributes_in_converting(): void
     {
         $array = [
             'task' => [
@@ -71,8 +72,8 @@ class ArrayToXmlTest extends TestCase
         $this->assertEquals($expected, array_to_xml($array));
     }
 
-    /** @test */
-    public function it_supports_custom_root_element_name()
+    #[Test]
+    public function it_supports_custom_root_element_name(): void
     {
         $array = [
             'task' => [
@@ -99,8 +100,8 @@ class ArrayToXmlTest extends TestCase
         $this->assertEquals($expected, array_to_xml($array, 'tasks'));
     }
 
-    /** @test */
-    public function it_replaces_spaces_by_under_scores_in_key_names_by_default()
+    #[Test]
+    public function it_replaces_spaces_by_under_scores_in_key_names_by_default(): void
     {
         $array = [
             'task' => [
@@ -127,8 +128,8 @@ class ArrayToXmlTest extends TestCase
         $this->assertEquals($expected, array_to_xml($array));
     }
 
-    /** @test */
-    public function it_is_fully_compatible_with_xml_to_array_helper()
+    #[Test]
+    public function it_is_fully_compatible_with_xml_to_array_helper(): void
     {
         $array = [
             'task' => [

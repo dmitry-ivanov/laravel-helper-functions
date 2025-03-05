@@ -4,12 +4,13 @@ namespace Illuminated\Helpers\Tests\xml;
 
 use Exception;
 use Illuminated\Helpers\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 use SimpleXMLElement;
 
 class XmlToArrayTest extends TestCase
 {
-    /** @test */
-    public function it_transforms_xml_string_to_array()
+    #[Test]
+    public function it_transforms_xml_string_to_array(): void
     {
         $xml = file_get_contents(__DIR__ . '/XmlToArrayTest/example.xml');
 
@@ -47,8 +48,8 @@ class XmlToArrayTest extends TestCase
         $this->assertEquals($expected, xml_to_array($xml));
     }
 
-    /** @test */
-    public function it_also_allows_to_pass_simplexmlelement_object()
+    #[Test]
+    public function it_also_allows_to_pass_simplexmlelement_object(): void
     {
         $xml = new SimpleXMLElement(file_get_contents(__DIR__ . '/XmlToArrayTest/example.xml'));
 
@@ -86,17 +87,17 @@ class XmlToArrayTest extends TestCase
         $this->assertEquals($expected, xml_to_array($xml));
     }
 
-    /** @test */
-    public function it_throws_an_exception_if_non_xml_string_passed()
+    #[Test]
+    public function it_throws_an_exception_if_non_xml_string_passed(): void
     {
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('String could not be parsed as XML');
 
-        xml_to_array('Non XML');
+        @xml_to_array('Non XML');
     }
 
-    /** @test */
-    public function it_is_fully_compatible_with_array_to_xml_helper()
+    #[Test]
+    public function it_is_fully_compatible_with_array_to_xml_helper(): void
     {
         $xml = file_get_contents(__DIR__ . '/XmlToArrayTest/example.xml');
 

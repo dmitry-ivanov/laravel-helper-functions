@@ -3,17 +3,18 @@
 namespace Illuminated\Helpers\Tests\email;
 
 use Illuminated\Helpers\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class ToRfc2822EmailTest extends TestCase
 {
-    /** @test */
-    public function it_returns_an_empty_string_for_an_empty_array()
+    #[Test]
+    public function it_returns_an_empty_string_for_an_empty_array(): void
     {
         $this->assertEquals('', to_rfc2822_email([]));
     }
 
-    /** @test */
-    public function it_supports_simplified_syntax_for_one_email()
+    #[Test]
+    public function it_supports_simplified_syntax_for_one_email(): void
     {
         $this->assertEquals(
             'John Doe <john.doe@example.com>',
@@ -21,8 +22,8 @@ class ToRfc2822EmailTest extends TestCase
         );
     }
 
-    /** @test */
-    public function it_supports_multiple_emails()
+    #[Test]
+    public function it_supports_multiple_emails(): void
     {
         $this->assertEquals(
             'John Doe <john.doe@example.com>, Jane Doe <jane.doe@example.com>, Mary Doe <mary.doe@example.com>',
@@ -34,8 +35,8 @@ class ToRfc2822EmailTest extends TestCase
         );
     }
 
-    /** @test */
-    public function it_skips_items_with_empty_addresses()
+    #[Test]
+    public function it_skips_items_with_empty_addresses(): void
     {
         $this->assertEquals(
             'John Doe <john.doe@example.com>, Mary Doe <mary.doe@example.com>',
@@ -50,8 +51,8 @@ class ToRfc2822EmailTest extends TestCase
         );
     }
 
-    /** @test */
-    public function it_skips_items_with_invalid_addresses()
+    #[Test]
+    public function it_skips_items_with_invalid_addresses(): void
     {
         $this->assertEquals(
             'John Doe <john.doe@example.com>, Vicky Doe <vicky.doe@example.com>',
@@ -65,14 +66,14 @@ class ToRfc2822EmailTest extends TestCase
         );
     }
 
-    /** @test */
-    public function name_is_optional_for_one_email()
+    #[Test]
+    public function name_is_optional_for_one_email(): void
     {
         $this->assertEquals('john.doe@example.com', to_rfc2822_email(['address' => 'john.doe@example.com']));
     }
 
-    /** @test */
-    public function name_is_optional_for_multiple_emails()
+    #[Test]
+    public function name_is_optional_for_multiple_emails(): void
     {
         $this->assertEquals(
             'John Doe <john.doe@example.com>, jane.doe@example.com, mary.doe@example.com',

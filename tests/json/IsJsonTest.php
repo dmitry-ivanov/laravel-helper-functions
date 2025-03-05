@@ -3,134 +3,135 @@
 namespace Illuminated\Helpers\Tests\json;
 
 use Illuminated\Helpers\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 use StdClass;
 
 class IsJsonTest extends TestCase
 {
-    /** @test */
-    public function it_returns_false_for_null()
+    #[Test]
+    public function it_returns_false_for_null(): void
     {
         $this->assertFalse(is_json(null));
     }
 
-    /** @test */
-    public function it_returns_false_for_boolean_true()
+    #[Test]
+    public function it_returns_false_for_boolean_true(): void
     {
         $this->assertFalse(is_json(true));
     }
 
-    /** @test */
-    public function it_returns_false_for_boolean_false()
+    #[Test]
+    public function it_returns_false_for_boolean_false(): void
     {
         $this->assertFalse(is_json(false));
     }
 
-    /** @test */
-    public function it_returns_false_for_integer()
+    #[Test]
+    public function it_returns_false_for_integer(): void
     {
         $this->assertFalse(is_json(123));
     }
 
-    /** @test */
-    public function it_returns_false_for_float()
+    #[Test]
+    public function it_returns_false_for_float(): void
     {
         $this->assertFalse(is_json(123.45));
     }
 
-    /** @test */
-    public function it_returns_false_for_an_empty_string()
+    #[Test]
+    public function it_returns_false_for_an_empty_string(): void
     {
         $this->assertFalse(is_json(''));
     }
 
-    /** @test */
-    public function it_returns_false_for_non_json_string()
+    #[Test]
+    public function it_returns_false_for_non_json_string(): void
     {
         $this->assertFalse(is_json('non-json string'));
     }
 
-    /** @test */
-    public function it_returns_false_for_empty_array()
+    #[Test]
+    public function it_returns_false_for_empty_array(): void
     {
         $this->assertFalse(is_json([]));
     }
 
-    /** @test */
-    public function it_returns_false_for_non_empty_array()
+    #[Test]
+    public function it_returns_false_for_non_empty_array(): void
     {
         $this->assertFalse(is_json(['foo' => 'bar']));
     }
 
-    /** @test */
-    public function it_returns_false_for_object()
+    #[Test]
+    public function it_returns_false_for_object(): void
     {
         $this->assertFalse(is_json(new StdClass()));
     }
 
-    /** @test */
-    public function it_returns_false_for_non_json_and_second_argument_passed()
+    #[Test]
+    public function it_returns_false_for_non_json_and_second_argument_passed(): void
     {
         $this->assertFalse(is_json('non-json string', true));
     }
 
-    /** @test */
-    public function it_returns_true_for_json_encoded_null()
+    #[Test]
+    public function it_returns_true_for_json_encoded_null(): void
     {
         $json = json_encode(null);
         $this->assertTrue(is_json($json));
     }
 
-    /** @test */
-    public function it_returns_true_for_json_encoded_boolean_true()
+    #[Test]
+    public function it_returns_true_for_json_encoded_boolean_true(): void
     {
         $json = json_encode(true);
         $this->assertTrue(is_json($json));
     }
 
-    /** @test */
-    public function it_returns_true_for_json_encoded_boolean_false()
+    #[Test]
+    public function it_returns_true_for_json_encoded_boolean_false(): void
     {
         $json = json_encode(false);
         $this->assertTrue(is_json($json));
     }
 
-    /** @test */
-    public function it_returns_true_for_json_encoded_integer()
+    #[Test]
+    public function it_returns_true_for_json_encoded_integer(): void
     {
         $json = json_encode(123);
         $this->assertTrue(is_json($json));
     }
 
-    /** @test */
-    public function it_returns_true_for_json_encoded_float()
+    #[Test]
+    public function it_returns_true_for_json_encoded_float(): void
     {
         $json = json_encode(123.45);
         $this->assertTrue(is_json($json));
     }
 
-    /** @test */
-    public function it_returns_true_for_json_encoded_string()
+    #[Test]
+    public function it_returns_true_for_json_encoded_string(): void
     {
         $json = json_encode('string to encode');
         $this->assertTrue(is_json($json));
     }
 
-    /** @test */
-    public function it_returns_true_for_json_encoded_array()
+    #[Test]
+    public function it_returns_true_for_json_encoded_array(): void
     {
         $json = json_encode(['foo' => 'bar']);
         $this->assertTrue(is_json($json));
     }
 
-    /** @test */
-    public function it_returns_true_for_json_encoded_object()
+    #[Test]
+    public function it_returns_true_for_json_encoded_object(): void
     {
         $json = json_encode((object) ['foo' => 'bar', 'baz' => 'bax']);
         $this->assertTrue(is_json($json));
     }
 
-    /** @test */
-    public function it_returns_decoded_json_with_second_argument_passed()
+    #[Test]
+    public function it_returns_decoded_json_with_second_argument_passed(): void
     {
         $array = ['foo' => 'bar', 'baz' => 'bax'];
         $json = json_encode($array);

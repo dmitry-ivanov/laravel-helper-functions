@@ -3,60 +3,61 @@
 namespace Illuminated\Helpers\Tests\email;
 
 use Illuminated\Helpers\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 use StdClass;
 
 class IsEmailTest extends TestCase
 {
-    /** @test */
-    public function it_returns_false_for_null()
+    #[Test]
+    public function it_returns_false_for_null(): void
     {
         $this->assertFalse(is_email(null));
     }
 
-    /** @test */
-    public function it_returns_false_for_boolean_true()
+    #[Test]
+    public function it_returns_false_for_boolean_true(): void
     {
         $this->assertFalse(is_email(true));
     }
 
-    /** @test */
-    public function it_returns_false_for_boolean_false()
+    #[Test]
+    public function it_returns_false_for_boolean_false(): void
     {
         $this->assertFalse(is_email(false));
     }
 
-    /** @test */
-    public function it_returns_false_for_integer()
+    #[Test]
+    public function it_returns_false_for_integer(): void
     {
         $this->assertFalse(is_email(123));
     }
 
-    /** @test */
-    public function it_returns_false_for_float()
+    #[Test]
+    public function it_returns_false_for_float(): void
     {
         $this->assertFalse(is_email(123.45));
     }
 
-    /** @test */
-    public function it_returns_false_for_empty_array()
+    #[Test]
+    public function it_returns_false_for_empty_array(): void
     {
         $this->assertFalse(is_email([]));
     }
 
-    /** @test */
-    public function it_returns_false_for_array()
+    #[Test]
+    public function it_returns_false_for_array(): void
     {
         $this->assertFalse(is_email(['user@example.com']));
     }
 
-    /** @test */
-    public function it_returns_false_for_an_object()
+    #[Test]
+    public function it_returns_false_for_an_object(): void
     {
         $this->assertFalse(is_email(new StdClass()));
     }
 
-    /** @test */
-    public function it_returns_false_for_invalid_emails()
+    #[Test]
+    public function it_returns_false_for_invalid_emails(): void
     {
         $this->assertFalse(is_email('user'));
         $this->assertFalse(is_email('user@'));
@@ -64,8 +65,8 @@ class IsEmailTest extends TestCase
         $this->assertFalse(is_email('user@example.'));
     }
 
-    /** @test */
-    public function it_returns_true_for_valid_emails()
+    #[Test]
+    public function it_returns_true_for_valid_emails(): void
     {
         $this->assertTrue(is_email('user@example.com'));
         $this->assertTrue(is_email('user.name@example.com'));

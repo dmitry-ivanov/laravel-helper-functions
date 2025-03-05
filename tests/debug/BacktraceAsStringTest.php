@@ -3,11 +3,12 @@
 namespace Illuminated\Helpers\Tests\debug;
 
 use Illuminated\Helpers\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class BacktraceAsStringTest extends TestCase
 {
-    /** @test */
-    public function it_returns_backtrace_as_string_without_args()
+    #[Test]
+    public function it_returns_backtrace_as_string_without_args(): void
     {
         $pattern = file_get_contents(__DIR__ . '/BacktraceAsStringTest/pattern.txt');
         $backtrace = $this->getBacktrace();

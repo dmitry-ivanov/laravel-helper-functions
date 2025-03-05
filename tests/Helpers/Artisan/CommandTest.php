@@ -3,6 +3,9 @@
 namespace Illuminated\Helpers\Artisan;
 
 use Illuminated\Helpers\Tests\TestCase;
+use PHPUnit\Framework\Attributes\PreserveGlobalState;
+use PHPUnit\Framework\Attributes\RunInSeparateProcess;
+use PHPUnit\Framework\Attributes\Test;
 
 class CommandTest extends TestCase
 {
@@ -17,34 +20,30 @@ class CommandTest extends TestCase
         $phpBinaryMock->expects('find')->andReturn('php');
     }
 
-    /** @test */
-    public function only_one_constructor_argument_is_required()
+    #[Test]
+    public function only_one_constructor_argument_is_required(): void
     {
         $command = new BackgroundCommand('test');
         $this->assertInstanceOf(BackgroundCommand::class, $command);
     }
 
-    /** @test */
-    public function it_has_static_constructor_named_factory()
+    #[Test]
+    public function it_has_static_constructor_named_factory(): void
     {
-        $command = BackgroundCommand::factory('test');
+        $command = BackgroundCommand::factory('test'); /** @noinspection UnnecessaryAssertionInspection */
         $this->assertInstanceOf(BackgroundCommand::class, $command);
     }
 
-    /**
-     * @test
-     * @runInSeparateProcess
-     * @preserveGlobalState disabled
-     */
-    public function it_can_run_command_in_background()
+    #[Test] #[RunInSeparateProcess] #[PreserveGlobalState(false)]
+    public function it_can_run_command_in_background(): void
     {
         $this->expectsExecWith('(php artisan test:command) > /dev/null 2>&1 &');
 
         BackgroundCommand::factory('test:command')->run();
     }
 
-    /** @test */
-    public function which_also_works_for_windows()
+    #[Test]
+    public function which_also_works_for_windows(): void
     {
         require_once 'mocks.php';
 
@@ -54,48 +53,32 @@ class CommandTest extends TestCase
         BackgroundCommand::factory('test:command')->run();
     }
 
-    /**
-     * @test
-     * @runInSeparateProcess
-     * @preserveGlobalState disabled
-     */
-    public function run_in_background_supports_the_before_command()
+    #[Test] #[RunInSeparateProcess] #[PreserveGlobalState(false)]
+    public function run_in_background_supports_the_before_command(): void
     {
         $this->expectsExecWith('(before command && php artisan test:command) > /dev/null 2>&1 &');
 
         BackgroundCommand::factory('test:command', 'before command')->run();
     }
 
-    /**
-     * @test
-     * @runInSeparateProcess
-     * @preserveGlobalState disabled
-     */
-    public function run_in_background_supports_the_after_command()
+    #[Test] #[RunInSeparateProcess] #[PreserveGlobalState(false)]
+    public function run_in_background_supports_the_after_command(): void
     {
         $this->expectsExecWith('(php artisan test:command && after command) > /dev/null 2>&1 &');
 
         BackgroundCommand::factory('test:command', '', 'after command')->run();
     }
 
-    /**
-     * @test
-     * @runInSeparateProcess
-     * @preserveGlobalState disabled
-     */
-    public function run_in_background_supports_the_before_and_after_commands_together()
+    #[Test] #[RunInSeparateProcess] #[PreserveGlobalState(false)]
+    public function run_in_background_supports_the_before_and_after_commands_together(): void
     {
         $this->expectsExecWith('(before && php artisan test:command && after) > /dev/null 2>&1 &');
 
         BackgroundCommand::factory('test:command', 'before', 'after')->run();
     }
 
-    /**
-     * @test
-     * @runInSeparateProcess
-     * @preserveGlobalState disabled
-     */
-    public function it_supports_overriding_of_artisan_binary_through_constant()
+    #[Test] #[RunInSeparateProcess] #[PreserveGlobalState(false)]
+    public function it_supports_overriding_of_artisan_binary_through_constant(): void
     {
         $this->expectsExecWith('(before && php custom-artisan test:command && after) > /dev/null 2>&1 &');
 
@@ -107,11 +90,10 @@ class CommandTest extends TestCase
 if (!function_exists(__NAMESPACE__ . '\exec')) {
     /**
      * Mock for the `exec` function.
-     *
-     * @noinspection PhpUndefinedMethodInspection
      */
     function exec(string $command): mixed
     {
+        /** @noinspection PhpUndefinedMethodInspection */
         return TestCase::$functions->exec($command);
     }
 }

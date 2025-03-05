@@ -3,11 +3,12 @@
 namespace Illuminated\Helpers\Tests\array;
 
 use Illuminated\Helpers\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class MultiarraySetTest extends TestCase
 {
-    /** @test */
-    public function it_can_set_new_field_for_each_item_of_multiarray()
+    #[Test]
+    public function it_can_set_new_field_for_each_item_of_multiarray(): void
     {
         $multiarray = [
             ['name' => 'Mercedes-Benz'],
@@ -24,8 +25,8 @@ class MultiarraySetTest extends TestCase
         $this->assertEquals($expected, multiarray_set($multiarray, 'country', 'Germany'));
     }
 
-    /** @test */
-    public function it_takes_multiarray_param_by_reference()
+    #[Test]
+    public function it_takes_multiarray_param_by_reference(): void
     {
         $multiarray = [
             ['name' => 'Mercedes-Benz'],
@@ -44,8 +45,8 @@ class MultiarraySetTest extends TestCase
         $this->assertEquals($expected, $multiarray);
     }
 
-    /** @test */
-    public function it_can_set_existing_field_for_each_item_of_multiarray()
+    #[Test]
+    public function it_can_set_existing_field_for_each_item_of_multiarray(): void
     {
         $multiarray = [
             ['name' => 'Mercedes-Benz', 'country' => 'Unknown'],
@@ -62,8 +63,8 @@ class MultiarraySetTest extends TestCase
         $this->assertEquals($expected, multiarray_set($multiarray, 'country', 'Germany'));
     }
 
-    /** @test */
-    public function it_can_set_new_field_for_each_item_of_multiarray_using_dot_notation()
+    #[Test]
+    public function it_can_set_new_field_for_each_item_of_multiarray_using_dot_notation(): void
     {
         $multiarray = [
             ['name' => 'Mercedes-Benz', 'details' => ['type' => 'SUV']],
@@ -80,8 +81,8 @@ class MultiarraySetTest extends TestCase
         $this->assertEquals($expected, multiarray_set($multiarray, 'details.country', 'Germany'));
     }
 
-    /** @test */
-    public function it_can_set_existing_field_for_each_item_of_multiarray_using_dot_notation()
+    #[Test]
+    public function it_can_set_existing_field_for_each_item_of_multiarray_using_dot_notation(): void
     {
         $multiarray = [
             ['name' => 'Mercedes-Benz', 'details' => ['type' => 'SUV', 'country' => 'Unknown']],
