@@ -15,18 +15,18 @@
         "php": "^8.2",
         "ext-dom": "*",
         "ext-simplexml": "*",
-        "illuminate/support": "^11.0",
-        "nesbot/carbon": "^2.72.6|^3.8.4",
-        "symfony/filesystem": "^7.0.3",
-        "symfony/finder": "^7.0.3",
-        "symfony/process": "^7.0.3",
-        "symfony/var-dumper": "^7.0.3",
+        "illuminate/support": "^12.0",
+        "nesbot/carbon": "^3.8.4",
+        "symfony/filesystem": "^7.2",
+        "symfony/finder": "^7.2",
+        "symfony/process": "^7.2",
+        "symfony/var-dumper": "^7.2",
         "spatie/array-to-xml": "^3.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^11.3.6",
+        "phpunit/phpunit": "^11.5.3",
         "mockery/mockery": "^1.6.10",
-        "illuminated/testing-tools": "^11.0"
+        "illuminated/testing-tools": "^12.0"
     },
     "autoload": {
         "files": [
